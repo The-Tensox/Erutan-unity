@@ -1,10 +1,9 @@
 using UnityEngine;
 using System;
 using Scripts.Utils;
-using Helloworld;
 using System.Threading.Tasks;
 
-namespace Scripts.Sessions
+namespace Erutan.Scripts.Sessions
 {
     public class SessionManager : Singleton<SessionManager>
     {
@@ -43,10 +42,13 @@ namespace Scripts.Sessions
 
         #endregion
 
+        
+
+/*
         public async Task<bool> ConnectAsync()
         {
-            HelloReply response = await Client.SayHelloAsync($"Log me plz");
-            /*
+            //HelloReply response = await Client.SayHelloAsync($"Log me plz");
+            
             switch (response)
             {
                 case AuthenticationResponse.Authenticated:
@@ -63,13 +65,15 @@ namespace Scripts.Sessions
                     InConsole.Instance.Log("Unhandled response received: " + response, LogLevel.Error);
                     break;
             }
-            */
+
             if (response != null) {
                 OnConnectionSuccess?.Invoke();
             } else {
                 OnConnectionFailure?.Invoke();
             }
             return response != null;
+            
+            return true;
         }
 
         public async Task<bool> SendPosition(Vector3 position) {
@@ -78,9 +82,13 @@ namespace Scripts.Sessions
 
         public async Task<bool> DisconnectAsync()
         {
+            
             ByeReply response = await Client.SayByeAsync($"Disconnect me plz");
             if (response != null) OnDisconnected.Invoke();
             return response != null;
+            
+            return true;
         }
+        */
     }
 }

@@ -19,8 +19,8 @@ BUILD
 - Build using Unity Editor.
 
 ```bash
-UNITY_PROJECT_DIR="/home/louis/Documents/unity/GrpcPush"
-protoc -I $UNITY_PROJECT_DIR/Assets/Protos --csharp_out=$UNITY_PROJECT_DIR/Assets/Protos \
-    $UNITY_PROJECT_DIR/Assets/Protos/helloworld.proto --grpc_out=$UNITY_PROJECT_DIR/Assets/Protos \
+UNITY_PROJECT_DIR="/home/louis/Documents/unity/Erutan"
+protoc -I $UNITY_PROJECT_DIR/Assets/Protos/Realtime --csharp_out=$UNITY_PROJECT_DIR/Assets/Protos/Realtime \
+    $UNITY_PROJECT_DIR/Assets/Protos/Realtime/realtime.proto --grpc_out=$UNITY_PROJECT_DIR/Assets/Protos/Realtime \
     --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
 ```
