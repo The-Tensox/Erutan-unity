@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Erutan {
+namespace Erutan.Scripts.Protos {
   /// <summary>
   ///
   ///The Erutan service.
@@ -17,38 +17,19 @@ namespace Erutan {
   {
     static readonly string __ServiceName = "erutan.Erutan";
 
-    static readonly grpc::Marshaller<global::Erutan.LoginRequest> __Marshaller_erutan_LoginRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.LoginRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Erutan.LoginResponse> __Marshaller_erutan_LoginResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.LoginResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Erutan.LogoutRequest> __Marshaller_erutan_LogoutRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.LogoutRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Erutan.LogoutResponse> __Marshaller_erutan_LogoutResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.LogoutResponse.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Erutan.StreamRequest> __Marshaller_erutan_StreamRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.StreamRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Erutan.StreamResponse> __Marshaller_erutan_StreamResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.StreamResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Erutan.Scripts.Protos.Packet> __Marshaller_erutan_Packet = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Erutan.Scripts.Protos.Packet.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Erutan.LoginRequest, global::Erutan.LoginResponse> __Method_Login = new grpc::Method<global::Erutan.LoginRequest, global::Erutan.LoginResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "Login",
-        __Marshaller_erutan_LoginRequest,
-        __Marshaller_erutan_LoginResponse);
-
-    static readonly grpc::Method<global::Erutan.LogoutRequest, global::Erutan.LogoutResponse> __Method_Logout = new grpc::Method<global::Erutan.LogoutRequest, global::Erutan.LogoutResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "Logout",
-        __Marshaller_erutan_LogoutRequest,
-        __Marshaller_erutan_LogoutResponse);
-
-    static readonly grpc::Method<global::Erutan.StreamRequest, global::Erutan.StreamResponse> __Method_Stream = new grpc::Method<global::Erutan.StreamRequest, global::Erutan.StreamResponse>(
+    static readonly grpc::Method<global::Erutan.Scripts.Protos.Packet, global::Erutan.Scripts.Protos.Packet> __Method_Stream = new grpc::Method<global::Erutan.Scripts.Protos.Packet, global::Erutan.Scripts.Protos.Packet>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
         "Stream",
-        __Marshaller_erutan_StreamRequest,
-        __Marshaller_erutan_StreamResponse);
+        __Marshaller_erutan_Packet,
+        __Marshaller_erutan_Packet);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Erutan.RealtimeReflection.Descriptor.Services[0]; }
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Erutan</summary>
@@ -59,20 +40,11 @@ namespace Erutan {
       ///
       ///Blabla
       /// </summary>
-      /// <param name="request">The request received from the client.</param>
+      /// <param name="requestStream">Used for reading requests from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::Erutan.LoginResponse> Login(global::Erutan.LoginRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task<global::Erutan.LogoutResponse> Logout(global::Erutan.LogoutRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task Stream(grpc::IAsyncStreamReader<global::Erutan.StreamRequest> requestStream, grpc::IServerStreamWriter<global::Erutan.StreamResponse> responseStream, grpc::ServerCallContext context)
+      /// <returns>A task indicating completion of the handler.</returns>
+      public virtual global::System.Threading.Tasks.Task Stream(grpc::IAsyncStreamReader<global::Erutan.Scripts.Protos.Packet> requestStream, grpc::IServerStreamWriter<global::Erutan.Scripts.Protos.Packet> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -106,71 +78,21 @@ namespace Erutan {
       ///
       ///Blabla
       /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
-      public virtual global::Erutan.LoginResponse Login(global::Erutan.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return Login(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
-      public virtual global::Erutan.LoginResponse Login(global::Erutan.LoginRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_Login, null, options, request);
-      }
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Erutan.LoginResponse> LoginAsync(global::Erutan.LoginRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return LoginAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      public virtual grpc::AsyncUnaryCall<global::Erutan.LoginResponse> LoginAsync(global::Erutan.LoginRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_Login, null, options, request);
-      }
-      public virtual global::Erutan.LogoutResponse Logout(global::Erutan.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return Logout(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual global::Erutan.LogoutResponse Logout(global::Erutan.LogoutRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_Logout, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::Erutan.LogoutResponse> LogoutAsync(global::Erutan.LogoutRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return LogoutAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::Erutan.LogoutResponse> LogoutAsync(global::Erutan.LogoutRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_Logout, null, options, request);
-      }
-      public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.StreamRequest, global::Erutan.StreamResponse> Stream(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.Scripts.Protos.Packet, global::Erutan.Scripts.Protos.Packet> Stream(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Stream(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.StreamRequest, global::Erutan.StreamResponse> Stream(grpc::CallOptions options)
+      /// <summary>
+      ///
+      ///Blabla
+      /// </summary>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.Scripts.Protos.Packet, global::Erutan.Scripts.Protos.Packet> Stream(grpc::CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Stream, null, options);
       }
@@ -186,8 +108,6 @@ namespace Erutan {
     public static grpc::ServerServiceDefinition BindService(ErutanBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Login, serviceImpl.Login)
-          .AddMethod(__Method_Logout, serviceImpl.Logout)
           .AddMethod(__Method_Stream, serviceImpl.Stream).Build();
     }
 
@@ -197,9 +117,7 @@ namespace Erutan {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ErutanBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_Login, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Erutan.LoginRequest, global::Erutan.LoginResponse>(serviceImpl.Login));
-      serviceBinder.AddMethod(__Method_Logout, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Erutan.LogoutRequest, global::Erutan.LogoutResponse>(serviceImpl.Logout));
-      serviceBinder.AddMethod(__Method_Stream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Erutan.StreamRequest, global::Erutan.StreamResponse>(serviceImpl.Stream));
+      serviceBinder.AddMethod(__Method_Stream, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Erutan.Scripts.Protos.Packet, global::Erutan.Scripts.Protos.Packet>(serviceImpl.Stream));
     }
 
   }

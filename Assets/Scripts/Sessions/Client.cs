@@ -1,11 +1,12 @@
 using UnityEngine;
 using Grpc.Core;
-using Scripts.Utils;
-using System.Collections;
-using System.Collections.Generic;
+using Erutan.Scripts.Utils;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
+using System.IO;
+using static Erutan.Scripts.Protos.Erutan;
+using Erutan.Scripts.Protos;
 
 namespace Erutan.Scripts.Sessions
 {
@@ -19,17 +20,17 @@ namespace Erutan.Scripts.Sessions
         /// <summary>
         /// Received when a stream is closed.
         /// </summary>
-        event Action Closed;
+        public event Action Closed;
 
         /// <summary>
         /// Received when a stream is connected.
         /// </summary>
-        event Action Connected;
+        public event Action Connected;
 
         /// <summary>
-        /// Received a stream message.
+        /// Received a stream packet.
         /// </summary>
-        event Action<StreamResponse> ReceivedMessage;
+        public event Action<Packet> ReceivedPacket;
 
         /// <summary>
         /// Received a presence change for joins and leaves with users in a stream.
@@ -39,18 +40,18 @@ namespace Erutan.Scripts.Sessions
         /// <summary>
         /// Received when an error occurs on the stream.
         /// </summary>
-        event Action<Exception> ReceivedError;
+        public event Action<Exception> ReceivedError;
 
-        private Erutan.ErutanClient _networkClient;
-        private Channel _channel;
+        private ErutanClient _networkClient;
+        public Channel _channel;
 
         private string _token;
 
         private Thread _listenerThread;
 
-        private AsyncDuplexStreamingCall<StreamRequest, StreamResponse> _stream;
-        private IAsyncStreamReader<StreamResponse> _inStream;
-        private IAsyncStreamWriter<StreamRequest> _outStream;
+        private AsyncDuplexStreamingCall<Packet, Packet> _stream;
+        private IAsyncStreamReader<Packet> _inStream;
+        private IAsyncStreamWriter<Packet> _outStream;
         public Client(string host, int port)
         {
             Host = host;
@@ -58,23 +59,37 @@ namespace Erutan.Scripts.Sessions
             // _channel = new Channel($"{host}:{port}", ChannelCredentials.Insecure);
         }
 
-        public async Task Init() {
-            /*
+        public async void Init() {
+            // Add client cert to the handler
+            AsyncAuthInterceptor asyncAuthInterceptor = (context, metadata) =>
+                  {
+                      return Task.Run(() => {
+                          metadata.Add("Authorization", $"Bearer {_token}");
+                      });
+                  };
+                  
+            var channelCredentials = new SslCredentials(File.ReadAllText($"{Application.dataPath}/server1.crt"));//, //new KeyCertificatePair(File.ReadAllText($"{Application.dataPath}/server1.crt"), ""));
+            
+            var callCredentials = CallCredentials.FromInterceptor(asyncAuthInterceptor);
+            _channel = new Channel(
+                "127.0.0.1",
+                50051,
+                ChannelCredentials.Create(
+                    channelCredentials,
+                    callCredentials)/*,
+                new []{ // https://grpc.github.io/grpc/node/grpc.html#~ChannelOptions
+                    new ChannelOption("grpc.keepalive_permit_without_calls", 1),
+                    new ChannelOption("grpc.keepalive_time_ms", 5 * 1000), // 5 seconds
+                }*/
+            );
 
-            , new []{
-                new ChannelOption("grpc.keepalive_permit_without_calls", 1),
-                new ChannelOption("grpc.keepalive_time_ms", 5 * 1000), // 5 seconds
-            }
-
-            */
-            _channel = new Channel(Host, Port, ChannelCredentials.Insecure);
             await _channel.ConnectAsync(deadline: System.DateTime.UtcNow.AddSeconds(20));
-            _networkClient = new Erutan.ErutanClient(_channel);
-            LoginResponse response =_networkClient.Login(new LoginRequest() { Name = "Louis", Password = ""});
-            _token = response.Token;
-            var m = new Metadata();
-            m.Insert(0, new Metadata.Entry("x-token", _token));
-            _stream = _networkClient.Stream(m);
+            Record.Log($"Status: {_channel.State}");
+            _networkClient = new ErutanClient(_channel);
+            //var headers = new Grpc.Core.Metadata(); // https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md
+            //headers.Add(new Grpc.Core.Metadata.Entry("grpc-timeout", "2S"));
+            _stream = _networkClient.Stream();
+            
             _inStream = _stream.ResponseStream;
             _outStream = _stream.RequestStream;
             
@@ -84,66 +99,48 @@ namespace Erutan.Scripts.Sessions
             _listenerThread.Start();
             
             //SpamServer();
+
+            Connected?.Invoke();
             IsConnected = true;
         }
 
         public void Logout() {
-            _networkClient.Logout(new LogoutRequest() { Token = _token });
-
             // Close stream !
             _stream.Dispose();
+            Closed?.Invoke();
         }
 
         private async void Listen() {
             while (await _inStream.MoveNext())
             {
-                var streamResponse = _inStream.Current;
-                switch (streamResponse.EventCase) {
-                    case StreamResponse.EventOneofCase.ClientPacket:
-                        Packet p = streamResponse.ClientPacket;
-                        switch (p.TypeCase) {
-                            case Packet.TypeOneofCase.EntityPosition:
-                                continue;
-                            default:
-                                Record.Log($"Unimplemented packet handler ! {p.TypeCase}");
-                                break;
-                        }
-                        break;
-                    case StreamResponse.EventOneofCase.ClientLogin:
-                    case StreamResponse.EventOneofCase.ClientLogout:
-                    case StreamResponse.EventOneofCase.ServerMessage:
-                    case StreamResponse.EventOneofCase.ServerShutdown:
-                        Record.Log($"Received {streamResponse.EventCase}: {streamResponse}");
-                        break;
-                    default:
-                        // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions
-                        Record.Log($"Unimplemented packet handler ! {streamResponse.EventCase}");
-                        break;
-                }
+                var packet = _inStream.Current;
+                // Invoke the event on the main thread
+                UnityMainThreadDispatcher.Instance()
+                    .Enqueue(() => ReceivedPacket?.Invoke(packet));
             }
         }
-
+        
         /// General purpose low level client to server packet sending method
-        public async void Send(Packet packet) => await _outStream.WriteAsync(new StreamRequest()
+        public async Task Send(Packet packet)
         {
-            Message = packet
-        });
+            packet.Metadata = new Protos.Metadata();
+            Record.Log($"Sending {packet}");
+            await _outStream.WriteAsync(packet);
+        }
 
         private async void SpamServer() {
-            var v = new Packet.Types.Position();
-            var randomPosition = Random.insideUnitSphere * 10;
-            v.Id = "zz";
-            v.X = randomPosition.x;
-            v.Y = randomPosition.y;
-            v.Z = randomPosition.z;
+            var updatePositionPacket = new Packet.Types.UpdatePositionPacket();
+            var randomPosition = UnityEngine.Random.insideUnitSphere * 10;
+            updatePositionPacket.ObjectId = "zz";
+            updatePositionPacket.Position = new NetVector3();
+            updatePositionPacket.Position.X = randomPosition.x;
+            updatePositionPacket.Position.Y = randomPosition.y;
+            updatePositionPacket.Position.Z = randomPosition.z;
+            var packet = new Packet();
+            packet.UpdatePosition = updatePositionPacket;
             while (true) {
-                await _outStream.WriteAsync(new StreamRequest(){ 
-                    Message = new Packet(){ 
-                        EntityPosition = v
-                    } 
-                });
+                await Send(packet);
                 await Task.Delay(1000);
-                return;
             }
         }
     }

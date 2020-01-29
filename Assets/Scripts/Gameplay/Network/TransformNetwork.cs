@@ -9,7 +9,7 @@ namespace Erutan.Scripts.Gameplay.Network {
         private void Update() {
             // TODO: create a "gameplaymanager" that has also the client
             // so we can split gameplay from session
-
+            /*
             if (SessionManager.Instance.Client.IsConnected && Time.time - _lastSent > 0.5f) {
                 var positionPacket = new Packet.Types.Position();
                 var myPosition = transform.position;
@@ -21,6 +21,7 @@ namespace Erutan.Scripts.Gameplay.Network {
                 SessionManager.Instance.Client.Send(new Packet() { EntityPosition = positionPacket });
                 _lastSent = Time.time;
             }
+            */
         }
     }
 }

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Erutan {
+namespace Erutan.Scripts.Protos {
 
   /// <summary>Holder for reflection information generated from realtime.proto</summary>
   public static partial class RealtimeReflection {
@@ -25,47 +25,880 @@ namespace Erutan {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg5yZWFsdGltZS5wcm90bxIGZXJ1dGFuGh9nb29nbGUvcHJvdG9idWYvdGlt",
-            "ZXN0YW1wLnByb3RvIn0KBlBhY2tldBIyCg9lbnRpdHlfcG9zaXRpb24YASAB",
-            "KAsyFy5lcnV0YW4uUGFja2V0LlBvc2l0aW9uSAAaNwoIUG9zaXRpb24SCgoC",
-            "aWQYASABKAkSCQoBeBgCIAEoAhIJCgF5GAMgASgCEgkKAXoYBCABKAJCBgoE",
-            "dHlwZSIuCgxMb2dpblJlcXVlc3QSEAoIcGFzc3dvcmQYASABKAkSDAoEbmFt",
-            "ZRgCIAEoCSIeCg1Mb2dpblJlc3BvbnNlEg0KBXRva2VuGAEgASgJIh4KDUxv",
-            "Z291dFJlcXVlc3QSDQoFdG9rZW4YASABKAkiEAoOTG9nb3V0UmVzcG9uc2Ui",
-            "MAoNU3RyZWFtUmVxdWVzdBIfCgdtZXNzYWdlGAIgASgLMg4uZXJ1dGFuLlBh",
-            "Y2tldCK6AwoOU3RyZWFtUmVzcG9uc2USLQoJdGltZXN0YW1wGAEgASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBI0CgxjbGllbnRfbG9naW4YAiAB",
-            "KAsyHC5lcnV0YW4uU3RyZWFtUmVzcG9uc2UuTG9naW5IABI2Cg1jbGllbnRf",
-            "bG9nb3V0GAMgASgLMh0uZXJ1dGFuLlN0cmVhbVJlc3BvbnNlLkxvZ291dEgA",
-            "EicKDWNsaWVudF9wYWNrZXQYBCABKAsyDi5lcnV0YW4uUGFja2V0SAASOAoO",
-            "c2VydmVyX21lc3NhZ2UYBSABKAsyHi5lcnV0YW4uU3RyZWFtUmVzcG9uc2Uu",
-            "TWVzc2FnZUgAEjoKD3NlcnZlcl9zaHV0ZG93bhgGIAEoCzIfLmVydXRhbi5T",
-            "dHJlYW1SZXNwb25zZS5TaHV0ZG93bkgAGhUKBUxvZ2luEgwKBG5hbWUYASAB",
-            "KAkaFgoGTG9nb3V0EgwKBG5hbWUYASABKAkaKAoHTWVzc2FnZRIMCgRuYW1l",
-            "GAEgASgJEg8KB21lc3NhZ2UYAiABKAkaCgoIU2h1dGRvd25CBwoFZXZlbnQy",
-            "ugEKBkVydXRhbhI2CgVMb2dpbhIULmVydXRhbi5Mb2dpblJlcXVlc3QaFS5l",
-            "cnV0YW4uTG9naW5SZXNwb25zZSIAEjkKBkxvZ291dBIVLmVydXRhbi5Mb2dv",
-            "dXRSZXF1ZXN0GhYuZXJ1dGFuLkxvZ291dFJlc3BvbnNlIgASPQoGU3RyZWFt",
-            "EhUuZXJ1dGFuLlN0cmVhbVJlcXVlc3QaFi5lcnV0YW4uU3RyZWFtUmVzcG9u",
-            "c2UiACgBMAFCFgoKY29tLmVydXRhbkIGRXJ1dGFuUAFiBnByb3RvMw=="));
+            "ZXN0YW1wLnByb3RvIjkKCE1ldGFkYXRhEi0KCXRpbWVzdGFtcBgBIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiLQoKTmV0VmVjdG9yMxIJCgF4",
+            "GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiI7Cg1OZXRRdWF0ZXJuaW9u",
+            "EgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCEgkKAXcYBCABKAIi",
+            "8gEKCU5ldE9iamVjdBIRCglvYmplY3RfaWQYASABKAkSEAoIb3duZXJfaWQY",
+            "AiABKAkSJAoIcG9zaXRpb24YAyABKAsyEi5lcnV0YW4uTmV0VmVjdG9yMxIn",
+            "Cghyb3RhdGlvbhgEIAEoCzIVLmVydXRhbi5OZXRRdWF0ZXJuaW9uEiEKBXNj",
+            "YWxlGAUgASgLMhIuZXJ1dGFuLk5ldFZlY3RvcjMSJAoEdHlwZRgGIAEoDjIW",
+            "LmVydXRhbi5OZXRPYmplY3QuVHlwZSIoCgRUeXBlEgoKBkFOSU1BTBAAEggK",
+            "BEZPT0QQARIKCgZHUk9VTkQQAiKiAwoGUGFja2V0EiIKCG1ldGFkYXRhGAEg",
+            "ASgLMhAuZXJ1dGFuLk1ldGFkYXRhEjoKDWNyZWF0ZV9vYmplY3QYAiABKAsy",
+            "IS5lcnV0YW4uUGFja2V0LkNyZWF0ZU9iamVjdFBhY2tldEgAEj4KD3VwZGF0",
+            "ZV9wb3NpdGlvbhgDIAEoCzIjLmVydXRhbi5QYWNrZXQuVXBkYXRlUG9zaXRp",
+            "b25QYWNrZXRIABI8Cg5kZXN0cm95X29iamVjdBgEIAEoCzIiLmVydXRhbi5Q",
+            "YWNrZXQuRGVzdHJveU9iamVjdFBhY2tldEgAGjcKEkNyZWF0ZU9iamVjdFBh",
+            "Y2tldBIhCgZvYmplY3QYASABKAsyES5lcnV0YW4uTmV0T2JqZWN0Gk8KFFVw",
+            "ZGF0ZVBvc2l0aW9uUGFja2V0EhEKCW9iamVjdF9pZBgBIAEoCRIkCghwb3Np",
+            "dGlvbhgCIAEoCzISLmVydXRhbi5OZXRWZWN0b3IzGigKE0Rlc3Ryb3lPYmpl",
+            "Y3RQYWNrZXQSEQoJb2JqZWN0X2lkGAEgASgJQgYKBHR5cGUyOAoGRXJ1dGFu",
+            "Ei4KBlN0cmVhbRIOLmVydXRhbi5QYWNrZXQaDi5lcnV0YW4uUGFja2V0IgAo",
+            "ATABQi4KCmNvbS5lcnV0YW5CBkVydXRhblABqgIVRXJ1dGFuLlNjcmlwdHMu",
+            "UHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet), global::Erutan.Packet.Parser, new[]{ "EntityPosition" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.Position), global::Erutan.Packet.Types.Position.Parser, new[]{ "Id", "X", "Y", "Z" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.LoginRequest), global::Erutan.LoginRequest.Parser, new[]{ "Password", "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.LoginResponse), global::Erutan.LoginResponse.Parser, new[]{ "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.LogoutRequest), global::Erutan.LogoutRequest.Parser, new[]{ "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.LogoutResponse), global::Erutan.LogoutResponse.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamRequest), global::Erutan.StreamRequest.Parser, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamResponse), global::Erutan.StreamResponse.Parser, new[]{ "Timestamp", "ClientLogin", "ClientLogout", "ClientPacket", "ServerMessage", "ServerShutdown" }, new[]{ "Event" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamResponse.Types.Login), global::Erutan.StreamResponse.Types.Login.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamResponse.Types.Logout), global::Erutan.StreamResponse.Types.Logout.Parser, new[]{ "Name" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamResponse.Types.Message), global::Erutan.StreamResponse.Types.Message.Parser, new[]{ "Name", "Message_" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.StreamResponse.Types.Shutdown), global::Erutan.StreamResponse.Types.Shutdown.Parser, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Metadata), global::Erutan.Scripts.Protos.Metadata.Parser, new[]{ "Timestamp" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetVector3), global::Erutan.Scripts.Protos.NetVector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetQuaternion), global::Erutan.Scripts.Protos.NetQuaternion.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetObject), global::Erutan.Scripts.Protos.NetObject.Parser, new[]{ "ObjectId", "OwnerId", "Position", "Rotation", "Scale", "Type" }, null, new[]{ typeof(global::Erutan.Scripts.Protos.NetObject.Types.Type) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet), global::Erutan.Scripts.Protos.Packet.Parser, new[]{ "Metadata", "CreateObject", "UpdatePosition", "DestroyObject" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket), global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket.Parser, new[]{ "Object" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket), global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket.Parser, new[]{ "ObjectId", "Position" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket), global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket.Parser, new[]{ "ObjectId" }, null, null, null)})
           }));
     }
     #endregion
 
   }
   #region Messages
+  public sealed partial class Metadata : pb::IMessage<Metadata> {
+    private static readonly pb::MessageParser<Metadata> _parser = new pb::MessageParser<Metadata>(() => new Metadata());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Metadata> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata(Metadata other) : this() {
+      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Metadata Clone() {
+      return new Metadata(this);
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 1;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Metadata);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Metadata other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Timestamp, other.Timestamp)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (timestamp_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Timestamp);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (timestamp_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Metadata other) {
+      if (other == null) {
+        return;
+      }
+      if (other.timestamp_ != null) {
+        if (timestamp_ == null) {
+          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        Timestamp.MergeFrom(other.Timestamp);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (timestamp_ == null) {
+              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Timestamp);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class NetVector3 : pb::IMessage<NetVector3> {
+    private static readonly pb::MessageParser<NetVector3> _parser = new pb::MessageParser<NetVector3>(() => new NetVector3());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<NetVector3> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetVector3() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetVector3(NetVector3 other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetVector3 Clone() {
+      return new NetVector3(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as NetVector3);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(NetVector3 other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(NetVector3 other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class NetQuaternion : pb::IMessage<NetQuaternion> {
+    private static readonly pb::MessageParser<NetQuaternion> _parser = new pb::MessageParser<NetQuaternion>(() => new NetQuaternion());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<NetQuaternion> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetQuaternion() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetQuaternion(NetQuaternion other) : this() {
+      x_ = other.x_;
+      y_ = other.y_;
+      z_ = other.z_;
+      w_ = other.w_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetQuaternion Clone() {
+      return new NetQuaternion(this);
+    }
+
+    /// <summary>Field number for the "x" field.</summary>
+    public const int XFieldNumber = 1;
+    private float x_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float X {
+      get { return x_; }
+      set {
+        x_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "y" field.</summary>
+    public const int YFieldNumber = 2;
+    private float y_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Y {
+      get { return y_; }
+      set {
+        y_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "z" field.</summary>
+    public const int ZFieldNumber = 3;
+    private float z_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float Z {
+      get { return z_; }
+      set {
+        z_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "w" field.</summary>
+    public const int WFieldNumber = 4;
+    private float w_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float W {
+      get { return w_; }
+      set {
+        w_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as NetQuaternion);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(NetQuaternion other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(W, other.W)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
+      if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
+      if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+      if (W != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(W);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (X != 0F) {
+        output.WriteRawTag(13);
+        output.WriteFloat(X);
+      }
+      if (Y != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Y);
+      }
+      if (Z != 0F) {
+        output.WriteRawTag(29);
+        output.WriteFloat(Z);
+      }
+      if (W != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(W);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (X != 0F) {
+        size += 1 + 4;
+      }
+      if (Y != 0F) {
+        size += 1 + 4;
+      }
+      if (Z != 0F) {
+        size += 1 + 4;
+      }
+      if (W != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(NetQuaternion other) {
+      if (other == null) {
+        return;
+      }
+      if (other.X != 0F) {
+        X = other.X;
+      }
+      if (other.Y != 0F) {
+        Y = other.Y;
+      }
+      if (other.Z != 0F) {
+        Z = other.Z;
+      }
+      if (other.W != 0F) {
+        W = other.W;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            X = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Y = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            Z = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            W = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// TODO: parent ...
+  /// </summary>
+  public sealed partial class NetObject : pb::IMessage<NetObject> {
+    private static readonly pb::MessageParser<NetObject> _parser = new pb::MessageParser<NetObject>(() => new NetObject());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<NetObject> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetObject() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetObject(NetObject other) : this() {
+      objectId_ = other.objectId_;
+      ownerId_ = other.ownerId_;
+      position_ = other.position_ != null ? other.position_.Clone() : null;
+      rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
+      scale_ = other.scale_ != null ? other.scale_.Clone() : null;
+      type_ = other.type_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public NetObject Clone() {
+      return new NetObject(this);
+    }
+
+    /// <summary>Field number for the "object_id" field.</summary>
+    public const int ObjectIdFieldNumber = 1;
+    private string objectId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ObjectId {
+      get { return objectId_; }
+      set {
+        objectId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "owner_id" field.</summary>
+    public const int OwnerIdFieldNumber = 2;
+    private string ownerId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OwnerId {
+      get { return ownerId_; }
+      set {
+        ownerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "position" field.</summary>
+    public const int PositionFieldNumber = 3;
+    private global::Erutan.Scripts.Protos.NetVector3 position_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetVector3 Position {
+      get { return position_; }
+      set {
+        position_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rotation" field.</summary>
+    public const int RotationFieldNumber = 4;
+    private global::Erutan.Scripts.Protos.NetQuaternion rotation_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetQuaternion Rotation {
+      get { return rotation_; }
+      set {
+        rotation_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scale" field.</summary>
+    public const int ScaleFieldNumber = 5;
+    private global::Erutan.Scripts.Protos.NetVector3 scale_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetVector3 Scale {
+      get { return scale_; }
+      set {
+        scale_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 6;
+    private global::Erutan.Scripts.Protos.NetObject.Types.Type type_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetObject.Types.Type Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as NetObject);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(NetObject other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ObjectId != other.ObjectId) return false;
+      if (OwnerId != other.OwnerId) return false;
+      if (!object.Equals(Position, other.Position)) return false;
+      if (!object.Equals(Rotation, other.Rotation)) return false;
+      if (!object.Equals(Scale, other.Scale)) return false;
+      if (Type != other.Type) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ObjectId.Length != 0) hash ^= ObjectId.GetHashCode();
+      if (OwnerId.Length != 0) hash ^= OwnerId.GetHashCode();
+      if (position_ != null) hash ^= Position.GetHashCode();
+      if (rotation_ != null) hash ^= Rotation.GetHashCode();
+      if (scale_ != null) hash ^= Scale.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (ObjectId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(ObjectId);
+      }
+      if (OwnerId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(OwnerId);
+      }
+      if (position_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Position);
+      }
+      if (rotation_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Rotation);
+      }
+      if (scale_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Scale);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Type);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (ObjectId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ObjectId);
+      }
+      if (OwnerId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OwnerId);
+      }
+      if (position_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+      }
+      if (rotation_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rotation);
+      }
+      if (scale_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Scale);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(NetObject other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ObjectId.Length != 0) {
+        ObjectId = other.ObjectId;
+      }
+      if (other.OwnerId.Length != 0) {
+        OwnerId = other.OwnerId;
+      }
+      if (other.position_ != null) {
+        if (position_ == null) {
+          Position = new global::Erutan.Scripts.Protos.NetVector3();
+        }
+        Position.MergeFrom(other.Position);
+      }
+      if (other.rotation_ != null) {
+        if (rotation_ == null) {
+          Rotation = new global::Erutan.Scripts.Protos.NetQuaternion();
+        }
+        Rotation.MergeFrom(other.Rotation);
+      }
+      if (other.scale_ != null) {
+        if (scale_ == null) {
+          Scale = new global::Erutan.Scripts.Protos.NetVector3();
+        }
+        Scale.MergeFrom(other.Scale);
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            ObjectId = input.ReadString();
+            break;
+          }
+          case 18: {
+            OwnerId = input.ReadString();
+            break;
+          }
+          case 26: {
+            if (position_ == null) {
+              Position = new global::Erutan.Scripts.Protos.NetVector3();
+            }
+            input.ReadMessage(Position);
+            break;
+          }
+          case 34: {
+            if (rotation_ == null) {
+              Rotation = new global::Erutan.Scripts.Protos.NetQuaternion();
+            }
+            input.ReadMessage(Rotation);
+            break;
+          }
+          case 42: {
+            if (scale_ == null) {
+              Scale = new global::Erutan.Scripts.Protos.NetVector3();
+            }
+            input.ReadMessage(Scale);
+            break;
+          }
+          case 48: {
+            Type = (global::Erutan.Scripts.Protos.NetObject.Types.Type) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the NetObject message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum Type {
+        [pbr::OriginalName("ANIMAL")] Animal = 0,
+        [pbr::OriginalName("FOOD")] Food = 1,
+        [pbr::OriginalName("GROUND")] Ground = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
   public sealed partial class Packet : pb::IMessage<Packet> {
     private static readonly pb::MessageParser<Packet> _parser = new pb::MessageParser<Packet>(() => new Packet());
     private pb::UnknownFieldSet _unknownFields;
@@ -74,7 +907,7 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -91,9 +924,16 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public Packet(Packet other) : this() {
+      metadata_ = other.metadata_ != null ? other.metadata_.Clone() : null;
       switch (other.TypeCase) {
-        case TypeOneofCase.EntityPosition:
-          EntityPosition = other.EntityPosition.Clone();
+        case TypeOneofCase.CreateObject:
+          CreateObject = other.CreateObject.Clone();
+          break;
+        case TypeOneofCase.UpdatePosition:
+          UpdatePosition = other.UpdatePosition.Clone();
+          break;
+        case TypeOneofCase.DestroyObject:
+          DestroyObject = other.DestroyObject.Clone();
           break;
       }
 
@@ -105,14 +945,47 @@ namespace Erutan {
       return new Packet(this);
     }
 
-    /// <summary>Field number for the "entity_position" field.</summary>
-    public const int EntityPositionFieldNumber = 1;
+    /// <summary>Field number for the "metadata" field.</summary>
+    public const int MetadataFieldNumber = 1;
+    private global::Erutan.Scripts.Protos.Metadata metadata_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.Packet.Types.Position EntityPosition {
-      get { return typeCase_ == TypeOneofCase.EntityPosition ? (global::Erutan.Packet.Types.Position) type_ : null; }
+    public global::Erutan.Scripts.Protos.Metadata Metadata {
+      get { return metadata_; }
+      set {
+        metadata_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "create_object" field.</summary>
+    public const int CreateObjectFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket CreateObject {
+      get { return typeCase_ == TypeOneofCase.CreateObject ? (global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket) type_ : null; }
       set {
         type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.EntityPosition;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.CreateObject;
+      }
+    }
+
+    /// <summary>Field number for the "update_position" field.</summary>
+    public const int UpdatePositionFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket UpdatePosition {
+      get { return typeCase_ == TypeOneofCase.UpdatePosition ? (global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.UpdatePosition;
+      }
+    }
+
+    /// <summary>Field number for the "destroy_object" field.</summary>
+    public const int DestroyObjectFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket DestroyObject {
+      get { return typeCase_ == TypeOneofCase.DestroyObject ? (global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.DestroyObject;
       }
     }
 
@@ -120,7 +993,9 @@ namespace Erutan {
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
       None = 0,
-      EntityPosition = 1,
+      CreateObject = 2,
+      UpdatePosition = 3,
+      DestroyObject = 4,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -147,7 +1022,10 @@ namespace Erutan {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(EntityPosition, other.EntityPosition)) return false;
+      if (!object.Equals(Metadata, other.Metadata)) return false;
+      if (!object.Equals(CreateObject, other.CreateObject)) return false;
+      if (!object.Equals(UpdatePosition, other.UpdatePosition)) return false;
+      if (!object.Equals(DestroyObject, other.DestroyObject)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -155,7 +1033,10 @@ namespace Erutan {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (typeCase_ == TypeOneofCase.EntityPosition) hash ^= EntityPosition.GetHashCode();
+      if (metadata_ != null) hash ^= Metadata.GetHashCode();
+      if (typeCase_ == TypeOneofCase.CreateObject) hash ^= CreateObject.GetHashCode();
+      if (typeCase_ == TypeOneofCase.UpdatePosition) hash ^= UpdatePosition.GetHashCode();
+      if (typeCase_ == TypeOneofCase.DestroyObject) hash ^= DestroyObject.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -170,9 +1051,21 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (typeCase_ == TypeOneofCase.EntityPosition) {
+      if (metadata_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(EntityPosition);
+        output.WriteMessage(Metadata);
+      }
+      if (typeCase_ == TypeOneofCase.CreateObject) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CreateObject);
+      }
+      if (typeCase_ == TypeOneofCase.UpdatePosition) {
+        output.WriteRawTag(26);
+        output.WriteMessage(UpdatePosition);
+      }
+      if (typeCase_ == TypeOneofCase.DestroyObject) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DestroyObject);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -182,8 +1075,17 @@ namespace Erutan {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (typeCase_ == TypeOneofCase.EntityPosition) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityPosition);
+      if (metadata_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Metadata);
+      }
+      if (typeCase_ == TypeOneofCase.CreateObject) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateObject);
+      }
+      if (typeCase_ == TypeOneofCase.UpdatePosition) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatePosition);
+      }
+      if (typeCase_ == TypeOneofCase.DestroyObject) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DestroyObject);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -196,12 +1098,30 @@ namespace Erutan {
       if (other == null) {
         return;
       }
+      if (other.metadata_ != null) {
+        if (metadata_ == null) {
+          Metadata = new global::Erutan.Scripts.Protos.Metadata();
+        }
+        Metadata.MergeFrom(other.Metadata);
+      }
       switch (other.TypeCase) {
-        case TypeOneofCase.EntityPosition:
-          if (EntityPosition == null) {
-            EntityPosition = new global::Erutan.Packet.Types.Position();
+        case TypeOneofCase.CreateObject:
+          if (CreateObject == null) {
+            CreateObject = new global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket();
           }
-          EntityPosition.MergeFrom(other.EntityPosition);
+          CreateObject.MergeFrom(other.CreateObject);
+          break;
+        case TypeOneofCase.UpdatePosition:
+          if (UpdatePosition == null) {
+            UpdatePosition = new global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket();
+          }
+          UpdatePosition.MergeFrom(other.UpdatePosition);
+          break;
+        case TypeOneofCase.DestroyObject:
+          if (DestroyObject == null) {
+            DestroyObject = new global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket();
+          }
+          DestroyObject.MergeFrom(other.DestroyObject);
           break;
       }
 
@@ -217,12 +1137,37 @@ namespace Erutan {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            global::Erutan.Packet.Types.Position subBuilder = new global::Erutan.Packet.Types.Position();
-            if (typeCase_ == TypeOneofCase.EntityPosition) {
-              subBuilder.MergeFrom(EntityPosition);
+            if (metadata_ == null) {
+              Metadata = new global::Erutan.Scripts.Protos.Metadata();
+            }
+            input.ReadMessage(Metadata);
+            break;
+          }
+          case 18: {
+            global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket subBuilder = new global::Erutan.Scripts.Protos.Packet.Types.CreateObjectPacket();
+            if (typeCase_ == TypeOneofCase.CreateObject) {
+              subBuilder.MergeFrom(CreateObject);
             }
             input.ReadMessage(subBuilder);
-            EntityPosition = subBuilder;
+            CreateObject = subBuilder;
+            break;
+          }
+          case 26: {
+            global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket subBuilder = new global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket();
+            if (typeCase_ == TypeOneofCase.UpdatePosition) {
+              subBuilder.MergeFrom(UpdatePosition);
+            }
+            input.ReadMessage(subBuilder);
+            UpdatePosition = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket subBuilder = new global::Erutan.Scripts.Protos.Packet.Types.DestroyObjectPacket();
+            if (typeCase_ == TypeOneofCase.DestroyObject) {
+              subBuilder.MergeFrom(DestroyObject);
+            }
+            input.ReadMessage(subBuilder);
+            DestroyObject = subBuilder;
             break;
           }
         }
@@ -233,15 +1178,15 @@ namespace Erutan {
     /// <summary>Container for nested types declared in the Packet message type.</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      public sealed partial class Position : pb::IMessage<Position> {
-        private static readonly pb::MessageParser<Position> _parser = new pb::MessageParser<Position>(() => new Position());
+      public sealed partial class CreateObjectPacket : pb::IMessage<CreateObjectPacket> {
+        private static readonly pb::MessageParser<CreateObjectPacket> _parser = new pb::MessageParser<CreateObjectPacket>(() => new CreateObjectPacket());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Position> Parser { get { return _parser; } }
+        public static pb::MessageParser<CreateObjectPacket> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Packet.Descriptor.NestedTypes[0]; }
+          get { return global::Erutan.Scripts.Protos.Packet.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -250,97 +1195,55 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Position() {
+        public CreateObjectPacket() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Position(Position other) : this() {
-          id_ = other.id_;
-          x_ = other.x_;
-          y_ = other.y_;
-          z_ = other.z_;
+        public CreateObjectPacket(CreateObjectPacket other) : this() {
+          object_ = other.object_ != null ? other.object_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Position Clone() {
-          return new Position(this);
+        public CreateObjectPacket Clone() {
+          return new CreateObjectPacket(this);
         }
 
-        /// <summary>Field number for the "id" field.</summary>
-        public const int IdFieldNumber = 1;
-        private string id_ = "";
+        /// <summary>Field number for the "object" field.</summary>
+        public const int ObjectFieldNumber = 1;
+        private global::Erutan.Scripts.Protos.NetObject object_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Id {
-          get { return id_; }
+        public global::Erutan.Scripts.Protos.NetObject Object {
+          get { return object_; }
           set {
-            id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        /// <summary>Field number for the "x" field.</summary>
-        public const int XFieldNumber = 2;
-        private float x_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float X {
-          get { return x_; }
-          set {
-            x_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "y" field.</summary>
-        public const int YFieldNumber = 3;
-        private float y_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Y {
-          get { return y_; }
-          set {
-            y_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "z" field.</summary>
-        public const int ZFieldNumber = 4;
-        private float z_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Z {
-          get { return z_; }
-          set {
-            z_ = value;
+            object_ = value;
           }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
-          return Equals(other as Position);
+          return Equals(other as CreateObjectPacket);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Position other) {
+        public bool Equals(CreateObjectPacket other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (Id != other.Id) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(X, other.X)) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Y, other.Y)) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Z, other.Z)) return false;
+          if (!object.Equals(Object, other.Object)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (Id.Length != 0) hash ^= Id.GetHashCode();
-          if (X != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(X);
-          if (Y != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Y);
-          if (Z != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Z);
+          if (object_ != null) hash ^= Object.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -354,21 +1257,9 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (Id.Length != 0) {
+          if (object_ != null) {
             output.WriteRawTag(10);
-            output.WriteString(Id);
-          }
-          if (X != 0F) {
-            output.WriteRawTag(21);
-            output.WriteFloat(X);
-          }
-          if (Y != 0F) {
-            output.WriteRawTag(29);
-            output.WriteFloat(Y);
-          }
-          if (Z != 0F) {
-            output.WriteRawTag(37);
-            output.WriteFloat(Z);
+            output.WriteMessage(Object);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -378,17 +1269,8 @@ namespace Erutan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (Id.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
-          }
-          if (X != 0F) {
-            size += 1 + 4;
-          }
-          if (Y != 0F) {
-            size += 1 + 4;
-          }
-          if (Z != 0F) {
-            size += 1 + 4;
+          if (object_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Object);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -397,21 +1279,15 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Position other) {
+        public void MergeFrom(CreateObjectPacket other) {
           if (other == null) {
             return;
           }
-          if (other.Id.Length != 0) {
-            Id = other.Id;
-          }
-          if (other.X != 0F) {
-            X = other.X;
-          }
-          if (other.Y != 0F) {
-            Y = other.Y;
-          }
-          if (other.Z != 0F) {
-            Z = other.Z;
+          if (other.object_ != null) {
+            if (object_ == null) {
+              Object = new global::Erutan.Scripts.Protos.NetObject();
+            }
+            Object.MergeFrom(other.Object);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -425,19 +1301,10 @@ namespace Erutan {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 10: {
-                Id = input.ReadString();
-                break;
-              }
-              case 21: {
-                X = input.ReadFloat();
-                break;
-              }
-              case 29: {
-                Y = input.ReadFloat();
-                break;
-              }
-              case 37: {
-                Z = input.ReadFloat();
+                if (object_ == null) {
+                  Object = new global::Erutan.Scripts.Protos.NetObject();
+                }
+                input.ReadMessage(Object);
                 break;
               }
             }
@@ -446,1028 +1313,15 @@ namespace Erutan {
 
       }
 
-    }
-    #endregion
-
-  }
-
-  public sealed partial class LoginRequest : pb::IMessage<LoginRequest> {
-    private static readonly pb::MessageParser<LoginRequest> _parser = new pb::MessageParser<LoginRequest>(() => new LoginRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LoginRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest(LoginRequest other) : this() {
-      password_ = other.password_;
-      name_ = other.name_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginRequest Clone() {
-      return new LoginRequest(this);
-    }
-
-    /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 1;
-    private string password_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Password {
-      get { return password_; }
-      set {
-        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 2;
-    private string name_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
-      set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as LoginRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LoginRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Password != other.Password) return false;
-      if (Name != other.Name) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Password.Length != 0) hash ^= Password.GetHashCode();
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Password.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Password);
-      }
-      if (Name.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Name);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Password.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
-      }
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LoginRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Password.Length != 0) {
-        Password = other.Password;
-      }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Password = input.ReadString();
-            break;
-          }
-          case 18: {
-            Name = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class LoginResponse : pb::IMessage<LoginResponse> {
-    private static readonly pb::MessageParser<LoginResponse> _parser = new pb::MessageParser<LoginResponse>(() => new LoginResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LoginResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse(LoginResponse other) : this() {
-      token_ = other.token_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LoginResponse Clone() {
-      return new LoginResponse(this);
-    }
-
-    /// <summary>Field number for the "token" field.</summary>
-    public const int TokenFieldNumber = 1;
-    private string token_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Token {
-      get { return token_; }
-      set {
-        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as LoginResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LoginResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Token != other.Token) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Token.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Token);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Token.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LoginResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Token.Length != 0) {
-        Token = other.Token;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Token = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class LogoutRequest : pb::IMessage<LogoutRequest> {
-    private static readonly pb::MessageParser<LogoutRequest> _parser = new pb::MessageParser<LogoutRequest>(() => new LogoutRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LogoutRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutRequest(LogoutRequest other) : this() {
-      token_ = other.token_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutRequest Clone() {
-      return new LogoutRequest(this);
-    }
-
-    /// <summary>Field number for the "token" field.</summary>
-    public const int TokenFieldNumber = 1;
-    private string token_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Token {
-      get { return token_; }
-      set {
-        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as LogoutRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LogoutRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Token != other.Token) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Token.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Token);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Token.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LogoutRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Token.Length != 0) {
-        Token = other.Token;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Token = input.ReadString();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class LogoutResponse : pb::IMessage<LogoutResponse> {
-    private static readonly pb::MessageParser<LogoutResponse> _parser = new pb::MessageParser<LogoutResponse>(() => new LogoutResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<LogoutResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutResponse(LogoutResponse other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public LogoutResponse Clone() {
-      return new LogoutResponse(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as LogoutResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(LogoutResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(LogoutResponse other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class StreamRequest : pb::IMessage<StreamRequest> {
-    private static readonly pb::MessageParser<StreamRequest> _parser = new pb::MessageParser<StreamRequest>(() => new StreamRequest());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<StreamRequest> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamRequest() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamRequest(StreamRequest other) : this() {
-      message_ = other.message_ != null ? other.message_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamRequest Clone() {
-      return new StreamRequest(this);
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
-    private global::Erutan.Packet message_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.Packet Message {
-      get { return message_; }
-      set {
-        message_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as StreamRequest);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(StreamRequest other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Message, other.Message)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (message_ != null) hash ^= Message.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (message_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Message);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (message_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Message);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(StreamRequest other) {
-      if (other == null) {
-        return;
-      }
-      if (other.message_ != null) {
-        if (message_ == null) {
-          Message = new global::Erutan.Packet();
-        }
-        Message.MergeFrom(other.Message);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 18: {
-            if (message_ == null) {
-              Message = new global::Erutan.Packet();
-            }
-            input.ReadMessage(Message);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  public sealed partial class StreamResponse : pb::IMessage<StreamResponse> {
-    private static readonly pb::MessageParser<StreamResponse> _parser = new pb::MessageParser<StreamResponse>(() => new StreamResponse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<StreamResponse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.RealtimeReflection.Descriptor.MessageTypes[6]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamResponse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamResponse(StreamResponse other) : this() {
-      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
-      switch (other.EventCase) {
-        case EventOneofCase.ClientLogin:
-          ClientLogin = other.ClientLogin.Clone();
-          break;
-        case EventOneofCase.ClientLogout:
-          ClientLogout = other.ClientLogout.Clone();
-          break;
-        case EventOneofCase.ClientPacket:
-          ClientPacket = other.ClientPacket.Clone();
-          break;
-        case EventOneofCase.ServerMessage:
-          ServerMessage = other.ServerMessage.Clone();
-          break;
-        case EventOneofCase.ServerShutdown:
-          ServerShutdown = other.ServerShutdown.Clone();
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public StreamResponse Clone() {
-      return new StreamResponse(this);
-    }
-
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 1;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "client_login" field.</summary>
-    public const int ClientLoginFieldNumber = 2;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.StreamResponse.Types.Login ClientLogin {
-      get { return eventCase_ == EventOneofCase.ClientLogin ? (global::Erutan.StreamResponse.Types.Login) event_ : null; }
-      set {
-        event_ = value;
-        eventCase_ = value == null ? EventOneofCase.None : EventOneofCase.ClientLogin;
-      }
-    }
-
-    /// <summary>Field number for the "client_logout" field.</summary>
-    public const int ClientLogoutFieldNumber = 3;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.StreamResponse.Types.Logout ClientLogout {
-      get { return eventCase_ == EventOneofCase.ClientLogout ? (global::Erutan.StreamResponse.Types.Logout) event_ : null; }
-      set {
-        event_ = value;
-        eventCase_ = value == null ? EventOneofCase.None : EventOneofCase.ClientLogout;
-      }
-    }
-
-    /// <summary>Field number for the "client_packet" field.</summary>
-    public const int ClientPacketFieldNumber = 4;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.Packet ClientPacket {
-      get { return eventCase_ == EventOneofCase.ClientPacket ? (global::Erutan.Packet) event_ : null; }
-      set {
-        event_ = value;
-        eventCase_ = value == null ? EventOneofCase.None : EventOneofCase.ClientPacket;
-      }
-    }
-
-    /// <summary>Field number for the "server_message" field.</summary>
-    public const int ServerMessageFieldNumber = 5;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.StreamResponse.Types.Message ServerMessage {
-      get { return eventCase_ == EventOneofCase.ServerMessage ? (global::Erutan.StreamResponse.Types.Message) event_ : null; }
-      set {
-        event_ = value;
-        eventCase_ = value == null ? EventOneofCase.None : EventOneofCase.ServerMessage;
-      }
-    }
-
-    /// <summary>Field number for the "server_shutdown" field.</summary>
-    public const int ServerShutdownFieldNumber = 6;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.StreamResponse.Types.Shutdown ServerShutdown {
-      get { return eventCase_ == EventOneofCase.ServerShutdown ? (global::Erutan.StreamResponse.Types.Shutdown) event_ : null; }
-      set {
-        event_ = value;
-        eventCase_ = value == null ? EventOneofCase.None : EventOneofCase.ServerShutdown;
-      }
-    }
-
-    private object event_;
-    /// <summary>Enum of possible cases for the "event" oneof.</summary>
-    public enum EventOneofCase {
-      None = 0,
-      ClientLogin = 2,
-      ClientLogout = 3,
-      ClientPacket = 4,
-      ServerMessage = 5,
-      ServerShutdown = 6,
-    }
-    private EventOneofCase eventCase_ = EventOneofCase.None;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public EventOneofCase EventCase {
-      get { return eventCase_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void ClearEvent() {
-      eventCase_ = EventOneofCase.None;
-      event_ = null;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as StreamResponse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(StreamResponse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(Timestamp, other.Timestamp)) return false;
-      if (!object.Equals(ClientLogin, other.ClientLogin)) return false;
-      if (!object.Equals(ClientLogout, other.ClientLogout)) return false;
-      if (!object.Equals(ClientPacket, other.ClientPacket)) return false;
-      if (!object.Equals(ServerMessage, other.ServerMessage)) return false;
-      if (!object.Equals(ServerShutdown, other.ServerShutdown)) return false;
-      if (EventCase != other.EventCase) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
-      if (eventCase_ == EventOneofCase.ClientLogin) hash ^= ClientLogin.GetHashCode();
-      if (eventCase_ == EventOneofCase.ClientLogout) hash ^= ClientLogout.GetHashCode();
-      if (eventCase_ == EventOneofCase.ClientPacket) hash ^= ClientPacket.GetHashCode();
-      if (eventCase_ == EventOneofCase.ServerMessage) hash ^= ServerMessage.GetHashCode();
-      if (eventCase_ == EventOneofCase.ServerShutdown) hash ^= ServerShutdown.GetHashCode();
-      hash ^= (int) eventCase_;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (timestamp_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Timestamp);
-      }
-      if (eventCase_ == EventOneofCase.ClientLogin) {
-        output.WriteRawTag(18);
-        output.WriteMessage(ClientLogin);
-      }
-      if (eventCase_ == EventOneofCase.ClientLogout) {
-        output.WriteRawTag(26);
-        output.WriteMessage(ClientLogout);
-      }
-      if (eventCase_ == EventOneofCase.ClientPacket) {
-        output.WriteRawTag(34);
-        output.WriteMessage(ClientPacket);
-      }
-      if (eventCase_ == EventOneofCase.ServerMessage) {
-        output.WriteRawTag(42);
-        output.WriteMessage(ServerMessage);
-      }
-      if (eventCase_ == EventOneofCase.ServerShutdown) {
-        output.WriteRawTag(50);
-        output.WriteMessage(ServerShutdown);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (timestamp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
-      }
-      if (eventCase_ == EventOneofCase.ClientLogin) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientLogin);
-      }
-      if (eventCase_ == EventOneofCase.ClientLogout) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientLogout);
-      }
-      if (eventCase_ == EventOneofCase.ClientPacket) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientPacket);
-      }
-      if (eventCase_ == EventOneofCase.ServerMessage) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerMessage);
-      }
-      if (eventCase_ == EventOneofCase.ServerShutdown) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerShutdown);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(StreamResponse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.timestamp_ != null) {
-        if (timestamp_ == null) {
-          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Timestamp.MergeFrom(other.Timestamp);
-      }
-      switch (other.EventCase) {
-        case EventOneofCase.ClientLogin:
-          if (ClientLogin == null) {
-            ClientLogin = new global::Erutan.StreamResponse.Types.Login();
-          }
-          ClientLogin.MergeFrom(other.ClientLogin);
-          break;
-        case EventOneofCase.ClientLogout:
-          if (ClientLogout == null) {
-            ClientLogout = new global::Erutan.StreamResponse.Types.Logout();
-          }
-          ClientLogout.MergeFrom(other.ClientLogout);
-          break;
-        case EventOneofCase.ClientPacket:
-          if (ClientPacket == null) {
-            ClientPacket = new global::Erutan.Packet();
-          }
-          ClientPacket.MergeFrom(other.ClientPacket);
-          break;
-        case EventOneofCase.ServerMessage:
-          if (ServerMessage == null) {
-            ServerMessage = new global::Erutan.StreamResponse.Types.Message();
-          }
-          ServerMessage.MergeFrom(other.ServerMessage);
-          break;
-        case EventOneofCase.ServerShutdown:
-          if (ServerShutdown == null) {
-            ServerShutdown = new global::Erutan.StreamResponse.Types.Shutdown();
-          }
-          ServerShutdown.MergeFrom(other.ServerShutdown);
-          break;
-      }
-
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
-            break;
-          }
-          case 18: {
-            global::Erutan.StreamResponse.Types.Login subBuilder = new global::Erutan.StreamResponse.Types.Login();
-            if (eventCase_ == EventOneofCase.ClientLogin) {
-              subBuilder.MergeFrom(ClientLogin);
-            }
-            input.ReadMessage(subBuilder);
-            ClientLogin = subBuilder;
-            break;
-          }
-          case 26: {
-            global::Erutan.StreamResponse.Types.Logout subBuilder = new global::Erutan.StreamResponse.Types.Logout();
-            if (eventCase_ == EventOneofCase.ClientLogout) {
-              subBuilder.MergeFrom(ClientLogout);
-            }
-            input.ReadMessage(subBuilder);
-            ClientLogout = subBuilder;
-            break;
-          }
-          case 34: {
-            global::Erutan.Packet subBuilder = new global::Erutan.Packet();
-            if (eventCase_ == EventOneofCase.ClientPacket) {
-              subBuilder.MergeFrom(ClientPacket);
-            }
-            input.ReadMessage(subBuilder);
-            ClientPacket = subBuilder;
-            break;
-          }
-          case 42: {
-            global::Erutan.StreamResponse.Types.Message subBuilder = new global::Erutan.StreamResponse.Types.Message();
-            if (eventCase_ == EventOneofCase.ServerMessage) {
-              subBuilder.MergeFrom(ServerMessage);
-            }
-            input.ReadMessage(subBuilder);
-            ServerMessage = subBuilder;
-            break;
-          }
-          case 50: {
-            global::Erutan.StreamResponse.Types.Shutdown subBuilder = new global::Erutan.StreamResponse.Types.Shutdown();
-            if (eventCase_ == EventOneofCase.ServerShutdown) {
-              subBuilder.MergeFrom(ServerShutdown);
-            }
-            input.ReadMessage(subBuilder);
-            ServerShutdown = subBuilder;
-            break;
-          }
-        }
-      }
-    }
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the StreamResponse message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static partial class Types {
-      public sealed partial class Login : pb::IMessage<Login> {
-        private static readonly pb::MessageParser<Login> _parser = new pb::MessageParser<Login>(() => new Login());
+      public sealed partial class UpdatePositionPacket : pb::IMessage<UpdatePositionPacket> {
+        private static readonly pb::MessageParser<UpdatePositionPacket> _parser = new pb::MessageParser<UpdatePositionPacket>(() => new UpdatePositionPacket());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Login> Parser { get { return _parser; } }
+        public static pb::MessageParser<UpdatePositionPacket> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.StreamResponse.Descriptor.NestedTypes[0]; }
+          get { return global::Erutan.Scripts.Protos.Packet.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1476,55 +1330,69 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Login() {
+        public UpdatePositionPacket() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Login(Login other) : this() {
-          name_ = other.name_;
+        public UpdatePositionPacket(UpdatePositionPacket other) : this() {
+          objectId_ = other.objectId_;
+          position_ = other.position_ != null ? other.position_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Login Clone() {
-          return new Login(this);
+        public UpdatePositionPacket Clone() {
+          return new UpdatePositionPacket(this);
         }
 
-        /// <summary>Field number for the "name" field.</summary>
-        public const int NameFieldNumber = 1;
-        private string name_ = "";
+        /// <summary>Field number for the "object_id" field.</summary>
+        public const int ObjectIdFieldNumber = 1;
+        private string objectId_ = "";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Name {
-          get { return name_; }
+        public string ObjectId {
+          get { return objectId_; }
           set {
-            name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            objectId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "position" field.</summary>
+        public const int PositionFieldNumber = 2;
+        private global::Erutan.Scripts.Protos.NetVector3 position_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Erutan.Scripts.Protos.NetVector3 Position {
+          get { return position_; }
+          set {
+            position_ = value;
           }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
-          return Equals(other as Login);
+          return Equals(other as UpdatePositionPacket);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Login other) {
+        public bool Equals(UpdatePositionPacket other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (Name != other.Name) return false;
+          if (ObjectId != other.ObjectId) return false;
+          if (!object.Equals(Position, other.Position)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
+          if (ObjectId.Length != 0) hash ^= ObjectId.GetHashCode();
+          if (position_ != null) hash ^= Position.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1538,285 +1406,13 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (Name.Length != 0) {
+          if (ObjectId.Length != 0) {
             output.WriteRawTag(10);
-            output.WriteString(Name);
+            output.WriteString(ObjectId);
           }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public int CalculateSize() {
-          int size = 0;
-          if (Name.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Login other) {
-          if (other == null) {
-            return;
-          }
-          if (other.Name.Length != 0) {
-            Name = other.Name;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 10: {
-                Name = input.ReadString();
-                break;
-              }
-            }
-          }
-        }
-
-      }
-
-      public sealed partial class Logout : pb::IMessage<Logout> {
-        private static readonly pb::MessageParser<Logout> _parser = new pb::MessageParser<Logout>(() => new Logout());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Logout> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.StreamResponse.Descriptor.NestedTypes[1]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Logout() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Logout(Logout other) : this() {
-          name_ = other.name_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Logout Clone() {
-          return new Logout(this);
-        }
-
-        /// <summary>Field number for the "name" field.</summary>
-        public const int NameFieldNumber = 1;
-        private string name_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Name {
-          get { return name_; }
-          set {
-            name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
-          return Equals(other as Logout);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Logout other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (Name != other.Name) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
-          if (Name.Length != 0) {
-            output.WriteRawTag(10);
-            output.WriteString(Name);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public int CalculateSize() {
-          int size = 0;
-          if (Name.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Logout other) {
-          if (other == null) {
-            return;
-          }
-          if (other.Name.Length != 0) {
-            Name = other.Name;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 10: {
-                Name = input.ReadString();
-                break;
-              }
-            }
-          }
-        }
-
-      }
-
-      public sealed partial class Message : pb::IMessage<Message> {
-        private static readonly pb::MessageParser<Message> _parser = new pb::MessageParser<Message>(() => new Message());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Message> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.StreamResponse.Descriptor.NestedTypes[2]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Message() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Message(Message other) : this() {
-          name_ = other.name_;
-          message_ = other.message_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Message Clone() {
-          return new Message(this);
-        }
-
-        /// <summary>Field number for the "name" field.</summary>
-        public const int NameFieldNumber = 1;
-        private string name_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Name {
-          get { return name_; }
-          set {
-            name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        /// <summary>Field number for the "message" field.</summary>
-        public const int Message_FieldNumber = 2;
-        private string message_ = "";
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Message_ {
-          get { return message_; }
-          set {
-            message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
-          return Equals(other as Message);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Message other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (Name != other.Name) return false;
-          if (Message_ != other.Message_) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (Message_.Length != 0) hash ^= Message_.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
-          if (Name.Length != 0) {
-            output.WriteRawTag(10);
-            output.WriteString(Name);
-          }
-          if (Message_.Length != 0) {
+          if (position_ != null) {
             output.WriteRawTag(18);
-            output.WriteString(Message_);
+            output.WriteMessage(Position);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -1826,11 +1422,11 @@ namespace Erutan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (Name.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+          if (ObjectId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(ObjectId);
           }
-          if (Message_.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Message_);
+          if (position_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1839,15 +1435,18 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Message other) {
+        public void MergeFrom(UpdatePositionPacket other) {
           if (other == null) {
             return;
           }
-          if (other.Name.Length != 0) {
-            Name = other.Name;
+          if (other.ObjectId.Length != 0) {
+            ObjectId = other.ObjectId;
           }
-          if (other.Message_.Length != 0) {
-            Message_ = other.Message_;
+          if (other.position_ != null) {
+            if (position_ == null) {
+              Position = new global::Erutan.Scripts.Protos.NetVector3();
+            }
+            Position.MergeFrom(other.Position);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1861,11 +1460,14 @@ namespace Erutan {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 10: {
-                Name = input.ReadString();
+                ObjectId = input.ReadString();
                 break;
               }
               case 18: {
-                Message_ = input.ReadString();
+                if (position_ == null) {
+                  Position = new global::Erutan.Scripts.Protos.NetVector3();
+                }
+                input.ReadMessage(Position);
                 break;
               }
             }
@@ -1874,15 +1476,15 @@ namespace Erutan {
 
       }
 
-      public sealed partial class Shutdown : pb::IMessage<Shutdown> {
-        private static readonly pb::MessageParser<Shutdown> _parser = new pb::MessageParser<Shutdown>(() => new Shutdown());
+      public sealed partial class DestroyObjectPacket : pb::IMessage<DestroyObjectPacket> {
+        private static readonly pb::MessageParser<DestroyObjectPacket> _parser = new pb::MessageParser<DestroyObjectPacket>(() => new DestroyObjectPacket());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<Shutdown> Parser { get { return _parser; } }
+        public static pb::MessageParser<DestroyObjectPacket> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.StreamResponse.Descriptor.NestedTypes[3]; }
+          get { return global::Erutan.Scripts.Protos.Packet.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1891,41 +1493,55 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Shutdown() {
+        public DestroyObjectPacket() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Shutdown(Shutdown other) : this() {
+        public DestroyObjectPacket(DestroyObjectPacket other) : this() {
+          objectId_ = other.objectId_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public Shutdown Clone() {
-          return new Shutdown(this);
+        public DestroyObjectPacket Clone() {
+          return new DestroyObjectPacket(this);
+        }
+
+        /// <summary>Field number for the "object_id" field.</summary>
+        public const int ObjectIdFieldNumber = 1;
+        private string objectId_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string ObjectId {
+          get { return objectId_; }
+          set {
+            objectId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
-          return Equals(other as Shutdown);
+          return Equals(other as DestroyObjectPacket);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(Shutdown other) {
+        public bool Equals(DestroyObjectPacket other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
+          if (ObjectId != other.ObjectId) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
+          if (ObjectId.Length != 0) hash ^= ObjectId.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1939,6 +1555,10 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
+          if (ObjectId.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(ObjectId);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1947,6 +1567,9 @@ namespace Erutan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
+          if (ObjectId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(ObjectId);
+          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -1954,9 +1577,12 @@ namespace Erutan {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(Shutdown other) {
+        public void MergeFrom(DestroyObjectPacket other) {
           if (other == null) {
             return;
+          }
+          if (other.ObjectId.Length != 0) {
+            ObjectId = other.ObjectId;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1969,6 +1595,10 @@ namespace Erutan {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
+              case 10: {
+                ObjectId = input.ReadString();
+                break;
+              }
             }
           }
         }

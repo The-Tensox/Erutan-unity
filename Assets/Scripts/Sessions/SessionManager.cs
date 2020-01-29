@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-using Scripts.Utils;
+using Erutan.Scripts.Utils;
 using System.Threading.Tasks;
 
 namespace Erutan.Scripts.Sessions
@@ -8,7 +8,7 @@ namespace Erutan.Scripts.Sessions
     public class SessionManager : Singleton<SessionManager>
     {
         #region Variables
-        [SerializeField] private string _ipAddress = "localhost";
+        [SerializeField] private string _ipAddress = "127.0.0.1";
         [SerializeField] private int _port = 50051;
         private string _deviceId;
         private Client _client;
