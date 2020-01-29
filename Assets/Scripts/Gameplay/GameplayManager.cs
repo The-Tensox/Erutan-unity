@@ -19,6 +19,7 @@ public class GameplayManager : Singleton<GameplayManager>
     //AI
     public event Action<CreateObjectPacket> OnObjectCreated;
     public event Action<UpdatePositionPacket> OnObjectMoved;
+    public event Action<UpdateRotationPacket> OnObjectRotated;
     public event Action<DestroyObjectPacket> OnObjectDestroyed;
 
     #endregion
@@ -58,7 +59,7 @@ public class GameplayManager : Singleton<GameplayManager>
     }
 
     private void Handler(Packet packet) {
-        Record.Log($"Receiving packet: {packet}");
+        //Record.Log($"Receiving packet: {packet}");
         switch (packet.TypeCase) {
             case Packet.TypeOneofCase.CreateObject:
                 OnObjectCreated?.Invoke(packet.CreateObject);
@@ -66,12 +67,15 @@ public class GameplayManager : Singleton<GameplayManager>
             case Packet.TypeOneofCase.UpdatePosition:
                 OnObjectMoved?.Invoke(packet.UpdatePosition);
                 break;
+            case Packet.TypeOneofCase.UpdateRotation:
+                OnObjectRotated?.Invoke(packet.UpdateRotation);
+                break;
             case Packet.TypeOneofCase.DestroyObject:
                 OnObjectDestroyed?.Invoke(packet.DestroyObject);
                 break;
             default:
                 // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions
-                Record.Log($"Unimplemented packet handler ! {packet.TypeCase}");
+                Record.Log($"Unimplemented packet handler ! {packet.TypeCase}", LogLevel.Error);
                 break;
         }
     }

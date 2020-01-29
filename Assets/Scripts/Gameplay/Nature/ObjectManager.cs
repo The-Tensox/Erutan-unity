@@ -25,6 +25,7 @@ namespace Erutan.Scripts.Gameplay.Nature
             Pool.Preload(FoodPrefab, 20);
             GameplayManager.Instance.OnObjectCreated += CreateObject;
             GameplayManager.Instance.OnObjectMoved += MoveObject;
+            GameplayManager.Instance.OnObjectRotated += RotateObject;
             GameplayManager.Instance.OnObjectDestroyed += DestroyObject;
         }
 
@@ -32,6 +33,7 @@ namespace Erutan.Scripts.Gameplay.Nature
         {
             GameplayManager.Instance.OnObjectCreated -= CreateObject;
             GameplayManager.Instance.OnObjectMoved -= MoveObject;
+            GameplayManager.Instance.OnObjectRotated -= RotateObject;
             GameplayManager.Instance.OnObjectDestroyed -= DestroyObject;
         }
 
@@ -68,9 +70,9 @@ namespace Erutan.Scripts.Gameplay.Nature
                     Record.Log($"Unknown object type {packet.Object.Type}", LogLevel.Error);
                     break;
             }
-            natureObject = Pool.Spawn(prefab, new Vector3(position.X, position.Y, position.Z),
-                new Quaternion(rotation.X, rotation.Y, rotation.Z, rotation.W)).GetComponent<NatureObject>();
-            natureObject.transform.localScale = new Vector3(scale.X, scale.Y, scale.Z);
+            natureObject = Pool.Spawn(prefab, new Vector3((float)position.X, (float)position.Y, (float)position.Z),
+                new Quaternion((float)rotation.X, (float)rotation.Y, (float)rotation.Z, (float)rotation.W)).GetComponent<NatureObject>();
+            natureObject.transform.localScale = new Vector3((float)scale.X, (float)scale.Y, (float)scale.Z);
             natureObject.OwnerId = packet.Object.OwnerId;
             natureObject.Id = packet.Object.ObjectId;
             _natureObjects.Add(natureObject);
@@ -85,6 +87,15 @@ namespace Erutan.Scripts.Gameplay.Nature
 
             // Maybe we received a move packet but the natureObject died ?
             if (natureObject.gameObject.activeInHierarchy) natureObject.Move(packet.Position);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <param name="packet"></param>
+        private void RotateObject(UpdateRotationPacket packet)
+        {
+            var natureObject = _natureObjects.Find(x => x.Id == packet.ObjectId);
+            if (natureObject.gameObject.activeInHierarchy) natureObject.Rotate(packet.Rotation);
         }
 
         private void DestroyObject(DestroyObjectPacket packet)
