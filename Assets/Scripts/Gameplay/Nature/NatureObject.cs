@@ -13,9 +13,7 @@ namespace Erutan.Scripts.Gameplay.Nature
         }
 
         public void Rotate(NetQuaternion rotation) {
-            Debug.Log($"my rot {transform.rotation}");
-            transform.Rotate(0, (float)rotation.Y, 0);// = new Quaternion((float)rotation.X, (float)rotation.Y, (float)rotation.Z, (float)rotation.W);
-            Debug.Log($"my rot {transform.rotation}");
+            transform.rotation = new Quaternion((float)rotation.X, (float)rotation.Y, (float)rotation.Z, (float)rotation.W);
         }
     }
 }
