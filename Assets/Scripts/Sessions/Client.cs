@@ -68,7 +68,7 @@ namespace Erutan.Scripts.Sessions
                       });
                   };
                   
-            var channelCredentials = new SslCredentials(File.ReadAllText($"{Application.dataPath}/server1.crt"));//, //new KeyCertificatePair(File.ReadAllText($"{Application.dataPath}/server1.crt"), ""));
+            var channelCredentials = new SslCredentials(File.ReadAllText($"{Application.streamingAssetsPath}/server1.crt"));//, //new KeyCertificatePair(File.ReadAllText($"{Application.dataPath}/server1.crt"), ""));
             
             var callCredentials = CallCredentials.FromInterceptor(asyncAuthInterceptor);
             _channel = new Channel(

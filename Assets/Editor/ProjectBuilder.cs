@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class Builds
 {
-    const string BASE_PATH = "../../Builds/";
+    const string BASE_PATH = "Builds/";
     static string[] gameLevels = new[]
     {
-        "Assets/Scenes/FirstMenu.unity",
-        "Assets/Scenes/Game.unity"
+        "Assets/Scenes/SampleScene.unity"
     };
     
     [MenuItem("Builds/Windows")]
@@ -16,7 +15,7 @@ public class Builds
         PlayerSettings.runInBackground = true;
         var message = BuildPipeline.BuildPlayer(
             gameLevels,
-            $"{BASE_PATH}Windows/Nakama.exe",
+            $"{BASE_PATH}Windows/Erutan.exe",
             BuildTarget.StandaloneWindows64,
             BuildOptions.ShowBuiltPlayer);
 
@@ -32,7 +31,7 @@ public class Builds
         PlayerSettings.runInBackground = true;
         var message = BuildPipeline.BuildPlayer(
             gameLevels,
-            $"{BASE_PATH}Linux/Nakama.x86_64",
+            $"{BASE_PATH}Linux/Erutan.x86_64",
             BuildTarget.StandaloneLinux64,
             BuildOptions.None);
 

@@ -13,14 +13,19 @@ public class GameplayManager : Singleton<GameplayManager>
 
     #region PUBLIC EVENTS
 
-    //GAME
+    // Game
     public event Action OnGameStarted;
 
-    //AI
+    // Physical world 
     public event Action<CreateObjectPacket> OnObjectCreated;
     public event Action<UpdatePositionPacket> OnObjectMoved;
     public event Action<UpdateRotationPacket> OnObjectRotated;
     public event Action<DestroyObjectPacket> OnObjectDestroyed;
+
+    // Animals & Environment
+    public event Action<FoodEatenPacket> OnFoodEaten;
+    public event Action<UpdateAnimalPacket> OnAnimalUpdated;
+
 
     #endregion
     /*
@@ -72,6 +77,12 @@ public class GameplayManager : Singleton<GameplayManager>
                 break;
             case Packet.TypeOneofCase.DestroyObject:
                 OnObjectDestroyed?.Invoke(packet.DestroyObject);
+                break;
+            case Packet.TypeOneofCase.FoodEaten:
+                OnFoodEaten?.Invoke(packet.FoodEaten);
+                break;
+            case Packet.TypeOneofCase.UpdateAnimal:
+                OnAnimalUpdated?.Invoke(packet.UpdateAnimal);
                 break;
             default:
                 // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions

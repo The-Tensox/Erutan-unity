@@ -24,3 +24,12 @@ protoc -I $UNITY_PROJECT_DIR/Assets/Protos/Realtime --csharp_out=$UNITY_PROJECT_
     $UNITY_PROJECT_DIR/Assets/Protos/Realtime/realtime.proto --grpc_out=$UNITY_PROJECT_DIR/Assets/Protos/Realtime \
     --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
 ```
+
+```bash
+# MACOS
+/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod ProjectBuilder.PerformBuild
+```
+
+```bash
+./Erutan.x86_64 & ./Erutan.x86_64 && fg
+```
