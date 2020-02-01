@@ -49,12 +49,29 @@ public class Builds
             gameLevels,
             $"{BASE_PATH}Web/",
             BuildTarget.WebGL,
-            BuildOptions.ShowBuiltPlayer);
+            BuildOptions.None);
 
         if (message)
             Debug.Log($"WebGL build complete");
         else
             Debug.LogError($"Error building WebGL { message }");
+    }
+
+    [MenuItem("Builds/Android %#A")]
+    public static void BuildAndroid()
+    {
+        PlayerSettings.runInBackground = true;
+        EditorPrefs.SetString("AndroidSdkRoot", System.Environment.GetEnvironmentVariable("ANDROID_HOME"));
+        var message = BuildPipeline.BuildPlayer(
+            gameLevels,
+            $"{BASE_PATH}Android/Erutan.apk",
+            BuildTarget.Android,
+            BuildOptions.None);
+
+        if (message)
+            Debug.Log($"Android build complete");
+        else
+            Debug.LogError($"Error building Android { message }");
     }
     
     // Seems to be runnable from bash

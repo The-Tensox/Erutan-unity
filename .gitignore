@@ -52,4 +52,7 @@ crashlytics-build.properties
 
 # Plugins
 Assets/Plugins
+Packages/Grpc*
 
+# SSL
+*.crt

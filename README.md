@@ -1,22 +1,13 @@
-gRPC C# on Unity
-========================
+# Erutan-unity
 
-EXPERIMENTAL ONLY
--------------
-Support of the Unity platform is currently experimental.
+[![Alt text](docs/example.gif)](https://www.youtube.com/watch?v=OElXIRdJFVs)
+
+# WIP - no clear instructions yet
 
 PREREQUISITES
 -------------
 
 - Unity 2018.3.5f1
-
-BUILD
--------
-
-- Follow instructions in https://github.com/grpc/grpc/tree/master/src/csharp/experimental#unity to obtain the grpc_csharp_unity.zip
-  that contains gRPC C# for Unity. Unzip it under `Assets/Plugins` directory.
-- Open the `HelloworldUnity.sln` in Unity Editor.
-- Build using Unity Editor.
 
 ```bash
 UNITY_PROJECT_DIR="/home/louis/Documents/unity/Erutan"
@@ -26,8 +17,9 @@ protoc -I $UNITY_PROJECT_DIR/Assets/Protos/Realtime --csharp_out=$UNITY_PROJECT_
 ```
 
 ```bash
-# MACOS
-/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod ProjectBuilder.PerformBuild
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
 ```bash
