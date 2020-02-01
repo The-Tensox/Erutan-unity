@@ -82,6 +82,7 @@ namespace Erutan.Scripts.Gameplay.Nature
             natureObject.OwnerId = packet.Object.OwnerId;
             natureObject.Id = packet.Object.ObjectId;
             _natureObjects[packet.Object.ObjectId] = natureObject;
+            Record.Log($"New object {natureObject}");
         }
 
         /// <summary>

@@ -106,7 +106,7 @@ namespace Erutan.Scripts.Sessions
 
         public void Logout() {
             // Close stream !
-            _stream.Dispose();
+            _stream?.Dispose();
             Closed?.Invoke();
         }
 
@@ -121,8 +121,12 @@ namespace Erutan.Scripts.Sessions
         }
         
         /// General purpose low level client to server packet sending method
-        public async Task Send(Packet packet)
+        public async void Send(Packet packet)
         {
+            if (!IsConnected) {
+                Record.Log($"Not connected !", LogLevel.Error);
+                return;
+            }
             packet.Metadata = new Protos.Metadata();
             Record.Log($"Sending {packet}");
             await _outStream.WriteAsync(packet);
@@ -139,7 +143,7 @@ namespace Erutan.Scripts.Sessions
             var packet = new Packet();
             packet.UpdatePosition = updatePositionPacket;
             while (true) {
-                await Send(packet);
+                Send(packet);
                 await Task.Delay(1000);
             }
         }
