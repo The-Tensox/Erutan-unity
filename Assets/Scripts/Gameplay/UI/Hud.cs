@@ -9,6 +9,5 @@ namespace Erutan.Scripts.Gameplay.UI
 {
     public class Hud : Singleton<Hud>
     {
-
     }
 }

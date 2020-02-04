@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace Erutan.Scripts.Gameplay.Nature
 {
-    public abstract class NatureObject : MonoBehaviour
+    public class Entity : MonoBehaviour
     {
-        [HideInInspector] public string OwnerId;
-        [HideInInspector] public string Id;
+        [HideInInspector] public ulong Id;
 
         public void Move(NetVector3 position) {
             transform.position = new Vector3((float)position.X, (float)position.Y, (float)position.Z);

@@ -17,47 +17,23 @@ public class GameplayManager : Singleton<GameplayManager>
     public event Action OnGameStarted;
 
     // Physical world 
-    public event Action<CreateObjectPacket> OnObjectCreated;
-    public event Action<UpdatePositionPacket> OnObjectMoved;
-    public event Action<UpdateRotationPacket> OnObjectRotated;
-    public event Action<DestroyObjectPacket> OnObjectDestroyed;
+    public event Action<CreateEntityPacket> OnEntityCreated;
+    public event Action<UpdatePositionPacket> OnEntityMoved;
+    public event Action<UpdateRotationPacket> OnEntityRotated;
+    public event Action<DestroyEntityPacket> OnEntityDestroyed;
 
     // Animals & Environment
-    public event Action<FoodEatenPacket> OnFoodEaten;
     public event Action<UpdateAnimalPacket> OnAnimalUpdated;
 
 
     #endregion
-    /*
-    [SerializeField] private GameObject groundPrefab;
-    [SerializeField] private GameObject animalPrefab;
-    [SerializeField] private GameObject foodPrefab;
-    private float _groundSize;
-    private Transform _food;
-    */
+
     // Start is called before the first frame update
     void Start()
     {
         SessionManager.Instance.Client.ReceivedPacket += Handler;
-        /*
-        Pool.Preload(animalPrefab, 10);
-        _groundSize = Pool.Spawn(groundPrefab).GetComponent<Collider>().bounds.size.x;
-        var f = Pool.Spawn(foodPrefab, new Vector3(0, 1, 0), Quaternion.identity);
-        _food = f.transform;
-        f.GetComponent<Food>().Radius = _groundSize / 3;
-        StartCoroutine(SpawnAnimals());
-        */
     }
-    /*
-    IEnumerator SpawnAnimals() {
-        while (true) {
-            var p = Random.insideUnitCircle * _groundSize / 4;
-            var animal = Pool.Spawn(animalPrefab, new Vector3(p.x, 1, p.y), Quaternion.identity);
-            animal.GetComponent<Animal>().Food = _food;
-            yield return new WaitForSeconds(4.0f);
-        }
-    }
-    */
+
     protected override void OnDestroy()
     {
         SessionManager.Instance.Client.ReceivedPacket -= Handler;
@@ -66,20 +42,17 @@ public class GameplayManager : Singleton<GameplayManager>
     private void Handler(Packet packet) {
         //Record.Log($"Receiving packet: {packet}");
         switch (packet.TypeCase) {
-            case Packet.TypeOneofCase.CreateObject:
-                OnObjectCreated?.Invoke(packet.CreateObject);
+            case Packet.TypeOneofCase.CreateEntity:
+                OnEntityCreated?.Invoke(packet.CreateEntity);
                 break;
             case Packet.TypeOneofCase.UpdatePosition:
-                OnObjectMoved?.Invoke(packet.UpdatePosition);
+                OnEntityMoved?.Invoke(packet.UpdatePosition);
                 break;
             case Packet.TypeOneofCase.UpdateRotation:
-                OnObjectRotated?.Invoke(packet.UpdateRotation);
+                OnEntityRotated?.Invoke(packet.UpdateRotation);
                 break;
-            case Packet.TypeOneofCase.DestroyObject:
-                OnObjectDestroyed?.Invoke(packet.DestroyObject);
-                break;
-            case Packet.TypeOneofCase.FoodEaten:
-                OnFoodEaten?.Invoke(packet.FoodEaten);
+            case Packet.TypeOneofCase.DestroyEntity:
+                OnEntityDestroyed?.Invoke(packet.DestroyEntity);
                 break;
             case Packet.TypeOneofCase.UpdateAnimal:
                 OnAnimalUpdated?.Invoke(packet.UpdateAnimal);

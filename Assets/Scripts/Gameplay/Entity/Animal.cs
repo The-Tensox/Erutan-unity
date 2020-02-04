@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Erutan.Scripts.Gameplay.Nature
 {
-    public class Animal : NatureObject
+    public class Animal : Entity
     {
 
         /*

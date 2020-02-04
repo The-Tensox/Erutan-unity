@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Erutan.Scripts.Gameplay.Nature
 {
-    public class Food : NatureObject
+    public class Food : Entity
     {
         /*
         [HideInInspector] public float Radius;

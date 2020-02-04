@@ -133,6 +133,7 @@ namespace Erutan.Scripts.Sessions
         }
 
         private async void SpamServer() {
+            /*
             var updatePositionPacket = new Packet.Types.UpdatePositionPacket();
             var randomPosition = UnityEngine.Random.insideUnitSphere * 10;
             updatePositionPacket.ObjectId = "zz";
@@ -146,6 +147,7 @@ namespace Erutan.Scripts.Sessions
                 Send(packet);
                 await Task.Delay(1000);
             }
+            */
         }
     }
 }
