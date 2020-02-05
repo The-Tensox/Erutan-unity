@@ -1,4 +1,4 @@
-﻿using Erutan.Scripts.Gameplay.Nature;
+﻿using Erutan.Scripts.Gameplay.Entity;
 using Erutan.Scripts.Sessions;
 using Erutan.Scripts.Utils;
 using UnityEngine;

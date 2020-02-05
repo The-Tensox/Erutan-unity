@@ -128,7 +128,7 @@ namespace Erutan.Scripts.Sessions
                 return;
             }
             packet.Metadata = new Protos.Metadata();
-            Record.Log($"Sending {packet}");
+            //Record.Log($"Sending {packet}");
             await _outStream.WriteAsync(packet);
         }
 

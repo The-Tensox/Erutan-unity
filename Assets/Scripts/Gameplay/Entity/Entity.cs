@@ -1,7 +1,7 @@
 using Erutan.Scripts.Protos;
 using UnityEngine;
 
-namespace Erutan.Scripts.Gameplay.Nature
+namespace Erutan.Scripts.Gameplay.Entity
 {
     public class Entity : MonoBehaviour
     {

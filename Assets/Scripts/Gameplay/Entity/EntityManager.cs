@@ -4,7 +4,7 @@ using Erutan.Scripts.Utils;
 using UnityEngine;
 using static Erutan.Scripts.Protos.Packet.Types;
 
-namespace Erutan.Scripts.Gameplay.Nature
+namespace Erutan.Scripts.Gameplay.Entity
 {
     public class EntityManager : Singleton<EntityManager>
     {
@@ -23,6 +23,7 @@ namespace Erutan.Scripts.Gameplay.Nature
             Entities = new Dictionary<ulong, Entity>();
             Pool.Preload(CubePrefab, 20);
             GameplayManager.Instance.OnEntityCreated += CreateEntity;
+            GameplayManager.Instance.OnEntityUpdated += UpdateEntity;
             GameplayManager.Instance.OnEntityMoved += MoveEntity;
             GameplayManager.Instance.OnEntityRotated += RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed += DestroyEntity;
@@ -33,6 +34,7 @@ namespace Erutan.Scripts.Gameplay.Nature
         protected override void OnDestroy()
         {
             GameplayManager.Instance.OnEntityCreated -= CreateEntity;
+            GameplayManager.Instance.OnEntityUpdated -= UpdateEntity;
             GameplayManager.Instance.OnEntityMoved -= MoveEntity;
             GameplayManager.Instance.OnEntityRotated -= RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed -= DestroyEntity;
@@ -83,6 +85,46 @@ namespace Erutan.Scripts.Gameplay.Nature
             entity.gameObject.name = $"{entity.Id}";
             Entities[entity.Id] = entity;
             Record.Log($"New object {entity}");
+            
+        }
+
+        /// <summary>
+        /// Update entity
+        /// </summary>
+        /// <param name="packet"></param>
+        private void UpdateEntity(UpdateEntityPacket packet)
+        {
+            var entity = Entities[packet.EntityId];
+            
+            foreach(var c in packet.Components) {
+                switch (c.TypeCase) {
+                    case Protos.Component.TypeOneofCase.Space:
+                        var position = new Vector3((float)c.Space.Position.X, (float)c.Space.Position.Y, (float)c.Space.Position.Z);
+                        var rotation = new Quaternion((float)c.Space.Rotation.X, 
+                                                  (float)c.Space.Rotation.Y, 
+                                                  (float)c.Space.Rotation.Z, 
+                                                  (float)c.Space.Rotation.W);
+                        var scale = new Vector3((float)c.Space.Scale.X, (float)c.Space.Scale.Y, (float)c.Space.Scale.Z);
+                        entity.transform.position = position;
+                        entity.transform.rotation = rotation;
+                        entity.transform.localScale = scale;
+                        break;
+                    case Protos.Component.TypeOneofCase.Render:
+                        entity.GetComponent<Renderer>().material.color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
+                        break;
+                    case Protos.Component.TypeOneofCase.Health:
+                        var renderer = entity.GetComponent<Renderer>();
+                        var color = renderer.material.color;
+                        color.r = (float)(Mathf.Clamp(4.0f*(float)(c.Health.Life) / 100f, 0.2f, 0.8f));
+                        renderer.material.color = color;
+                        Record.Log($"life: {c.Health.Life}");
+                        break;
+                }
+            }
+
+            
+
+            //Record.Log($"update entity {entity.transform.position}");
             
         }
 
