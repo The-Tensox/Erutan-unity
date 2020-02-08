@@ -26,7 +26,7 @@ namespace Erutan.Scripts.Gameplay.UI
                 if(!Physics.Raycast (ray, out var hit))
                     return;
                 //ObjectManager.Instance.NatureObjects[hit.transform.name].
-                Record.Log($"{hit.transform.gameObject}");
+                //Record.Log($"{hit.transform.gameObject}");
             }
         }
 

@@ -60,7 +60,7 @@ namespace Erutan.Scripts.Gameplay.Entity
             var rotation = Quaternion.identity;
             Vector3 scale = Vector3.zero;
             Color color = Color.white;
-            Record.Log($"Packet {packet.Components}");
+            //Record.Log($"Packet {packet.Components}");
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
                     case Protos.Component.TypeOneofCase.Space:
@@ -84,8 +84,7 @@ namespace Erutan.Scripts.Gameplay.Entity
             entity.Id = packet.EntityId;
             entity.gameObject.name = $"{entity.Id}";
             Entities[entity.Id] = entity;
-            Record.Log($"New object {entity}");
-            
+            Record.Log($"Nb entites: {Entities.Count}");
         }
 
         /// <summary>
@@ -117,7 +116,7 @@ namespace Erutan.Scripts.Gameplay.Entity
                         var color = renderer.material.color;
                         color.r = (float)(Mathf.Clamp(4.0f*(float)(c.Health.Life) / 100f, 0.2f, 0.8f));
                         renderer.material.color = color;
-                        Record.Log($"life: {c.Health.Life}");
+                        //Record.Log($"life: {c.Health.Life}");
                         break;
                 }
             }

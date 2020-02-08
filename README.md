@@ -2,6 +2,8 @@
 
 [![Alt text](docs/example.gif)](https://www.youtube.com/watch?v=OElXIRdJFVs)
 
+![Alt text](docs/example2.gif)
+
 # WIP - no clear instructions yet
 
 PREREQUISITES

@@ -37,6 +37,12 @@ message NetQuaternion {
     double w = 4;
 }
 
+message Statistics {
+    double average = 1;
+    double minimum = 2;
+    double maximum = 3;
+}
+
 // Data-oriented design like
 message Component {
     oneof type {
@@ -45,11 +51,12 @@ message Component {
         HealthComponent health = 3;
         SpeedComponent speed = 4;
         RenderComponent render = 5;
+        BehaviourTypeComponent behaviour_type = 6;
     }
     message SpaceComponent {
-        NetVector3 position = 3;
-        NetQuaternion rotation = 4;
-        NetVector3 scale = 5;
+        NetVector3 position = 1;
+        NetQuaternion rotation = 2;
+        NetVector3 scale = 3;
     }
     message SpaceTimeComponent {
         google.protobuf.Timestamp timestamp = 1;
@@ -60,7 +67,6 @@ message Component {
     }
     message SpeedComponent {
         double move_speed = 1;
-        double agility = 2;
     }
     message TargetComponent {
         NetVector3 target = 1;
@@ -69,6 +75,13 @@ message Component {
         float red = 1;
         float green = 2;
         float blue = 3;
+    }
+    message BehaviourTypeComponent {
+        enum BehaviourType {
+            ANIMAL = 0;
+            VEGETATION = 1;
+        }
+        BehaviourType behaviour_type = 1;
     }
 }
 
@@ -86,8 +99,9 @@ message Packet {
         // Animals & Environment
         UpdateAnimalPacket update_animal = 7;
 
-        // Server general parameters
+        // Server general
         UpdateParametersPacket update_parameters = 8;
+        StatisticsPacket statistics = 9;
     }
 
     message CreateEntityPacket {
@@ -126,5 +140,10 @@ message Packet {
                 double time_scale = 1;
             }
         }
+    }
+
+    message StatisticsPacket {
+        Statistics speed = 1;
+        Statistics life = 2;
     }
 }

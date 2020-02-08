@@ -28,6 +28,9 @@ namespace Erutan.Scripts.Gameplay
         // Animals & Environment
         public event Action<UpdateAnimalPacket> OnAnimalUpdated;
 
+        // Statistics
+        public event Action<StatisticsPacket> OnStatistics;
+
 
         #endregion
 
@@ -62,6 +65,9 @@ namespace Erutan.Scripts.Gameplay
                     break;
                 case Packet.TypeOneofCase.UpdateAnimal:
                     OnAnimalUpdated?.Invoke(packet.UpdateAnimal);
+                    break;
+                case Packet.TypeOneofCase.Statistics:
+                    OnStatistics?.Invoke(packet.Statistics);
                     break;
                 default:
                     // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions
