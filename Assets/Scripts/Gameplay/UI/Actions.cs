@@ -1,4 +1,5 @@
-﻿using Erutan.Scripts.Gameplay.Entity;
+﻿using System;
+using Erutan.Scripts.Gameplay.Entity;
 using Erutan.Scripts.Sessions;
 using Erutan.Scripts.Utils;
 using UnityEngine;
@@ -14,7 +15,6 @@ namespace Erutan.Scripts.Gameplay.UI
 
         private void Update() {
             if (_draggedObject != null && _isDragging) {
-                //Record.Log($"StartDragging {Input.mousePosition}");
                 var v3 = Input.mousePosition;
                 v3.z = 100.0f;
                 v3 = Camera.main.ScreenToWorldPoint(v3);
@@ -25,8 +25,9 @@ namespace Erutan.Scripts.Gameplay.UI
 
                 if(!Physics.Raycast (ray, out var hit))
                     return;
-                //ObjectManager.Instance.NatureObjects[hit.transform.name].
-                //Record.Log($"{hit.transform.gameObject}");
+                var id = Convert.ToUInt64(hit.transform.name);
+                EntityManager.Instance.Entities.TryGetValue(id, out var entity);
+                Record.Log($"{entity}");
             }
         }
 

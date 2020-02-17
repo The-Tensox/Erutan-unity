@@ -29,6 +29,7 @@ public class Builds
     public static void BuildLinux()
     {
         PlayerSettings.runInBackground = true;
+        PlayerSettings.resizableWindow = true;
         var message = BuildPipeline.BuildPlayer(
             gameLevels,
             $"{BASE_PATH}Linux/Erutan.x86_64",

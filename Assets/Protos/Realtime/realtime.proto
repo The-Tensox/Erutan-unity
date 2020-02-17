@@ -30,17 +30,16 @@ message NetVector3 {
     double z = 3;
 }
 
+message NetVector2 {
+    double x = 1;
+    double y = 2;
+}
+
 message NetQuaternion {
     double x = 1;
     double y = 2;
     double z = 3;
     double w = 4;
-}
-
-message Statistics {
-    double average = 1;
-    double minimum = 2;
-    double maximum = 3;
 }
 
 // Data-oriented design like
@@ -101,7 +100,6 @@ message Packet {
 
         // Server general
         UpdateParametersPacket update_parameters = 8;
-        StatisticsPacket statistics = 9;
     }
 
     message CreateEntityPacket {
@@ -140,10 +138,5 @@ message Packet {
                 double time_scale = 1;
             }
         }
-    }
-
-    message StatisticsPacket {
-        Statistics speed = 1;
-        Statistics life = 2;
     }
 }
