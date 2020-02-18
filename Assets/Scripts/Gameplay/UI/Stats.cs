@@ -42,11 +42,11 @@ namespace Erutan.Scripts.Gameplay.UI
                     }
                 }
                 _speedStatistics[0].text = averageSpeed.ToString("0.##");
-                _speedStatistics[1].text = minimumSpeed.ToString("0.##");
-                _speedStatistics[2].text = maximumSpeed.ToString("0.##");
+                _speedStatistics[1].text = minimumSpeed != double.MaxValue ? minimumSpeed.ToString("0.##") : "";
+                _speedStatistics[2].text = maximumSpeed != double.MinValue ? maximumSpeed.ToString("0.##") : "";
                 _lifeStatistics[0].text = averageLife.ToString("0.##");
-                _lifeStatistics[1].text = minimumLife.ToString("0.##");
-                _lifeStatistics[2].text = maximumLife.ToString("0.##");
+                _lifeStatistics[1].text = minimumLife != double.MaxValue ? minimumLife.ToString("0.##") : "";
+                _lifeStatistics[2].text = maximumLife != double.MinValue ? maximumLife.ToString("0.##") : "";
             }
         }
     }

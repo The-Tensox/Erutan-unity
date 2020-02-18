@@ -43,7 +43,7 @@ namespace Erutan.Scripts.Gameplay
         }
 
         private void Handler(Packet packet) {
-            //Record.Log($"Receiving packet: {packet}");
+            //Record.Log($"Receiving packet: {packet.TypeCase}");
             switch (packet.TypeCase) {
                 case Packet.TypeOneofCase.CreateEntity:
                     OnEntityCreated?.Invoke(packet.CreateEntity);

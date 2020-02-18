@@ -25,9 +25,11 @@ namespace Erutan.Scripts.Gameplay.UI
 
                 if(!Physics.Raycast (ray, out var hit))
                     return;
+                /*
                 var id = Convert.ToUInt64(hit.transform.name);
                 EntityManager.Instance.Entities.TryGetValue(id, out var entity);
                 Record.Log($"{entity}");
+                */
             }
         }
 
@@ -39,7 +41,6 @@ namespace Erutan.Scripts.Gameplay.UI
         }
         
         public void StopDraggingCreateObject() {
-            /*
             Destroy(_draggedObject);
             _isDragging = false;
             //Record.Log($"StopDraggingCreateObject {Input.mousePosition}");
@@ -49,17 +50,16 @@ namespace Erutan.Scripts.Gameplay.UI
             var p = new Protos.Packet();
             p.Metadata = new Protos.Metadata();
             var t = new Protos.Packet.Types.CreateEntityPacket();
+            var c = new Protos.Component();
+            c.Space = new Protos.Component.Types.SpaceComponent(){
+                    Position = new Protos.NetVector3(){X = hit.transform.position.x, Y = 1, Z = hit.transform.position.z},
+                    Rotation = new Protos.NetQuaternion(){X = 0, Y = 0, Z = 0, W = 0},
+                    Scale = new Protos.NetVector3(){X = 1, Y = 1, Z = 1}
+                };
+            t.Components.Add(c);
 
-            t.Object = new Protos.NetObject(){
-                ObjectId = gameObject.GetInstanceID().ToString(),
-                Position = new Protos.NetVector3(){X = hit.transform.position.x, Y = 1, Z = hit.transform.position.z},
-                Rotation = new Protos.NetQuaternion(){X = 0, Y = 0, Z = 0, W = 0},
-                Scale = new Protos.NetVector3(){X = 1, Y = 1, Z = 1},
-                Type = Protos.NetObject.Types.Type.Animal
-            };
-            p.CreateObject = t;
+            p.CreateEntity = t;
             SessionManager.Instance.Client.Send(p);
-            */
         }
     }
 }
