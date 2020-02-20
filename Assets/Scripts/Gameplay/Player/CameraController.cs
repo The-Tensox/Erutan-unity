@@ -26,8 +26,16 @@ namespace Erutan.Scripts.Gameplay.Player
             transform.position += (transform.right * Input.GetAxis("Horizontal") + dir * Input.GetAxis("Vertical")) * MovementSpeed;
 
             // Rotate camera on Y axis
-            if(Input.GetMouseButton(1)) {
+            if(Input.GetMouseButton(1) && !Input.GetMouseButton(2)) {
                 transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * RotationSpeed, 0));
+                _eulerX = transform.rotation.eulerAngles.x;
+                _eulerY = transform.rotation.eulerAngles.y;
+                transform.rotation = Quaternion.Euler(_eulerX, _eulerY, 0);
+            }
+
+            // Rotate camera on X axis
+            if(Input.GetMouseButton(1) && Input.GetMouseButton(2)) {
+                transform.Rotate(-new Vector3(Input.GetAxis("Mouse Y") * RotationSpeed, 0, 0));
                 _eulerX = transform.rotation.eulerAngles.x;
                 _eulerY = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(_eulerX, _eulerY, 0);

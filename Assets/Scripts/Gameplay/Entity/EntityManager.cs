@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Erutan.Scripts.Protos;
 using Erutan.Scripts.Utils;
 using UnityEngine;
+using System.Linq;
 using static Erutan.Scripts.Protos.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay.Entity
@@ -27,7 +28,6 @@ namespace Erutan.Scripts.Gameplay.Entity
             GameplayManager.Instance.OnEntityMoved += MoveEntity;
             GameplayManager.Instance.OnEntityRotated += RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed += DestroyEntity;
-
             GameplayManager.Instance.OnAnimalUpdated += AnimalUpdated;
         }
 
@@ -38,7 +38,6 @@ namespace Erutan.Scripts.Gameplay.Entity
             GameplayManager.Instance.OnEntityMoved -= MoveEntity;
             GameplayManager.Instance.OnEntityRotated -= RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed -= DestroyEntity;
-
             GameplayManager.Instance.OnAnimalUpdated -= AnimalUpdated;
         }
 
@@ -60,16 +59,15 @@ namespace Erutan.Scripts.Gameplay.Entity
             var rotation = Quaternion.identity;
             Vector3 scale = Vector3.zero;
             Color color = Color.white;
+            Shape shape = null;
             //Record.Log($"Packet {packet.Components}");
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
                     case Protos.Component.TypeOneofCase.Space:
-                        position = new Vector3((float)c.Space.Position.X, (float)c.Space.Position.Y, (float)c.Space.Position.Z);
-                        rotation = new Quaternion((float)c.Space.Rotation.X, 
-                                                  (float)c.Space.Rotation.Y, 
-                                                  (float)c.Space.Rotation.Z, 
-                                                  (float)c.Space.Rotation.W);
-                        scale = new Vector3((float)c.Space.Scale.X, (float)c.Space.Scale.Y, (float)c.Space.Scale.Z);
+                        position = c.Space.Position.ToVector3();
+                        rotation = c.Space.Rotation.ToQuaternion();
+                        scale = c.Space.Scale.ToVector3();
+                        shape = c.Space.Shape;
                         break;
                     case Protos.Component.TypeOneofCase.Render:
                         color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
@@ -77,8 +75,11 @@ namespace Erutan.Scripts.Gameplay.Entity
                 }
             }
 
-            var entity = Pool.Spawn(CubePrefab, position, rotation).GetComponent<Entity>();
-            entity.GetComponent<Renderer>().material.color = color;
+            // TODO: could handle the case "null shape"
+            var entity = InstanciateMesh(shape, color).AddComponent<Entity>();
+
+            //var entity = Pool.Spawn(CubePrefab, position, rotation).GetComponent<Entity>();
+            //entity.GetComponent<Renderer>().material.color = color;
 
             entity.transform.localScale = scale;
             entity.Id = packet.EntityId;
@@ -98,12 +99,9 @@ namespace Erutan.Scripts.Gameplay.Entity
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
                     case Protos.Component.TypeOneofCase.Space:
-                        var position = new Vector3((float)c.Space.Position.X, (float)c.Space.Position.Y, (float)c.Space.Position.Z);
-                        var rotation = new Quaternion((float)c.Space.Rotation.X, 
-                                                  (float)c.Space.Rotation.Y, 
-                                                  (float)c.Space.Rotation.Z, 
-                                                  (float)c.Space.Rotation.W);
-                        var scale = new Vector3((float)c.Space.Scale.X, (float)c.Space.Scale.Y, (float)c.Space.Scale.Z);
+                        var position = c.Space.Position.ToVector3();
+                        var rotation = c.Space.Rotation.ToQuaternion();
+                        var scale = c.Space.Scale.ToVector3();
                         entity.transform.position = position;
                         entity.transform.rotation = rotation;
                         entity.transform.localScale = scale;
@@ -144,6 +142,7 @@ namespace Erutan.Scripts.Gameplay.Entity
         private void DestroyEntity(DestroyEntityPacket packet)
         {
             var entity = Entities[packet.EntityId];
+            Entities.Remove(packet.EntityId);
             Pool.Despawn(entity.gameObject);
         }
 
@@ -157,6 +156,29 @@ namespace Erutan.Scripts.Gameplay.Entity
         }
 
         #endregion
+
+        private GameObject InstanciateMesh(Shape shape, Color color) {
+            var go = new GameObject();
+            var meshRenderer = go.AddComponent<MeshRenderer>();
+            meshRenderer.sharedMaterial = new Material(Shader.Find("Standard"));
+            meshRenderer.sharedMaterial.color = color;
+            var meshFilter = go.AddComponent<MeshFilter>();
+            var mesh = new Mesh();
+
+            mesh.vertices = shape.Vertices.ToList().Select(e => e.ToVector3()).ToArray();
+            mesh.triangles = shape.Tris.ToArray();
+
+            if (shape.Normals != null) {
+                mesh.normals = shape.Normals.ToList().Select(e => e.ToVector3()).ToArray();
+                mesh.uv = shape.Uvs.ToList().Select(e => e.ToVector2()).ToArray();
+            } else {
+                mesh.Optimize ();
+		        mesh.RecalculateNormals ();
+            }
+            
+            meshFilter.mesh = mesh;
+            return go;
+        }
     }
 
 }

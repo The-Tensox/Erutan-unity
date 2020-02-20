@@ -29,13 +29,13 @@ namespace Erutan.Scripts.Gameplay.UI
                 foreach(var entity in EntityManager.Instance.Entities.Values) {
                     foreach(var component in entity.Components) {
                         if (component.Speed != null) {
-                            averageSpeed = (averageSpeed + component.Speed.MoveSpeed) / 2;
+                            averageSpeed = (averageSpeed + component.Speed.MoveSpeed) / (averageSpeed != 0 ? 2 : 1);
                             minimumSpeed = component.Speed.MoveSpeed < minimumSpeed ? component.Speed.MoveSpeed : minimumSpeed;
                             maximumSpeed = component.Speed.MoveSpeed > maximumSpeed ? component.Speed.MoveSpeed : maximumSpeed;
                         }
 
                         if (component.Health != null) {
-                            averageLife = (averageLife + component.Health.Life) / 2;
+                            averageLife = (averageLife + component.Health.Life) / (averageSpeed != 0 ? 2 : 1);
                             minimumLife = component.Health.Life < minimumLife ? component.Health.Life : minimumLife;
                             maximumLife = component.Health.Life > maximumLife ? component.Health.Life : maximumLife;
                         }

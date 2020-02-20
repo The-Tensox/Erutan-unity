@@ -10,10 +10,12 @@ To be used with [the go server](https://github.com/The-Tensox/Erutan-go)
 
 # Installation
 
+TODO: add grpc installation ...
+
 ```bash
-export UNITY_PROJECT_DIR=""
-protoc -I $UNITY_PROJECT_DIR/Assets/Protos/Realtime --csharp_out=$UNITY_PROJECT_DIR/Assets/Protos/Realtime \
-    $UNITY_PROJECT_DIR/Assets/Protos/Realtime/realtime.proto --grpc_out=$UNITY_PROJECT_DIR/Assets/Protos/Realtime \
+export UNITY_PROJECT_PATH="/home/louis/Documents/unity/Erutan"
+protoc -I $UNITY_PROJECT_PATH/Assets/Protos/Realtime --csharp_out=$UNITY_PROJECT_PATH/Assets/Protos/Realtime \
+    $UNITY_PROJECT_PATH/Assets/Protos/Realtime/realtime.proto --grpc_out=$UNITY_PROJECT_PATH/Assets/Protos/Realtime \
     --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
 ```
 

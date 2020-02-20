@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Erutan.Scripts.Gameplay.Entity;
 using Erutan.Scripts.Protos;
 using Erutan.Scripts.Sessions;
 using Erutan.Scripts.Utils;
-using UnityEngine;
 using static Erutan.Scripts.Protos.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay

@@ -29,54 +29,63 @@ namespace Erutan.Scripts.Protos {
             "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAiLQoKTmV0VmVjdG9yMxIJCgF4",
             "GAEgASgBEgkKAXkYAiABKAESCQoBehgDIAEoASIiCgpOZXRWZWN0b3IyEgkK",
             "AXgYASABKAESCQoBeRgCIAEoASI7Cg1OZXRRdWF0ZXJuaW9uEgkKAXgYASAB",
-            "KAESCQoBeRgCIAEoARIJCgF6GAMgASgBEgkKAXcYBCABKAEisQcKCUNvbXBv",
-            "bmVudBIxCgVzcGFjZRgBIAEoCzIgLmVydXRhbi5Db21wb25lbnQuU3BhY2VD",
-            "b21wb25lbnRIABI6CgpzcGFjZV90aW1lGAIgASgLMiQuZXJ1dGFuLkNvbXBv",
-            "bmVudC5TcGFjZVRpbWVDb21wb25lbnRIABIzCgZoZWFsdGgYAyABKAsyIS5l",
-            "cnV0YW4uQ29tcG9uZW50LkhlYWx0aENvbXBvbmVudEgAEjEKBXNwZWVkGAQg",
-            "ASgLMiAuZXJ1dGFuLkNvbXBvbmVudC5TcGVlZENvbXBvbmVudEgAEjMKBnJl",
-            "bmRlchgFIAEoCzIhLmVydXRhbi5Db21wb25lbnQuUmVuZGVyQ29tcG9uZW50",
-            "SAASQgoOYmVoYXZpb3VyX3R5cGUYBiABKAsyKC5lcnV0YW4uQ29tcG9uZW50",
-            "LkJlaGF2aW91clR5cGVDb21wb25lbnRIABqCAQoOU3BhY2VDb21wb25lbnQS",
-            "JAoIcG9zaXRpb24YASABKAsyEi5lcnV0YW4uTmV0VmVjdG9yMxInCghyb3Rh",
-            "dGlvbhgCIAEoCzIVLmVydXRhbi5OZXRRdWF0ZXJuaW9uEiEKBXNjYWxlGAMg",
-            "ASgLMhIuZXJ1dGFuLk5ldFZlY3RvcjMadAoSU3BhY2VUaW1lQ29tcG9uZW50",
+            "KAESCQoBeRgCIAEoARIJCgF6GAMgASgBEgkKAXcYBCABKAEiRgoETGluZRIe",
+            "CgJwMRgBIAEoCzISLmVydXRhbi5OZXRWZWN0b3IyEh4KAnAyGAIgASgLMhIu",
+            "ZXJ1dGFuLk5ldFZlY3RvcjIigQEKBVNoYXBlEiQKCHZlcnRpY2VzGAIgAygL",
+            "MhIuZXJ1dGFuLk5ldFZlY3RvcjMSDAoEdHJpcxgDIAMoBRIjCgdub3JtYWxz",
+            "GAQgAygLMhIuZXJ1dGFuLk5ldFZlY3RvcjMSHwoDdXZzGAUgAygLMhIuZXJ1",
+            "dGFuLk5ldFZlY3RvcjIiCgoIQ29sbGlkZXIiOQoHRWxsaXBzZRIKCgJjeBgB",
+            "IAEoARIKCgJjeRgCIAEoARIKCgJyeBgDIAEoARIKCgJyeRgEIAEoASK4CAoJ",
+            "Q29tcG9uZW50EjEKBXNwYWNlGAEgASgLMiAuZXJ1dGFuLkNvbXBvbmVudC5T",
+            "cGFjZUNvbXBvbmVudEgAEjoKCnNwYWNlX3RpbWUYAiABKAsyJC5lcnV0YW4u",
+            "Q29tcG9uZW50LlNwYWNlVGltZUNvbXBvbmVudEgAEjMKBmhlYWx0aBgDIAEo",
+            "CzIhLmVydXRhbi5Db21wb25lbnQuSGVhbHRoQ29tcG9uZW50SAASMQoFc3Bl",
+            "ZWQYBCABKAsyIC5lcnV0YW4uQ29tcG9uZW50LlNwZWVkQ29tcG9uZW50SAAS",
+            "MwoGcmVuZGVyGAUgASgLMiEuZXJ1dGFuLkNvbXBvbmVudC5SZW5kZXJDb21w",
+            "b25lbnRIABJCCg5iZWhhdmlvdXJfdHlwZRgGIAEoCzIoLmVydXRhbi5Db21w",
+            "b25lbnQuQmVoYXZpb3VyVHlwZUNvbXBvbmVudEgAEjUKB3BoeXNpY3MYByAB",
+            "KAsyIi5lcnV0YW4uQ29tcG9uZW50LlBoeXNpY3NDb21wb25lbnRIABqgAQoO",
+            "U3BhY2VDb21wb25lbnQSJAoIcG9zaXRpb24YASABKAsyEi5lcnV0YW4uTmV0",
+            "VmVjdG9yMxInCghyb3RhdGlvbhgCIAEoCzIVLmVydXRhbi5OZXRRdWF0ZXJu",
+            "aW9uEiEKBXNjYWxlGAMgASgLMhIuZXJ1dGFuLk5ldFZlY3RvcjMSHAoFc2hh",
+            "cGUYBCABKAsyDS5lcnV0YW4uU2hhcGUadAoSU3BhY2VUaW1lQ29tcG9uZW50",
             "Ei0KCXRpbWVzdGFtcBgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
             "bXASLwoFc3BhY2UYAiABKAsyIC5lcnV0YW4uQ29tcG9uZW50LlNwYWNlQ29t",
             "cG9uZW50Gh8KD0hlYWx0aENvbXBvbmVudBIMCgRsaWZlGAEgASgBGiQKDlNw",
             "ZWVkQ29tcG9uZW50EhIKCm1vdmVfc3BlZWQYASABKAEaNQoPVGFyZ2V0Q29t",
             "cG9uZW50EiIKBnRhcmdldBgBIAEoCzISLmVydXRhbi5OZXRWZWN0b3IzGjsK",
             "D1JlbmRlckNvbXBvbmVudBILCgNyZWQYASABKAISDQoFZ3JlZW4YAiABKAIS",
-            "DAoEYmx1ZRgDIAEoAhqVAQoWQmVoYXZpb3VyVHlwZUNvbXBvbmVudBJOCg5i",
+            "DAoEYmx1ZRgDIAEoAhqeAQoWQmVoYXZpb3VyVHlwZUNvbXBvbmVudBJOCg5i",
             "ZWhhdmlvdXJfdHlwZRgBIAEoDjI2LmVydXRhbi5Db21wb25lbnQuQmVoYXZp",
-            "b3VyVHlwZUNvbXBvbmVudC5CZWhhdmlvdXJUeXBlIisKDUJlaGF2aW91clR5",
-            "cGUSCgoGQU5JTUFMEAASDgoKVkVHRVRBVElPThABQgYKBHR5cGUimwgKBlBh",
-            "Y2tldBIiCghtZXRhZGF0YRgBIAEoCzIQLmVydXRhbi5NZXRhZGF0YRI6Cg1j",
-            "cmVhdGVfZW50aXR5GAIgASgLMiEuZXJ1dGFuLlBhY2tldC5DcmVhdGVFbnRp",
-            "dHlQYWNrZXRIABI6Cg11cGRhdGVfZW50aXR5GAMgASgLMiEuZXJ1dGFuLlBh",
-            "Y2tldC5VcGRhdGVFbnRpdHlQYWNrZXRIABI+Cg91cGRhdGVfcG9zaXRpb24Y",
-            "BCABKAsyIy5lcnV0YW4uUGFja2V0LlVwZGF0ZVBvc2l0aW9uUGFja2V0SAAS",
-            "PgoPdXBkYXRlX3JvdGF0aW9uGAUgASgLMiMuZXJ1dGFuLlBhY2tldC5VcGRh",
-            "dGVSb3RhdGlvblBhY2tldEgAEjwKDmRlc3Ryb3lfZW50aXR5GAYgASgLMiIu",
-            "ZXJ1dGFuLlBhY2tldC5EZXN0cm95RW50aXR5UGFja2V0SAASOgoNdXBkYXRl",
-            "X2FuaW1hbBgHIAEoCzIhLmVydXRhbi5QYWNrZXQuVXBkYXRlQW5pbWFsUGFj",
-            "a2V0SAASQgoRdXBkYXRlX3BhcmFtZXRlcnMYCCABKAsyJS5lcnV0YW4uUGFj",
-            "a2V0LlVwZGF0ZVBhcmFtZXRlcnNQYWNrZXRIABpOChJDcmVhdGVFbnRpdHlQ",
-            "YWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEiUKCmNvbXBvbmVudHMYAiADKAsy",
-            "ES5lcnV0YW4uQ29tcG9uZW50Gk4KElVwZGF0ZUVudGl0eVBhY2tldBIRCgll",
-            "bnRpdHlfaWQYASABKAQSJQoKY29tcG9uZW50cxgCIAMoCzIRLmVydXRhbi5D",
-            "b21wb25lbnQaTwoUVXBkYXRlUG9zaXRpb25QYWNrZXQSEQoJZW50aXR5X2lk",
-            "GAEgASgEEiQKCHBvc2l0aW9uGAIgASgLMhIuZXJ1dGFuLk5ldFZlY3RvcjMa",
-            "UgoUVXBkYXRlUm90YXRpb25QYWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEicK",
-            "CHJvdGF0aW9uGAIgASgLMhUuZXJ1dGFuLk5ldFF1YXRlcm5pb24aKAoTRGVz",
-            "dHJveUVudGl0eVBhY2tldBIRCgllbnRpdHlfaWQYASABKAQaNQoSVXBkYXRl",
-            "QW5pbWFsUGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIMCgRsaWZlGAIgASgB",
-            "GogBChZVcGRhdGVQYXJhbWV0ZXJzUGFja2V0EkMKCnBhcmFtZXRlcnMYASAD",
-            "KAsyLy5lcnV0YW4uUGFja2V0LlVwZGF0ZVBhcmFtZXRlcnNQYWNrZXQuUGFy",
-            "YW1ldGVyGikKCVBhcmFtZXRlchIUCgp0aW1lX3NjYWxlGAEgASgBSABCBgoE",
-            "dHlwZUIGCgR0eXBlMjgKBkVydXRhbhIuCgZTdHJlYW0SDi5lcnV0YW4uUGFj",
-            "a2V0Gg4uZXJ1dGFuLlBhY2tldCIAKAEwAUIuCgpjb20uZXJ1dGFuQgZFcnV0",
-            "YW5QAaoCFUVydXRhbi5TY3JpcHRzLlByb3Rvc2IGcHJvdG8z"));
+            "b3VyVHlwZUNvbXBvbmVudC5CZWhhdmlvdXJUeXBlIjQKDUJlaGF2aW91clR5",
+            "cGUSBwoDQU5ZEAASCgoGQU5JTUFMEAESDgoKVkVHRVRBVElPThACGicKEFBo",
+            "eXNpY3NDb21wb25lbnQSEwoLdXNlX2dyYXZpdHkYASABKAhCBgoEdHlwZSKb",
+            "CAoGUGFja2V0EiIKCG1ldGFkYXRhGAEgASgLMhAuZXJ1dGFuLk1ldGFkYXRh",
+            "EjoKDWNyZWF0ZV9lbnRpdHkYAiABKAsyIS5lcnV0YW4uUGFja2V0LkNyZWF0",
+            "ZUVudGl0eVBhY2tldEgAEjoKDXVwZGF0ZV9lbnRpdHkYAyABKAsyIS5lcnV0",
+            "YW4uUGFja2V0LlVwZGF0ZUVudGl0eVBhY2tldEgAEj4KD3VwZGF0ZV9wb3Np",
+            "dGlvbhgEIAEoCzIjLmVydXRhbi5QYWNrZXQuVXBkYXRlUG9zaXRpb25QYWNr",
+            "ZXRIABI+Cg91cGRhdGVfcm90YXRpb24YBSABKAsyIy5lcnV0YW4uUGFja2V0",
+            "LlVwZGF0ZVJvdGF0aW9uUGFja2V0SAASPAoOZGVzdHJveV9lbnRpdHkYBiAB",
+            "KAsyIi5lcnV0YW4uUGFja2V0LkRlc3Ryb3lFbnRpdHlQYWNrZXRIABI6Cg11",
+            "cGRhdGVfYW5pbWFsGAcgASgLMiEuZXJ1dGFuLlBhY2tldC5VcGRhdGVBbmlt",
+            "YWxQYWNrZXRIABJCChF1cGRhdGVfcGFyYW1ldGVycxgIIAEoCzIlLmVydXRh",
+            "bi5QYWNrZXQuVXBkYXRlUGFyYW1ldGVyc1BhY2tldEgAGk4KEkNyZWF0ZUVu",
+            "dGl0eVBhY2tldBIRCgllbnRpdHlfaWQYASABKAQSJQoKY29tcG9uZW50cxgC",
+            "IAMoCzIRLmVydXRhbi5Db21wb25lbnQaTgoSVXBkYXRlRW50aXR5UGFja2V0",
+            "EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpjb21wb25lbnRzGAIgAygLMhEuZXJ1",
+            "dGFuLkNvbXBvbmVudBpPChRVcGRhdGVQb3NpdGlvblBhY2tldBIRCgllbnRp",
+            "dHlfaWQYASABKAQSJAoIcG9zaXRpb24YAiABKAsyEi5lcnV0YW4uTmV0VmVj",
+            "dG9yMxpSChRVcGRhdGVSb3RhdGlvblBhY2tldBIRCgllbnRpdHlfaWQYASAB",
+            "KAQSJwoIcm90YXRpb24YAiABKAsyFS5lcnV0YW4uTmV0UXVhdGVybmlvbhoo",
+            "ChNEZXN0cm95RW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBo1ChJV",
+            "cGRhdGVBbmltYWxQYWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEgwKBGxpZmUY",
+            "AiABKAEaiAEKFlVwZGF0ZVBhcmFtZXRlcnNQYWNrZXQSQwoKcGFyYW1ldGVy",
+            "cxgBIAMoCzIvLmVydXRhbi5QYWNrZXQuVXBkYXRlUGFyYW1ldGVyc1BhY2tl",
+            "dC5QYXJhbWV0ZXIaKQoJUGFyYW1ldGVyEhQKCnRpbWVfc2NhbGUYASABKAFI",
+            "AEIGCgR0eXBlQgYKBHR5cGUyOAoGRXJ1dGFuEi4KBlN0cmVhbRIOLmVydXRh",
+            "bi5QYWNrZXQaDi5lcnV0YW4uUGFja2V0IgAoATABQi4KCmNvbS5lcnV0YW5C",
+            "BkVydXRhblABqgIVRXJ1dGFuLlNjcmlwdHMuUHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -84,13 +93,18 @@ namespace Erutan.Scripts.Protos {
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetVector3), global::Erutan.Scripts.Protos.NetVector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetVector2), global::Erutan.Scripts.Protos.NetVector2.Parser, new[]{ "X", "Y" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.NetQuaternion), global::Erutan.Scripts.Protos.NetQuaternion.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component), global::Erutan.Scripts.Protos.Component.Parser, new[]{ "Space", "SpaceTime", "Health", "Speed", "Render", "BehaviourType" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.SpaceComponent), global::Erutan.Scripts.Protos.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Line), global::Erutan.Scripts.Protos.Line.Parser, new[]{ "P1", "P2" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Shape), global::Erutan.Scripts.Protos.Shape.Parser, new[]{ "Vertices", "Tris", "Normals", "Uvs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Collider), global::Erutan.Scripts.Protos.Collider.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Ellipse), global::Erutan.Scripts.Protos.Ellipse.Parser, new[]{ "Cx", "Cy", "Rx", "Ry" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component), global::Erutan.Scripts.Protos.Component.Parser, new[]{ "Space", "SpaceTime", "Health", "Speed", "Render", "BehaviourType", "Physics" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.SpaceComponent), global::Erutan.Scripts.Protos.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Shape" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.SpaceTimeComponent), global::Erutan.Scripts.Protos.Component.Types.SpaceTimeComponent.Parser, new[]{ "Timestamp", "Space" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.HealthComponent), global::Erutan.Scripts.Protos.Component.Types.HealthComponent.Parser, new[]{ "Life" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.SpeedComponent), global::Erutan.Scripts.Protos.Component.Types.SpeedComponent.Parser, new[]{ "MoveSpeed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.TargetComponent), global::Erutan.Scripts.Protos.Component.Types.TargetComponent.Parser, new[]{ "Target" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.RenderComponent), global::Erutan.Scripts.Protos.Component.Types.RenderComponent.Parser, new[]{ "Red", "Green", "Blue" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent), global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent.Parser, new[]{ "BehaviourType" }, null, new[]{ typeof(global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent.Types.BehaviourType) }, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent), global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent.Parser, new[]{ "BehaviourType" }, null, new[]{ typeof(global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent.Types.BehaviourType) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent), global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent.Parser, new[]{ "UseGravity" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet), global::Erutan.Scripts.Protos.Packet.Parser, new[]{ "Metadata", "CreateEntity", "UpdateEntity", "UpdatePosition", "UpdateRotation", "DestroyEntity", "UpdateAnimal", "UpdateParameters" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.CreateEntityPacket), global::Erutan.Scripts.Protos.Packet.Types.CreateEntityPacket.Parser, new[]{ "EntityId", "Components" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.UpdateEntityPacket), global::Erutan.Scripts.Protos.Packet.Types.UpdateEntityPacket.Parser, new[]{ "EntityId", "Components" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket), global::Erutan.Scripts.Protos.Packet.Types.UpdatePositionPacket.Parser, new[]{ "EntityId", "Position" }, null, null, null),
@@ -794,6 +808,682 @@ namespace Erutan.Scripts.Protos {
 
   }
 
+  public sealed partial class Line : pb::IMessage<Line> {
+    private static readonly pb::MessageParser<Line> _parser = new pb::MessageParser<Line>(() => new Line());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Line> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Line() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Line(Line other) : this() {
+      p1_ = other.p1_ != null ? other.p1_.Clone() : null;
+      p2_ = other.p2_ != null ? other.p2_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Line Clone() {
+      return new Line(this);
+    }
+
+    /// <summary>Field number for the "p1" field.</summary>
+    public const int P1FieldNumber = 1;
+    private global::Erutan.Scripts.Protos.NetVector2 p1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetVector2 P1 {
+      get { return p1_; }
+      set {
+        p1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "p2" field.</summary>
+    public const int P2FieldNumber = 2;
+    private global::Erutan.Scripts.Protos.NetVector2 p2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.NetVector2 P2 {
+      get { return p2_; }
+      set {
+        p2_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Line);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Line other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(P1, other.P1)) return false;
+      if (!object.Equals(P2, other.P2)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (p1_ != null) hash ^= P1.GetHashCode();
+      if (p2_ != null) hash ^= P2.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (p1_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(P1);
+      }
+      if (p2_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(P2);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (p1_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(P1);
+      }
+      if (p2_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(P2);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Line other) {
+      if (other == null) {
+        return;
+      }
+      if (other.p1_ != null) {
+        if (p1_ == null) {
+          P1 = new global::Erutan.Scripts.Protos.NetVector2();
+        }
+        P1.MergeFrom(other.P1);
+      }
+      if (other.p2_ != null) {
+        if (p2_ == null) {
+          P2 = new global::Erutan.Scripts.Protos.NetVector2();
+        }
+        P2.MergeFrom(other.P2);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (p1_ == null) {
+              P1 = new global::Erutan.Scripts.Protos.NetVector2();
+            }
+            input.ReadMessage(P1);
+            break;
+          }
+          case 18: {
+            if (p2_ == null) {
+              P2 = new global::Erutan.Scripts.Protos.NetVector2();
+            }
+            input.ReadMessage(P2);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// Shape is a ...
+  /// </summary>
+  public sealed partial class Shape : pb::IMessage<Shape> {
+    private static readonly pb::MessageParser<Shape> _parser = new pb::MessageParser<Shape>(() => new Shape());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Shape> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Shape() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Shape(Shape other) : this() {
+      vertices_ = other.vertices_.Clone();
+      tris_ = other.tris_.Clone();
+      normals_ = other.normals_.Clone();
+      uvs_ = other.uvs_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Shape Clone() {
+      return new Shape(this);
+    }
+
+    /// <summary>Field number for the "vertices" field.</summary>
+    public const int VerticesFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::Erutan.Scripts.Protos.NetVector3> _repeated_vertices_codec
+        = pb::FieldCodec.ForMessage(18, global::Erutan.Scripts.Protos.NetVector3.Parser);
+    private readonly pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3> vertices_ = new pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3> Vertices {
+      get { return vertices_; }
+    }
+
+    /// <summary>Field number for the "tris" field.</summary>
+    public const int TrisFieldNumber = 3;
+    private static readonly pb::FieldCodec<int> _repeated_tris_codec
+        = pb::FieldCodec.ForInt32(26);
+    private readonly pbc::RepeatedField<int> tris_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> Tris {
+      get { return tris_; }
+    }
+
+    /// <summary>Field number for the "normals" field.</summary>
+    public const int NormalsFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Erutan.Scripts.Protos.NetVector3> _repeated_normals_codec
+        = pb::FieldCodec.ForMessage(34, global::Erutan.Scripts.Protos.NetVector3.Parser);
+    private readonly pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3> normals_ = new pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector3> Normals {
+      get { return normals_; }
+    }
+
+    /// <summary>Field number for the "uvs" field.</summary>
+    public const int UvsFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::Erutan.Scripts.Protos.NetVector2> _repeated_uvs_codec
+        = pb::FieldCodec.ForMessage(42, global::Erutan.Scripts.Protos.NetVector2.Parser);
+    private readonly pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector2> uvs_ = new pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector2>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Erutan.Scripts.Protos.NetVector2> Uvs {
+      get { return uvs_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Shape);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Shape other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!vertices_.Equals(other.vertices_)) return false;
+      if(!tris_.Equals(other.tris_)) return false;
+      if(!normals_.Equals(other.normals_)) return false;
+      if(!uvs_.Equals(other.uvs_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= vertices_.GetHashCode();
+      hash ^= tris_.GetHashCode();
+      hash ^= normals_.GetHashCode();
+      hash ^= uvs_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      vertices_.WriteTo(output, _repeated_vertices_codec);
+      tris_.WriteTo(output, _repeated_tris_codec);
+      normals_.WriteTo(output, _repeated_normals_codec);
+      uvs_.WriteTo(output, _repeated_uvs_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += vertices_.CalculateSize(_repeated_vertices_codec);
+      size += tris_.CalculateSize(_repeated_tris_codec);
+      size += normals_.CalculateSize(_repeated_normals_codec);
+      size += uvs_.CalculateSize(_repeated_uvs_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Shape other) {
+      if (other == null) {
+        return;
+      }
+      vertices_.Add(other.vertices_);
+      tris_.Add(other.tris_);
+      normals_.Add(other.normals_);
+      uvs_.Add(other.uvs_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            vertices_.AddEntriesFrom(input, _repeated_vertices_codec);
+            break;
+          }
+          case 26:
+          case 24: {
+            tris_.AddEntriesFrom(input, _repeated_tris_codec);
+            break;
+          }
+          case 34: {
+            normals_.AddEntriesFrom(input, _repeated_normals_codec);
+            break;
+          }
+          case 42: {
+            uvs_.AddEntriesFrom(input, _repeated_uvs_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// TODO: Box, Sphere, Capsule ..., atm all are Box collider
+  /// </summary>
+  public sealed partial class Collider : pb::IMessage<Collider> {
+    private static readonly pb::MessageParser<Collider> _parser = new pb::MessageParser<Collider>(() => new Collider());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Collider> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Collider() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Collider(Collider other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Collider Clone() {
+      return new Collider(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Collider);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Collider other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Collider other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// Ellipse represnets an ellpitical shape.
+  /// Cx and Cy are the x and y coordinates of the center of the ellipse.
+  /// Rx and Ry are the x and y radius of the ellipse.
+  /// </summary>
+  public sealed partial class Ellipse : pb::IMessage<Ellipse> {
+    private static readonly pb::MessageParser<Ellipse> _parser = new pb::MessageParser<Ellipse>(() => new Ellipse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Ellipse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ellipse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ellipse(Ellipse other) : this() {
+      cx_ = other.cx_;
+      cy_ = other.cy_;
+      rx_ = other.rx_;
+      ry_ = other.ry_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Ellipse Clone() {
+      return new Ellipse(this);
+    }
+
+    /// <summary>Field number for the "cx" field.</summary>
+    public const int CxFieldNumber = 1;
+    private double cx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Cx {
+      get { return cx_; }
+      set {
+        cx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cy" field.</summary>
+    public const int CyFieldNumber = 2;
+    private double cy_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Cy {
+      get { return cy_; }
+      set {
+        cy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rx" field.</summary>
+    public const int RxFieldNumber = 3;
+    private double rx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Rx {
+      get { return rx_; }
+      set {
+        rx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ry" field.</summary>
+    public const int RyFieldNumber = 4;
+    private double ry_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Ry {
+      get { return ry_; }
+      set {
+        ry_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Ellipse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Ellipse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Cx, other.Cx)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Cy, other.Cy)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Rx, other.Rx)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Ry, other.Ry)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Cx != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Cx);
+      if (Cy != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Cy);
+      if (Rx != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Rx);
+      if (Ry != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Ry);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Cx != 0D) {
+        output.WriteRawTag(9);
+        output.WriteDouble(Cx);
+      }
+      if (Cy != 0D) {
+        output.WriteRawTag(17);
+        output.WriteDouble(Cy);
+      }
+      if (Rx != 0D) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Rx);
+      }
+      if (Ry != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(Ry);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Cx != 0D) {
+        size += 1 + 8;
+      }
+      if (Cy != 0D) {
+        size += 1 + 8;
+      }
+      if (Rx != 0D) {
+        size += 1 + 8;
+      }
+      if (Ry != 0D) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Ellipse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Cx != 0D) {
+        Cx = other.Cx;
+      }
+      if (other.Cy != 0D) {
+        Cy = other.Cy;
+      }
+      if (other.Rx != 0D) {
+        Rx = other.Rx;
+      }
+      if (other.Ry != 0D) {
+        Ry = other.Ry;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 9: {
+            Cx = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            Cy = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Rx = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            Ry = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
   /// <summary>
   /// Data-oriented design like
   /// </summary>
@@ -805,7 +1495,7 @@ namespace Erutan.Scripts.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -840,6 +1530,9 @@ namespace Erutan.Scripts.Protos {
           break;
         case TypeOneofCase.BehaviourType:
           BehaviourType = other.BehaviourType.Clone();
+          break;
+        case TypeOneofCase.Physics:
+          Physics = other.Physics.Clone();
           break;
       }
 
@@ -917,6 +1610,17 @@ namespace Erutan.Scripts.Protos {
       }
     }
 
+    /// <summary>Field number for the "physics" field.</summary>
+    public const int PhysicsFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent Physics {
+      get { return typeCase_ == TypeOneofCase.Physics ? (global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.Physics;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
@@ -927,6 +1631,7 @@ namespace Erutan.Scripts.Protos {
       Speed = 4,
       Render = 5,
       BehaviourType = 6,
+      Physics = 7,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -959,6 +1664,7 @@ namespace Erutan.Scripts.Protos {
       if (!object.Equals(Speed, other.Speed)) return false;
       if (!object.Equals(Render, other.Render)) return false;
       if (!object.Equals(BehaviourType, other.BehaviourType)) return false;
+      if (!object.Equals(Physics, other.Physics)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -972,6 +1678,7 @@ namespace Erutan.Scripts.Protos {
       if (typeCase_ == TypeOneofCase.Speed) hash ^= Speed.GetHashCode();
       if (typeCase_ == TypeOneofCase.Render) hash ^= Render.GetHashCode();
       if (typeCase_ == TypeOneofCase.BehaviourType) hash ^= BehaviourType.GetHashCode();
+      if (typeCase_ == TypeOneofCase.Physics) hash ^= Physics.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1010,6 +1717,10 @@ namespace Erutan.Scripts.Protos {
         output.WriteRawTag(50);
         output.WriteMessage(BehaviourType);
       }
+      if (typeCase_ == TypeOneofCase.Physics) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Physics);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1035,6 +1746,9 @@ namespace Erutan.Scripts.Protos {
       }
       if (typeCase_ == TypeOneofCase.BehaviourType) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BehaviourType);
+      }
+      if (typeCase_ == TypeOneofCase.Physics) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Physics);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1083,6 +1797,12 @@ namespace Erutan.Scripts.Protos {
             BehaviourType = new global::Erutan.Scripts.Protos.Component.Types.BehaviourTypeComponent();
           }
           BehaviourType.MergeFrom(other.BehaviourType);
+          break;
+        case TypeOneofCase.Physics:
+          if (Physics == null) {
+            Physics = new global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent();
+          }
+          Physics.MergeFrom(other.Physics);
           break;
       }
 
@@ -1151,6 +1871,15 @@ namespace Erutan.Scripts.Protos {
             BehaviourType = subBuilder;
             break;
           }
+          case 58: {
+            global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent subBuilder = new global::Erutan.Scripts.Protos.Component.Types.PhysicsComponent();
+            if (typeCase_ == TypeOneofCase.Physics) {
+              subBuilder.MergeFrom(Physics);
+            }
+            input.ReadMessage(subBuilder);
+            Physics = subBuilder;
+            break;
+          }
         }
       }
     }
@@ -1187,6 +1916,7 @@ namespace Erutan.Scripts.Protos {
           position_ = other.position_ != null ? other.position_.Clone() : null;
           rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
           scale_ = other.scale_ != null ? other.scale_.Clone() : null;
+          shape_ = other.shape_ != null ? other.shape_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1228,6 +1958,17 @@ namespace Erutan.Scripts.Protos {
           }
         }
 
+        /// <summary>Field number for the "shape" field.</summary>
+        public const int ShapeFieldNumber = 4;
+        private global::Erutan.Scripts.Protos.Shape shape_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Erutan.Scripts.Protos.Shape Shape {
+          get { return shape_; }
+          set {
+            shape_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as SpaceComponent);
@@ -1244,6 +1985,7 @@ namespace Erutan.Scripts.Protos {
           if (!object.Equals(Position, other.Position)) return false;
           if (!object.Equals(Rotation, other.Rotation)) return false;
           if (!object.Equals(Scale, other.Scale)) return false;
+          if (!object.Equals(Shape, other.Shape)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1253,6 +1995,7 @@ namespace Erutan.Scripts.Protos {
           if (position_ != null) hash ^= Position.GetHashCode();
           if (rotation_ != null) hash ^= Rotation.GetHashCode();
           if (scale_ != null) hash ^= Scale.GetHashCode();
+          if (shape_ != null) hash ^= Shape.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1278,6 +2021,10 @@ namespace Erutan.Scripts.Protos {
             output.WriteRawTag(26);
             output.WriteMessage(Scale);
           }
+          if (shape_ != null) {
+            output.WriteRawTag(34);
+            output.WriteMessage(Shape);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1294,6 +2041,9 @@ namespace Erutan.Scripts.Protos {
           }
           if (scale_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Scale);
+          }
+          if (shape_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Shape);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1323,6 +2073,12 @@ namespace Erutan.Scripts.Protos {
               Scale = new global::Erutan.Scripts.Protos.NetVector3();
             }
             Scale.MergeFrom(other.Scale);
+          }
+          if (other.shape_ != null) {
+            if (shape_ == null) {
+              Shape = new global::Erutan.Scripts.Protos.Shape();
+            }
+            Shape.MergeFrom(other.Shape);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1354,6 +2110,13 @@ namespace Erutan.Scripts.Protos {
                   Scale = new global::Erutan.Scripts.Protos.NetVector3();
                 }
                 input.ReadMessage(Scale);
+                break;
+              }
+              case 34: {
+                if (shape_ == null) {
+                  Shape = new global::Erutan.Scripts.Protos.Shape();
+                }
+                input.ReadMessage(Shape);
                 break;
               }
             }
@@ -2109,6 +2872,9 @@ namespace Erutan.Scripts.Protos {
 
       }
 
+      /// <summary>
+      /// Acts as a sort of tag, see if we could do something cleaner
+      /// </summary>
       public sealed partial class BehaviourTypeComponent : pb::IMessage<BehaviourTypeComponent> {
         private static readonly pb::MessageParser<BehaviourTypeComponent> _parser = new pb::MessageParser<BehaviourTypeComponent>(() => new BehaviourTypeComponent());
         private pb::UnknownFieldSet _unknownFields;
@@ -2241,12 +3007,142 @@ namespace Erutan.Scripts.Protos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Types {
           public enum BehaviourType {
-            [pbr::OriginalName("ANIMAL")] Animal = 0,
-            [pbr::OriginalName("VEGETATION")] Vegetation = 1,
+            [pbr::OriginalName("ANY")] Any = 0,
+            [pbr::OriginalName("ANIMAL")] Animal = 1,
+            [pbr::OriginalName("VEGETATION")] Vegetation = 2,
           }
 
         }
         #endregion
+
+      }
+
+      public sealed partial class PhysicsComponent : pb::IMessage<PhysicsComponent> {
+        private static readonly pb::MessageParser<PhysicsComponent> _parser = new pb::MessageParser<PhysicsComponent>(() => new PhysicsComponent());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<PhysicsComponent> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Erutan.Scripts.Protos.Component.Descriptor.NestedTypes[7]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PhysicsComponent() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PhysicsComponent(PhysicsComponent other) : this() {
+          useGravity_ = other.useGravity_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PhysicsComponent Clone() {
+          return new PhysicsComponent(this);
+        }
+
+        /// <summary>Field number for the "use_gravity" field.</summary>
+        public const int UseGravityFieldNumber = 1;
+        private bool useGravity_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool UseGravity {
+          get { return useGravity_; }
+          set {
+            useGravity_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as PhysicsComponent);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(PhysicsComponent other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (UseGravity != other.UseGravity) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (UseGravity != false) hash ^= UseGravity.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (UseGravity != false) {
+            output.WriteRawTag(8);
+            output.WriteBool(UseGravity);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (UseGravity != false) {
+            size += 1 + 1;
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(PhysicsComponent other) {
+          if (other == null) {
+            return;
+          }
+          if (other.UseGravity != false) {
+            UseGravity = other.UseGravity;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                UseGravity = input.ReadBool();
+                break;
+              }
+            }
+          }
+        }
 
       }
 
@@ -2263,7 +3159,7 @@ namespace Erutan.Scripts.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Erutan.Scripts.Protos.RealtimeReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
