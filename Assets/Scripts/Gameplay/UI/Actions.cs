@@ -2,6 +2,7 @@
 using Erutan.Scripts.Gameplay.Entity;
 using Erutan.Scripts.Sessions;
 using Erutan.Scripts.Utils;
+using Protometry;
 using UnityEngine;
 
 namespace Erutan.Scripts.Gameplay.UI
@@ -47,15 +48,18 @@ namespace Erutan.Scripts.Gameplay.UI
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out var hit, 1000.0f))
                 return;
-            var p = new Protos.Packet();
-            p.Metadata = new Protos.Metadata();
-            var t = new Protos.Packet.Types.CreateEntityPacket();
-            var c = new Protos.Component();
-            c.Space = new Protos.Component.Types.SpaceComponent(){
-                    Position = new Protos.NetVector3(){X = hit.transform.position.x, Y = 1, Z = hit.transform.position.z},
-                    Rotation = new Protos.NetQuaternion(){X = 0, Y = 0, Z = 0, W = 0},
-                    Scale = new Protos.NetVector3(){X = 1, Y = 1, Z = 1}
-                };
+            var p = new Packet {Metadata = new Metadata()};
+            var t = new Packet.Types.CreateEntityPacket();
+            var c = new Component
+            {
+                Space = new Component.Types.SpaceComponent()
+                {
+                    Position =
+                        Helper.VectorN(new double[] {hit.transform.position.x, 1, hit.transform.position.z}),
+                    Rotation = Helper.QuaternionN(new double[]{ 0, 0, 0, 0}),
+                    Scale = Helper.VectorN(new double[] {1, 1, 1})
+                }
+            };
             t.Components.Add(c);
 
             p.CreateEntity = t;

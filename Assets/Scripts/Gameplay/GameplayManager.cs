@@ -1,8 +1,8 @@
 ﻿using System;
-using Erutan.Scripts.Protos;
+using Erutan;
 using Erutan.Scripts.Sessions;
 using Erutan.Scripts.Utils;
-using static Erutan.Scripts.Protos.Packet.Types;
+using static Erutan.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay
 {

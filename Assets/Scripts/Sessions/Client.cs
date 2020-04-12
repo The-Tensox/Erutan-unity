@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using System.IO;
-using static Erutan.Scripts.Protos.Erutan;
-using Erutan.Scripts.Protos;
+using static Erutan.Erutan;
+using Erutan;
 
 namespace Erutan.Scripts.Sessions
 {
@@ -127,7 +127,7 @@ namespace Erutan.Scripts.Sessions
                 Record.Log($"Not connected !", LogLevel.Error);
                 return;
             }
-            packet.Metadata = new Protos.Metadata();
+            packet.Metadata = new Metadata();
             //Record.Log($"Sending {packet}");
             await _outStream.WriteAsync(packet);
         }

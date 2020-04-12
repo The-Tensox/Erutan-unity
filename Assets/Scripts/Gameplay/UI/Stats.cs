@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Erutan.Scripts.Gameplay.Entity;
 using Erutan.Scripts.Utils;
 using UnityEngine;
-using static Erutan.Scripts.Protos.Packet.Types;
+using static Erutan.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay.UI 
 {

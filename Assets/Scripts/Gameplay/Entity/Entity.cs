@@ -1,5 +1,7 @@
 using System.Collections.Generic;
-using Erutan.Scripts.Protos;
+using Erutan;
+using Erutan.Scripts.Utils;
+using Protometry;
 using UnityEngine;
 
 namespace Erutan.Scripts.Gameplay.Entity
@@ -7,14 +9,14 @@ namespace Erutan.Scripts.Gameplay.Entity
     public class Entity : MonoBehaviour
     {
         [HideInInspector] public ulong Id;
-        [HideInInspector] public Google.Protobuf.Collections.RepeatedField<Protos.Component> Components;
+        [HideInInspector] public Google.Protobuf.Collections.RepeatedField<Component> Components;
 
-        public void Move(NetVector3 position) {
-            transform.position = new Vector3((float)position.X, (float)position.Y, (float)position.Z);
+        public void Move(VectorN position) {
+            transform.position = position.ToVector3();
         }
 
-        public void Rotate(NetQuaternion rotation) {
-            transform.rotation = new Quaternion((float)rotation.X, (float)rotation.Y, (float)rotation.Z, (float)rotation.W);
+        public void Rotate(QuaternionN rotation) {
+            transform.rotation = rotation.ToQuaternion();
         }
     }
 }

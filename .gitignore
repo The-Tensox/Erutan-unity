@@ -56,3 +56,6 @@ Packages/Grpc*
 
 # SSL
 *.crt
+
+# Jetbrains
+.idea

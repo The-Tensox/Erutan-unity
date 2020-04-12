@@ -656,8 +656,8 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1551087914}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 10
-  m_WholeNumbers: 0
+  m_MaxValue: 50
+  m_WholeNumbers: 1
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2785,6 +2785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032ba55e1512dc0e8b8c6834a02eacde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Label: {fileID: 1401497848}
 --- !u!114 &936545497
 MonoBehaviour:
   m_ObjectHideFlags: 0

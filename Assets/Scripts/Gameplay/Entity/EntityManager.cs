@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Erutan.Scripts.Protos;
+using Erutan;
 using Erutan.Scripts.Utils;
 using UnityEngine;
 using System.Linq;
-using static Erutan.Scripts.Protos.Packet.Types;
+using static Erutan.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay.Entity
 {
@@ -63,13 +63,13 @@ namespace Erutan.Scripts.Gameplay.Entity
             //Record.Log($"Packet {packet.Components}");
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
-                    case Protos.Component.TypeOneofCase.Space:
+                    case Component.TypeOneofCase.Space:
                         position = c.Space.Position.ToVector3();
                         rotation = c.Space.Rotation.ToQuaternion();
                         scale = c.Space.Scale.ToVector3();
                         shape = c.Space.Shape;
                         break;
-                    case Protos.Component.TypeOneofCase.Render:
+                    case Component.TypeOneofCase.Render:
                         color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
                         break;
                 }
@@ -98,7 +98,7 @@ namespace Erutan.Scripts.Gameplay.Entity
             entity.Components = packet.Components;
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
-                    case Protos.Component.TypeOneofCase.Space:
+                    case Component.TypeOneofCase.Space:
                         var position = c.Space.Position.ToVector3();
                         var rotation = c.Space.Rotation.ToQuaternion();
                         var scale = c.Space.Scale.ToVector3();
@@ -106,10 +106,10 @@ namespace Erutan.Scripts.Gameplay.Entity
                         entity.transform.rotation = rotation;
                         entity.transform.localScale = scale;
                         break;
-                    case Protos.Component.TypeOneofCase.Render:
+                    case Component.TypeOneofCase.Render:
                         entity.GetComponent<Renderer>().material.color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
                         break;
-                    case Protos.Component.TypeOneofCase.Health:
+                    case Component.TypeOneofCase.Health:
                         var renderer = entity.GetComponent<Renderer>();
                         var color = renderer.material.color;
                         color.r = (float)(Mathf.Clamp(4.0f*(float)(c.Health.Life) / 100f, 0.2f, 0.8f));
