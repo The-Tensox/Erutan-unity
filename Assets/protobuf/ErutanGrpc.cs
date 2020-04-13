@@ -11,7 +11,6 @@ namespace Erutan {
   /// <summary>
   ///
   ///The Erutan service.
-  ///Allows you to actually play the game.
   /// </summary>
   public static partial class Erutan
   {
@@ -36,14 +35,6 @@ namespace Erutan {
     [grpc::BindServiceMethod(typeof(Erutan), "BindService")]
     public abstract partial class ErutanBase
     {
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="requestStream">Used for reading requests from the client.</param>
-      /// <param name="responseStream">Used for sending responses back to the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>A task indicating completion of the handler.</returns>
       public virtual global::System.Threading.Tasks.Task Stream(grpc::IAsyncStreamReader<global::Erutan.Packet> requestStream, grpc::IServerStreamWriter<global::Erutan.Packet> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
@@ -74,24 +65,10 @@ namespace Erutan {
       {
       }
 
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.Packet, global::Erutan.Packet> Stream(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Stream(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      /// <summary>
-      ///
-      ///Blabla
-      /// </summary>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
       public virtual grpc::AsyncDuplexStreamingCall<global::Erutan.Packet, global::Erutan.Packet> Stream(grpc::CallOptions options)
       {
         return CallInvoker.AsyncDuplexStreamingCall(__Method_Stream, null, options);

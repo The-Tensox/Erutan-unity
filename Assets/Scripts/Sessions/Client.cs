@@ -84,7 +84,7 @@ namespace Erutan.Scripts.Sessions
             );
 
             await _channel.ConnectAsync(deadline: System.DateTime.UtcNow.AddSeconds(20));
-            Record.Log($"Status: {_channel.State}");
+            Record.Log($"gRPC channel status: {_channel.State}");
             _networkClient = new ErutanClient(_channel);
             //var headers = new Grpc.Core.Metadata(); // https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md
             //headers.Add(new Grpc.Core.Metadata.Entry("grpc-timeout", "2S"));

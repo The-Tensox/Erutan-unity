@@ -28,74 +28,72 @@ namespace Erutan {
             "YnVmL3RpbWVzdGFtcC5wcm90bxohcHJvdG9idWYvcHJvdG9tZXRyeS92ZWN0",
             "b3JuLnByb3RvGiVwcm90b2J1Zi9wcm90b21ldHJ5L3F1YXRlcm5pb25uLnBy",
             "b3RvIjkKCE1ldGFkYXRhEi0KCXRpbWVzdGFtcBgBIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXAihAEKBVNoYXBlEiUKCHZlcnRpY2VzGAIgAygL",
-            "MhMucHJvdG9tZXRyeS5WZWN0b3JOEgwKBHRyaXMYAyADKAUSJAoHbm9ybWFs",
-            "cxgEIAMoCzITLnByb3RvbWV0cnkuVmVjdG9yThIgCgN1dnMYBSADKAsyEy5w",
-            "cm90b21ldHJ5LlZlY3Rvck4iCgoIQ29sbGlkZXIiOQoHRWxsaXBzZRIKCgJj",
-            "eBgBIAEoARIKCgJjeRgCIAEoARIKCgJyeBgDIAEoARIKCgJyeRgEIAEoASK9",
-            "CAoJQ29tcG9uZW50EjEKBXNwYWNlGAEgASgLMiAuZXJ1dGFuLkNvbXBvbmVu",
-            "dC5TcGFjZUNvbXBvbmVudEgAEjoKCnNwYWNlX3RpbWUYAiABKAsyJC5lcnV0",
-            "YW4uQ29tcG9uZW50LlNwYWNlVGltZUNvbXBvbmVudEgAEjMKBmhlYWx0aBgD",
-            "IAEoCzIhLmVydXRhbi5Db21wb25lbnQuSGVhbHRoQ29tcG9uZW50SAASMQoF",
-            "c3BlZWQYBCABKAsyIC5lcnV0YW4uQ29tcG9uZW50LlNwZWVkQ29tcG9uZW50",
-            "SAASMwoGcmVuZGVyGAUgASgLMiEuZXJ1dGFuLkNvbXBvbmVudC5SZW5kZXJD",
-            "b21wb25lbnRIABJCCg5iZWhhdmlvdXJfdHlwZRgGIAEoCzIoLmVydXRhbi5D",
-            "b21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBvbmVudEgAEjUKB3BoeXNpY3MY",
-            "ByABKAsyIi5lcnV0YW4uQ29tcG9uZW50LlBoeXNpY3NDb21wb25lbnRIABqk",
-            "AQoOU3BhY2VDb21wb25lbnQSJQoIcG9zaXRpb24YASABKAsyEy5wcm90b21l",
-            "dHJ5LlZlY3Rvck4SKQoIcm90YXRpb24YAiABKAsyFy5wcm90b21ldHJ5LlF1",
-            "YXRlcm5pb25OEiIKBXNjYWxlGAMgASgLMhMucHJvdG9tZXRyeS5WZWN0b3JO",
-            "EhwKBXNoYXBlGAQgASgLMg0uZXJ1dGFuLlNoYXBlGnQKElNwYWNlVGltZUNv",
-            "bXBvbmVudBItCgl0aW1lc3RhbXAYASABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wEi8KBXNwYWNlGAIgASgLMiAuZXJ1dGFuLkNvbXBvbmVudC5T",
-            "cGFjZUNvbXBvbmVudBofCg9IZWFsdGhDb21wb25lbnQSDAoEbGlmZRgBIAEo",
-            "ARokCg5TcGVlZENvbXBvbmVudBISCgptb3ZlX3NwZWVkGAEgASgBGjYKD1Rh",
-            "cmdldENvbXBvbmVudBIjCgZ0YXJnZXQYASABKAsyEy5wcm90b21ldHJ5LlZl",
-            "Y3Rvck4aOwoPUmVuZGVyQ29tcG9uZW50EgsKA3JlZBgBIAEoAhINCgVncmVl",
-            "bhgCIAEoAhIMCgRibHVlGAMgASgCGp4BChZCZWhhdmlvdXJUeXBlQ29tcG9u",
-            "ZW50Ek4KDmJlaGF2aW91cl90eXBlGAEgASgOMjYuZXJ1dGFuLkNvbXBvbmVu",
-            "dC5CZWhhdmlvdXJUeXBlQ29tcG9uZW50LkJlaGF2aW91clR5cGUiNAoNQmVo",
-            "YXZpb3VyVHlwZRIHCgNBTlkQABIKCgZBTklNQUwQARIOCgpWRUdFVEFUSU9O",
-            "EAIaJwoQUGh5c2ljc0NvbXBvbmVudBITCgt1c2VfZ3Jhdml0eRgBIAEoCEIG",
-            "CgR0eXBlIp4ICgZQYWNrZXQSIgoIbWV0YWRhdGEYASABKAsyEC5lcnV0YW4u",
-            "TWV0YWRhdGESOgoNY3JlYXRlX2VudGl0eRgCIAEoCzIhLmVydXRhbi5QYWNr",
-            "ZXQuQ3JlYXRlRW50aXR5UGFja2V0SAASOgoNdXBkYXRlX2VudGl0eRgDIAEo",
-            "CzIhLmVydXRhbi5QYWNrZXQuVXBkYXRlRW50aXR5UGFja2V0SAASPgoPdXBk",
-            "YXRlX3Bvc2l0aW9uGAQgASgLMiMuZXJ1dGFuLlBhY2tldC5VcGRhdGVQb3Np",
-            "dGlvblBhY2tldEgAEj4KD3VwZGF0ZV9yb3RhdGlvbhgFIAEoCzIjLmVydXRh",
-            "bi5QYWNrZXQuVXBkYXRlUm90YXRpb25QYWNrZXRIABI8Cg5kZXN0cm95X2Vu",
-            "dGl0eRgGIAEoCzIiLmVydXRhbi5QYWNrZXQuRGVzdHJveUVudGl0eVBhY2tl",
-            "dEgAEjoKDXVwZGF0ZV9hbmltYWwYByABKAsyIS5lcnV0YW4uUGFja2V0LlVw",
-            "ZGF0ZUFuaW1hbFBhY2tldEgAEkIKEXVwZGF0ZV9wYXJhbWV0ZXJzGAggASgL",
-            "MiUuZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0ZXJzUGFja2V0SAAaTgoS",
-            "Q3JlYXRlRW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpjb21w",
-            "b25lbnRzGAIgAygLMhEuZXJ1dGFuLkNvbXBvbmVudBpOChJVcGRhdGVFbnRp",
-            "dHlQYWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEiUKCmNvbXBvbmVudHMYAiAD",
-            "KAsyES5lcnV0YW4uQ29tcG9uZW50GlAKFFVwZGF0ZVBvc2l0aW9uUGFja2V0",
-            "EhEKCWVudGl0eV9pZBgBIAEoBBIlCghwb3NpdGlvbhgCIAEoCzITLnByb3Rv",
-            "bWV0cnkuVmVjdG9yThpUChRVcGRhdGVSb3RhdGlvblBhY2tldBIRCgllbnRp",
-            "dHlfaWQYASABKAQSKQoIcm90YXRpb24YAiABKAsyFy5wcm90b21ldHJ5LlF1",
-            "YXRlcm5pb25OGigKE0Rlc3Ryb3lFbnRpdHlQYWNrZXQSEQoJZW50aXR5X2lk",
-            "GAEgASgEGjUKElVwZGF0ZUFuaW1hbFBhY2tldBIRCgllbnRpdHlfaWQYASAB",
-            "KAQSDAoEbGlmZRgCIAEoARqIAQoWVXBkYXRlUGFyYW1ldGVyc1BhY2tldBJD",
-            "CgpwYXJhbWV0ZXJzGAEgAygLMi8uZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJh",
-            "bWV0ZXJzUGFja2V0LlBhcmFtZXRlchopCglQYXJhbWV0ZXISFAoKdGltZV9z",
-            "Y2FsZRgBIAEoAUgAQgYKBHR5cGVCBgoEdHlwZTI4CgZFcnV0YW4SLgoGU3Ry",
-            "ZWFtEg4uZXJ1dGFuLlBhY2tldBoOLmVydXRhbi5QYWNrZXQiACgBMAFCJ1oc",
-            "Z2l0aHViLmNvbS9UaGUtVGVuc294L2VydXRhbqoCBkVydXRhbmIGcHJvdG8z"));
+            "cm90b2J1Zi5UaW1lc3RhbXAigwEKBE1lc2gSJQoIdmVydGljZXMYAiADKAsy",
+            "Ey5wcm90b21ldHJ5LlZlY3Rvck4SDAoEdHJpcxgDIAMoBRIkCgdub3JtYWxz",
+            "GAQgAygLMhMucHJvdG9tZXRyeS5WZWN0b3JOEiAKA3V2cxgFIAMoCzITLnBy",
+            "b3RvbWV0cnkuVmVjdG9yTiLVCAoJQ29tcG9uZW50EjEKBXNwYWNlGAEgASgL",
+            "MiAuZXJ1dGFuLkNvbXBvbmVudC5TcGFjZUNvbXBvbmVudEgAEjoKCnNwYWNl",
+            "X3RpbWUYAiABKAsyJC5lcnV0YW4uQ29tcG9uZW50LlNwYWNlVGltZUNvbXBv",
+            "bmVudEgAEjMKBmhlYWx0aBgDIAEoCzIhLmVydXRhbi5Db21wb25lbnQuSGVh",
+            "bHRoQ29tcG9uZW50SAASMQoFc3BlZWQYBCABKAsyIC5lcnV0YW4uQ29tcG9u",
+            "ZW50LlNwZWVkQ29tcG9uZW50SAASMwoGcmVuZGVyGAUgASgLMiEuZXJ1dGFu",
+            "LkNvbXBvbmVudC5SZW5kZXJDb21wb25lbnRIABJCCg5iZWhhdmlvdXJfdHlw",
+            "ZRgGIAEoCzIoLmVydXRhbi5Db21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBv",
+            "bmVudEgAEjUKB3BoeXNpY3MYByABKAsyIi5lcnV0YW4uQ29tcG9uZW50LlBo",
+            "eXNpY3NDb21wb25lbnRIABqiAQoOU3BhY2VDb21wb25lbnQSJQoIcG9zaXRp",
+            "b24YASABKAsyEy5wcm90b21ldHJ5LlZlY3Rvck4SKQoIcm90YXRpb24YAiAB",
+            "KAsyFy5wcm90b21ldHJ5LlF1YXRlcm5pb25OEiIKBXNjYWxlGAMgASgLMhMu",
+            "cHJvdG9tZXRyeS5WZWN0b3JOEhoKBG1lc2gYBCABKAsyDC5lcnV0YW4uTWVz",
+            "aBp0ChJTcGFjZVRpbWVDb21wb25lbnQSLQoJdGltZXN0YW1wGAEgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgVzcGFjZRgCIAEoCzIgLmVy",
+            "dXRhbi5Db21wb25lbnQuU3BhY2VDb21wb25lbnQaHwoPSGVhbHRoQ29tcG9u",
+            "ZW50EgwKBGxpZmUYASABKAEaJAoOU3BlZWRDb21wb25lbnQSEgoKbW92ZV9z",
+            "cGVlZBgBIAEoARo2Cg9UYXJnZXRDb21wb25lbnQSIwoGdGFyZ2V0GAEgASgL",
+            "MhMucHJvdG9tZXRyeS5WZWN0b3JOGkoKD1JlbmRlckNvbXBvbmVudBILCgNy",
+            "ZWQYASABKAISDQoFZ3JlZW4YAiABKAISDAoEYmx1ZRgDIAEoAhINCgVhbHBo",
+            "YRgEIAEoAhqpAQoWQmVoYXZpb3VyVHlwZUNvbXBvbmVudBJOCg5iZWhhdmlv",
+            "dXJfdHlwZRgBIAEoDjI2LmVydXRhbi5Db21wb25lbnQuQmVoYXZpb3VyVHlw",
+            "ZUNvbXBvbmVudC5CZWhhdmlvdXJUeXBlIj8KDUJlaGF2aW91clR5cGUSBwoD",
+            "QU5ZEAASCgoGQU5JTUFMEAESDgoKVkVHRVRBVElPThACEgkKBURFQlVHEAMa",
+            "JwoQUGh5c2ljc0NvbXBvbmVudBITCgt1c2VfZ3Jhdml0eRgBIAEoCEIGCgR0",
+            "eXBlIq8ICgZQYWNrZXQSIgoIbWV0YWRhdGEYASABKAsyEC5lcnV0YW4uTWV0",
+            "YWRhdGESOgoNY3JlYXRlX2VudGl0eRgCIAEoCzIhLmVydXRhbi5QYWNrZXQu",
+            "Q3JlYXRlRW50aXR5UGFja2V0SAASOgoNdXBkYXRlX2VudGl0eRgDIAEoCzIh",
+            "LmVydXRhbi5QYWNrZXQuVXBkYXRlRW50aXR5UGFja2V0SAASPgoPdXBkYXRl",
+            "X3Bvc2l0aW9uGAQgASgLMiMuZXJ1dGFuLlBhY2tldC5VcGRhdGVQb3NpdGlv",
+            "blBhY2tldEgAEj4KD3VwZGF0ZV9yb3RhdGlvbhgFIAEoCzIjLmVydXRhbi5Q",
+            "YWNrZXQuVXBkYXRlUm90YXRpb25QYWNrZXRIABI8Cg5kZXN0cm95X2VudGl0",
+            "eRgGIAEoCzIiLmVydXRhbi5QYWNrZXQuRGVzdHJveUVudGl0eVBhY2tldEgA",
+            "EjoKDXVwZGF0ZV9hbmltYWwYByABKAsyIS5lcnV0YW4uUGFja2V0LlVwZGF0",
+            "ZUFuaW1hbFBhY2tldEgAEkIKEXVwZGF0ZV9wYXJhbWV0ZXJzGAggASgLMiUu",
+            "ZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0ZXJzUGFja2V0SAAaTgoSQ3Jl",
+            "YXRlRW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpjb21wb25l",
+            "bnRzGAIgAygLMhEuZXJ1dGFuLkNvbXBvbmVudBpOChJVcGRhdGVFbnRpdHlQ",
+            "YWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEiUKCmNvbXBvbmVudHMYAiADKAsy",
+            "ES5lcnV0YW4uQ29tcG9uZW50GlAKFFVwZGF0ZVBvc2l0aW9uUGFja2V0EhEK",
+            "CWVudGl0eV9pZBgBIAEoBBIlCghwb3NpdGlvbhgCIAEoCzITLnByb3RvbWV0",
+            "cnkuVmVjdG9yThpUChRVcGRhdGVSb3RhdGlvblBhY2tldBIRCgllbnRpdHlf",
+            "aWQYASABKAQSKQoIcm90YXRpb24YAiABKAsyFy5wcm90b21ldHJ5LlF1YXRl",
+            "cm5pb25OGigKE0Rlc3Ryb3lFbnRpdHlQYWNrZXQSEQoJZW50aXR5X2lkGAEg",
+            "ASgEGjUKElVwZGF0ZUFuaW1hbFBhY2tldBIRCgllbnRpdHlfaWQYASABKAQS",
+            "DAoEbGlmZRgCIAEoARqZAQoWVXBkYXRlUGFyYW1ldGVyc1BhY2tldBJDCgpw",
+            "YXJhbWV0ZXJzGAEgAygLMi8uZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0",
+            "ZXJzUGFja2V0LlBhcmFtZXRlcho6CglQYXJhbWV0ZXISFAoKdGltZV9zY2Fs",
+            "ZRgBIAEoAUgAEg8KBWRlYnVnGAIgASgISABCBgoEdHlwZUIGCgR0eXBlMjgK",
+            "BkVydXRhbhIuCgZTdHJlYW0SDi5lcnV0YW4uUGFja2V0Gg4uZXJ1dGFuLlBh",
+            "Y2tldCIAKAEwAUInWhxnaXRodWIuY29tL1RoZS1UZW5zb3gvZXJ1dGFuqgIG",
+            "RXJ1dGFuYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Protometry.VectornReflection.Descriptor, global::Protometry.QuaternionnReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Metadata), global::Erutan.Metadata.Parser, new[]{ "Timestamp" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Shape), global::Erutan.Shape.Parser, new[]{ "Vertices", "Tris", "Normals", "Uvs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Collider), global::Erutan.Collider.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Ellipse), global::Erutan.Ellipse.Parser, new[]{ "Cx", "Cy", "Rx", "Ry" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "SpaceTime", "Health", "Speed", "Render", "BehaviourType", "Physics" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Shape" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Mesh), global::Erutan.Mesh.Parser, new[]{ "Vertices", "Tris", "Normals", "Uvs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "SpaceTime", "Health", "Speed", "Render", "BehaviourType", "Physics" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Mesh" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceTimeComponent), global::Erutan.Component.Types.SpaceTimeComponent.Parser, new[]{ "Timestamp", "Space" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.HealthComponent), global::Erutan.Component.Types.HealthComponent.Parser, new[]{ "Life" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpeedComponent), global::Erutan.Component.Types.SpeedComponent.Parser, new[]{ "MoveSpeed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.TargetComponent), global::Erutan.Component.Types.TargetComponent.Parser, new[]{ "Target" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent), global::Erutan.Component.Types.RenderComponent.Parser, new[]{ "Red", "Green", "Blue" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent), global::Erutan.Component.Types.RenderComponent.Parser, new[]{ "Red", "Green", "Blue", "Alpha" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.BehaviourTypeComponent), global::Erutan.Component.Types.BehaviourTypeComponent.Parser, new[]{ "BehaviourType" }, null, new[]{ typeof(global::Erutan.Component.Types.BehaviourTypeComponent.Types.BehaviourType) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.PhysicsComponent), global::Erutan.Component.Types.PhysicsComponent.Parser, new[]{ "UseGravity" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet), global::Erutan.Packet.Parser, new[]{ "Metadata", "CreateEntity", "UpdateEntity", "UpdatePosition", "UpdateRotation", "DestroyEntity", "UpdateAnimal", "UpdateParameters" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.CreateEntityPacket), global::Erutan.Packet.Types.CreateEntityPacket.Parser, new[]{ "EntityId", "Components" }, null, null, null),
@@ -104,7 +102,7 @@ namespace Erutan {
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateRotationPacket), global::Erutan.Packet.Types.UpdateRotationPacket.Parser, new[]{ "EntityId", "Rotation" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.DestroyEntityPacket), global::Erutan.Packet.Types.DestroyEntityPacket.Parser, new[]{ "EntityId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateAnimalPacket), global::Erutan.Packet.Types.UpdateAnimalPacket.Parser, new[]{ "EntityId", "Life" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateParametersPacket), global::Erutan.Packet.Types.UpdateParametersPacket.Parser, new[]{ "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateParametersPacket.Types.Parameter), global::Erutan.Packet.Types.UpdateParametersPacket.Types.Parameter.Parser, new[]{ "TimeScale" }, new[]{ "Type" }, null, null)})})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateParametersPacket), global::Erutan.Packet.Types.UpdateParametersPacket.Parser, new[]{ "Parameters" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateParametersPacket.Types.Parameter), global::Erutan.Packet.Types.UpdateParametersPacket.Types.Parameter.Parser, new[]{ "TimeScale", "Debug" }, new[]{ "Type" }, null, null)})})
           }));
     }
     #endregion
@@ -247,13 +245,13 @@ namespace Erutan {
   }
 
   /// <summary>
-  /// Shape is a ...
+  /// Mesh is used for rendering meshes
   /// </summary>
-  public sealed partial class Shape : pb::IMessage<Shape> {
-    private static readonly pb::MessageParser<Shape> _parser = new pb::MessageParser<Shape>(() => new Shape());
+  public sealed partial class Mesh : pb::IMessage<Mesh> {
+    private static readonly pb::MessageParser<Mesh> _parser = new pb::MessageParser<Mesh>(() => new Mesh());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Shape> Parser { get { return _parser; } }
+    public static pb::MessageParser<Mesh> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -266,14 +264,14 @@ namespace Erutan {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Shape() {
+    public Mesh() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Shape(Shape other) : this() {
+    public Mesh(Mesh other) : this() {
       vertices_ = other.vertices_.Clone();
       tris_ = other.tris_.Clone();
       normals_ = other.normals_.Clone();
@@ -282,8 +280,8 @@ namespace Erutan {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Shape Clone() {
-      return new Shape(this);
+    public Mesh Clone() {
+      return new Mesh(this);
     }
 
     /// <summary>Field number for the "vertices" field.</summary>
@@ -328,11 +326,11 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as Shape);
+      return Equals(other as Mesh);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Shape other) {
+    public bool Equals(Mesh other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -389,7 +387,7 @@ namespace Erutan {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Shape other) {
+    public void MergeFrom(Mesh other) {
       if (other == null) {
         return;
       }
@@ -432,329 +430,7 @@ namespace Erutan {
   }
 
   /// <summary>
-  /// TODO: Box, Sphere, Capsule ..., atm all are Box collider
-  /// </summary>
-  public sealed partial class Collider : pb::IMessage<Collider> {
-    private static readonly pb::MessageParser<Collider> _parser = new pb::MessageParser<Collider>(() => new Collider());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Collider> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[2]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Collider() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Collider(Collider other) : this() {
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Collider Clone() {
-      return new Collider(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Collider);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Collider other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Collider other) {
-      if (other == null) {
-        return;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// Ellipse represnets an ellpitical shape.
-  /// Cx and Cy are the x and y coordinates of the center of the ellipse.
-  /// Rx and Ry are the x and y radius of the ellipse.
-  /// </summary>
-  public sealed partial class Ellipse : pb::IMessage<Ellipse> {
-    private static readonly pb::MessageParser<Ellipse> _parser = new pb::MessageParser<Ellipse>(() => new Ellipse());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Ellipse> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Ellipse() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Ellipse(Ellipse other) : this() {
-      cx_ = other.cx_;
-      cy_ = other.cy_;
-      rx_ = other.rx_;
-      ry_ = other.ry_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Ellipse Clone() {
-      return new Ellipse(this);
-    }
-
-    /// <summary>Field number for the "cx" field.</summary>
-    public const int CxFieldNumber = 1;
-    private double cx_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Cx {
-      get { return cx_; }
-      set {
-        cx_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "cy" field.</summary>
-    public const int CyFieldNumber = 2;
-    private double cy_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Cy {
-      get { return cy_; }
-      set {
-        cy_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "rx" field.</summary>
-    public const int RxFieldNumber = 3;
-    private double rx_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Rx {
-      get { return rx_; }
-      set {
-        rx_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "ry" field.</summary>
-    public const int RyFieldNumber = 4;
-    private double ry_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public double Ry {
-      get { return ry_; }
-      set {
-        ry_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Ellipse);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Ellipse other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Cx, other.Cx)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Cy, other.Cy)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Rx, other.Rx)) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Ry, other.Ry)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Cx != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Cx);
-      if (Cy != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Cy);
-      if (Rx != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Rx);
-      if (Ry != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Ry);
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      if (Cx != 0D) {
-        output.WriteRawTag(9);
-        output.WriteDouble(Cx);
-      }
-      if (Cy != 0D) {
-        output.WriteRawTag(17);
-        output.WriteDouble(Cy);
-      }
-      if (Rx != 0D) {
-        output.WriteRawTag(25);
-        output.WriteDouble(Rx);
-      }
-      if (Ry != 0D) {
-        output.WriteRawTag(33);
-        output.WriteDouble(Ry);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Cx != 0D) {
-        size += 1 + 8;
-      }
-      if (Cy != 0D) {
-        size += 1 + 8;
-      }
-      if (Rx != 0D) {
-        size += 1 + 8;
-      }
-      if (Ry != 0D) {
-        size += 1 + 8;
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Ellipse other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Cx != 0D) {
-        Cx = other.Cx;
-      }
-      if (other.Cy != 0D) {
-        Cy = other.Cy;
-      }
-      if (other.Rx != 0D) {
-        Rx = other.Rx;
-      }
-      if (other.Ry != 0D) {
-        Ry = other.Ry;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 9: {
-            Cx = input.ReadDouble();
-            break;
-          }
-          case 17: {
-            Cy = input.ReadDouble();
-            break;
-          }
-          case 25: {
-            Rx = input.ReadDouble();
-            break;
-          }
-          case 33: {
-            Ry = input.ReadDouble();
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
-  /// Data-oriented design like
+  /// Data-oriented design : Entity Component System (ECS)
   /// </summary>
   public sealed partial class Component : pb::IMessage<Component> {
     private static readonly pb::MessageParser<Component> _parser = new pb::MessageParser<Component>(() => new Component());
@@ -764,7 +440,7 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1185,7 +861,7 @@ namespace Erutan {
           position_ = other.position_ != null ? other.position_.Clone() : null;
           rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
           scale_ = other.scale_ != null ? other.scale_.Clone() : null;
-          shape_ = other.shape_ != null ? other.shape_.Clone() : null;
+          mesh_ = other.mesh_ != null ? other.mesh_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1227,14 +903,14 @@ namespace Erutan {
           }
         }
 
-        /// <summary>Field number for the "shape" field.</summary>
-        public const int ShapeFieldNumber = 4;
-        private global::Erutan.Shape shape_;
+        /// <summary>Field number for the "mesh" field.</summary>
+        public const int MeshFieldNumber = 4;
+        private global::Erutan.Mesh mesh_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Erutan.Shape Shape {
-          get { return shape_; }
+        public global::Erutan.Mesh Mesh {
+          get { return mesh_; }
           set {
-            shape_ = value;
+            mesh_ = value;
           }
         }
 
@@ -1254,7 +930,7 @@ namespace Erutan {
           if (!object.Equals(Position, other.Position)) return false;
           if (!object.Equals(Rotation, other.Rotation)) return false;
           if (!object.Equals(Scale, other.Scale)) return false;
-          if (!object.Equals(Shape, other.Shape)) return false;
+          if (!object.Equals(Mesh, other.Mesh)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -1264,7 +940,7 @@ namespace Erutan {
           if (position_ != null) hash ^= Position.GetHashCode();
           if (rotation_ != null) hash ^= Rotation.GetHashCode();
           if (scale_ != null) hash ^= Scale.GetHashCode();
-          if (shape_ != null) hash ^= Shape.GetHashCode();
+          if (mesh_ != null) hash ^= Mesh.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1290,9 +966,9 @@ namespace Erutan {
             output.WriteRawTag(26);
             output.WriteMessage(Scale);
           }
-          if (shape_ != null) {
+          if (mesh_ != null) {
             output.WriteRawTag(34);
-            output.WriteMessage(Shape);
+            output.WriteMessage(Mesh);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -1311,8 +987,8 @@ namespace Erutan {
           if (scale_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Scale);
           }
-          if (shape_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Shape);
+          if (mesh_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mesh);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1343,11 +1019,11 @@ namespace Erutan {
             }
             Scale.MergeFrom(other.Scale);
           }
-          if (other.shape_ != null) {
-            if (shape_ == null) {
-              Shape = new global::Erutan.Shape();
+          if (other.mesh_ != null) {
+            if (mesh_ == null) {
+              Mesh = new global::Erutan.Mesh();
             }
-            Shape.MergeFrom(other.Shape);
+            Mesh.MergeFrom(other.Mesh);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1382,10 +1058,10 @@ namespace Erutan {
                 break;
               }
               case 34: {
-                if (shape_ == null) {
-                  Shape = new global::Erutan.Shape();
+                if (mesh_ == null) {
+                  Mesh = new global::Erutan.Mesh();
                 }
-                input.ReadMessage(Shape);
+                input.ReadMessage(Mesh);
                 break;
               }
             }
@@ -1984,6 +1660,7 @@ namespace Erutan {
           red_ = other.red_;
           green_ = other.green_;
           blue_ = other.blue_;
+          alpha_ = other.alpha_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -2025,6 +1702,17 @@ namespace Erutan {
           }
         }
 
+        /// <summary>Field number for the "alpha" field.</summary>
+        public const int AlphaFieldNumber = 4;
+        private float alpha_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public float Alpha {
+          get { return alpha_; }
+          set {
+            alpha_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as RenderComponent);
@@ -2041,6 +1729,7 @@ namespace Erutan {
           if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Red, other.Red)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Green, other.Green)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Blue, other.Blue)) return false;
+          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Alpha, other.Alpha)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -2050,6 +1739,7 @@ namespace Erutan {
           if (Red != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Red);
           if (Green != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Green);
           if (Blue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Blue);
+          if (Alpha != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Alpha);
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2075,6 +1765,10 @@ namespace Erutan {
             output.WriteRawTag(29);
             output.WriteFloat(Blue);
           }
+          if (Alpha != 0F) {
+            output.WriteRawTag(37);
+            output.WriteFloat(Alpha);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -2090,6 +1784,9 @@ namespace Erutan {
             size += 1 + 4;
           }
           if (Blue != 0F) {
+            size += 1 + 4;
+          }
+          if (Alpha != 0F) {
             size += 1 + 4;
           }
           if (_unknownFields != null) {
@@ -2112,6 +1809,9 @@ namespace Erutan {
           if (other.Blue != 0F) {
             Blue = other.Blue;
           }
+          if (other.Alpha != 0F) {
+            Alpha = other.Alpha;
+          }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -2133,6 +1833,10 @@ namespace Erutan {
               }
               case 29: {
                 Blue = input.ReadFloat();
+                break;
+              }
+              case 37: {
+                Alpha = input.ReadFloat();
                 break;
               }
             }
@@ -2279,6 +1983,7 @@ namespace Erutan {
             [pbr::OriginalName("ANY")] Any = 0,
             [pbr::OriginalName("ANIMAL")] Animal = 1,
             [pbr::OriginalName("VEGETATION")] Vegetation = 2,
+            [pbr::OriginalName("DEBUG")] Debug = 3,
           }
 
         }
@@ -2428,7 +2133,7 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3929,6 +3634,9 @@ namespace Erutan {
                 case TypeOneofCase.TimeScale:
                   TimeScale = other.TimeScale;
                   break;
+                case TypeOneofCase.Debug:
+                  Debug = other.Debug;
+                  break;
               }
 
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3950,11 +3658,26 @@ namespace Erutan {
               }
             }
 
+            /// <summary>Field number for the "debug" field.</summary>
+            public const int DebugFieldNumber = 2;
+            /// <summary>
+            /// Whether or not synchronizing debug stuff
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool Debug {
+              get { return typeCase_ == TypeOneofCase.Debug ? (bool) type_ : false; }
+              set {
+                type_ = value;
+                typeCase_ = TypeOneofCase.Debug;
+              }
+            }
+
             private object type_;
             /// <summary>Enum of possible cases for the "type" oneof.</summary>
             public enum TypeOneofCase {
               None = 0,
               TimeScale = 1,
+              Debug = 2,
             }
             private TypeOneofCase typeCase_ = TypeOneofCase.None;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3982,6 +3705,7 @@ namespace Erutan {
                 return true;
               }
               if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TimeScale, other.TimeScale)) return false;
+              if (Debug != other.Debug) return false;
               if (TypeCase != other.TypeCase) return false;
               return Equals(_unknownFields, other._unknownFields);
             }
@@ -3990,6 +3714,7 @@ namespace Erutan {
             public override int GetHashCode() {
               int hash = 1;
               if (typeCase_ == TypeOneofCase.TimeScale) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TimeScale);
+              if (typeCase_ == TypeOneofCase.Debug) hash ^= Debug.GetHashCode();
               hash ^= (int) typeCase_;
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
@@ -4008,6 +3733,10 @@ namespace Erutan {
                 output.WriteRawTag(9);
                 output.WriteDouble(TimeScale);
               }
+              if (typeCase_ == TypeOneofCase.Debug) {
+                output.WriteRawTag(16);
+                output.WriteBool(Debug);
+              }
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(output);
               }
@@ -4018,6 +3747,9 @@ namespace Erutan {
               int size = 0;
               if (typeCase_ == TypeOneofCase.TimeScale) {
                 size += 1 + 8;
+              }
+              if (typeCase_ == TypeOneofCase.Debug) {
+                size += 1 + 1;
               }
               if (_unknownFields != null) {
                 size += _unknownFields.CalculateSize();
@@ -4034,6 +3766,9 @@ namespace Erutan {
                 case TypeOneofCase.TimeScale:
                   TimeScale = other.TimeScale;
                   break;
+                case TypeOneofCase.Debug:
+                  Debug = other.Debug;
+                  break;
               }
 
               _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4049,6 +3784,10 @@ namespace Erutan {
                     break;
                   case 9: {
                     TimeScale = input.ReadDouble();
+                    break;
+                  }
+                  case 16: {
+                    Debug = input.ReadBool();
                     break;
                   }
                 }
