@@ -1,0 +1,142 @@
+syntax = "proto3";
+
+package erutan;
+
+import "google/protobuf/timestamp.proto";
+import "protobuf/protometry/vectorn.proto";
+import "protobuf/protometry/quaternionn.proto";
+option go_package = "github.com/The-Tensox/erutan";
+option csharp_namespace = "Erutan";
+
+/*
+    The Erutan service.
+*/
+service Erutan {
+    rpc Stream(stream Packet) returns (stream Packet) {}
+}
+
+message Metadata {
+    google.protobuf.Timestamp timestamp = 1;
+}
+
+// Mesh is used for rendering meshes
+message Mesh {
+	repeated protometry.VectorN vertices = 2;
+	repeated int32 tris = 3;
+	repeated protometry.VectorN normals = 4;
+	repeated protometry.VectorN uvs = 5;
+}
+
+// Data-oriented design : Entity Component System (ECS)
+message Component {
+    oneof type {
+        SpaceComponent space = 1;
+        HealthComponent health = 2;
+        SpeedComponent speed = 3;
+        RenderComponent render = 4;
+        BehaviourTypeComponent behaviour_type = 5;
+        PhysicsComponent physics = 6;
+        NetworkBehaviourComponent network_behaviour = 7;
+    }
+    message SpaceComponent {
+        protometry.VectorN position = 1;
+        protometry.QuaternionN rotation = 2;
+        protometry.VectorN scale = 3;
+        Mesh mesh = 4; // TODO: maybe should be moved to render
+    }
+    message HealthComponent {
+        double life = 1;
+    }
+    message SpeedComponent {
+        double move_speed = 1;
+    }
+    message TargetComponent {
+        protometry.VectorN target = 1;
+    }
+    message RenderComponent {
+        float red = 1;
+        float green = 2;
+        float blue = 3;
+        float alpha = 4;
+    }
+    // Acts as a sort of tag
+    message BehaviourTypeComponent {
+        Tag tag = 1;
+        enum Tag {
+            ANY = 0;
+            ANIMAL = 1;
+            VEGETATION = 2;
+        }
+    }
+    message PhysicsComponent {
+        bool use_gravity = 1;
+    }
+    // Some information about how this object should be synchronized
+    message NetworkBehaviourComponent {
+        Tag tag = 1;
+        enum Tag { // Some kind of filter, should an object be considered debug thing or normal or hack mode: show only clients :p
+            ALL = 0;
+            DEBUG = 1;
+        }
+    }
+}
+
+message Packet {
+    Metadata metadata = 1;
+    // TODO: entity -> object ? or maybe not
+    oneof type {
+        // General physical entitys
+        CreateEntityPacket create_entity = 2;
+        UpdateEntityPacket update_entity = 3;
+        UpdatePositionPacket update_position = 4;
+        UpdateRotationPacket update_rotation = 5;
+        DestroyEntityPacket destroy_entity = 6;
+
+        // Animals & Environment
+        UpdateAnimalPacket update_animal = 7;
+
+        // Server general
+        UpdateParametersPacket update_parameters = 8;
+    }
+
+    message CreateEntityPacket {
+        uint64 entity_id = 1;
+        repeated Component components = 2; 
+    }
+
+    message UpdateEntityPacket {
+        uint64 entity_id = 1;
+        repeated Component components = 2; 
+    }
+
+    message UpdatePositionPacket {
+        uint64 entity_id = 1;
+        protometry.VectorN position = 2;
+    }
+
+    message UpdateRotationPacket {
+        uint64 entity_id = 1;
+        protometry.QuaternionN rotation = 2;
+    }
+
+    message DestroyEntityPacket {
+        uint64 entity_id = 1;
+    }
+
+    message UpdateAnimalPacket { // Maybe will have more params later
+        uint64 entity_id = 1;
+        double life = 2;
+    }
+
+    message UpdateParametersPacket {
+        repeated Parameter parameters = 1;
+        message Parameter {
+            oneof type {
+                double time_scale = 1;
+                bool debug = 2; // Whether or not synchronizing debug stuff
+                // TODO: client area that he wants to be synchronized on, culling-like (obvsly to improve client-side perf)
+                // TODO: maybe should move protometry.Box into protobuf then
+            }
+        }
+    }
+}

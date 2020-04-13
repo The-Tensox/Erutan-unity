@@ -1,21 +1,65 @@
-using Erutan.Scripts.Protos;
+using Erutan;
+using Google.Protobuf.Collections;
+using Protometry;
 using UnityEngine;
 
-namespace Erutan.Scripts.Utils{
+namespace Erutan.Scripts.Utils
+{
+    /**
+    * Simple protobuf helpers to have cleaner code
+    */
     public static class Helper
     {
-        public static Quaternion ToQuaternion(this NetQuaternion netQuaternion) 
+        public static RepeatedField<double> RepeatedField(double[] dimensions)
         {
-            return new Quaternion((float)netQuaternion.X, (float)netQuaternion.Y, (float)netQuaternion.Z, (float)netQuaternion.W);
+            return new RepeatedField<double> {dimensions};
         }
-        public static Vector3 ToVector3(this NetVector3 netVector3) 
+        public static VectorN VectorN(double[] dimensions) 
         {
-            return new Vector3((float)netVector3.X, (float)netVector3.Y, (float)netVector3.Z);
+            var v = new VectorN();
+            foreach (var d in dimensions)
+            {
+                v.Dimensions.Add(d);
+            }
+            return v;
         }
-
-        public static Vector2 ToVector2(this NetVector2 netVector2) 
+        public static QuaternionN QuaternionN(double[] dimensions) 
         {
-            return new Vector2((float)netVector2.X, (float)netVector2.Y);
+            var q = new QuaternionN();
+            foreach (var d in dimensions)
+            {
+                q.Value.Dimensions.Add(d);
+            }
+            return q;
+        }
+        // TODO: handle exceptions ?
+        public static float GetF(this VectorN v, int dimension) 
+        {
+            return (float)v.Dimensions[dimension];
+        }
+        public static double GetD(this VectorN v, int dimension) 
+        {
+            return v.Dimensions[dimension];
+        }
+        public static float GetF(this QuaternionN q, int dimension) 
+        {
+            return q.Value.GetF(dimension);
+        }
+        public static double GetD(this QuaternionN q, int dimension) 
+        {
+            return q.Value.GetD(dimension);
+        }
+        public static Quaternion ToQuaternion(this QuaternionN q) 
+        {
+            return new Quaternion(q.GetF(0), q.GetF(1), q.GetF(2), q.GetF(3));
+        }
+        public static Vector3 ToVector3(this VectorN v) 
+        {
+            return new Vector3(v.GetF(0), v.GetF(1), v.GetF(2));
+        }
+        public static Vector2 ToVector2(this VectorN v) 
+        {
+            return new Vector2(v.GetF(0), v.GetF(1));
         }
     }
 }

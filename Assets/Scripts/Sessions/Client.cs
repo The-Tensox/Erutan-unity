@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System;
 using System.IO;
-using static Erutan.Scripts.Protos.Erutan;
-using Erutan.Scripts.Protos;
+using static Erutan.Erutan;
+using Erutan;
 
 namespace Erutan.Scripts.Sessions
 {
@@ -84,7 +84,7 @@ namespace Erutan.Scripts.Sessions
             );
 
             await _channel.ConnectAsync(deadline: System.DateTime.UtcNow.AddSeconds(20));
-            Record.Log($"Status: {_channel.State}");
+            Record.Log($"gRPC channel status: {_channel.State}");
             _networkClient = new ErutanClient(_channel);
             //var headers = new Grpc.Core.Metadata(); // https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-HTTP2.md
             //headers.Add(new Grpc.Core.Metadata.Entry("grpc-timeout", "2S"));
@@ -127,7 +127,7 @@ namespace Erutan.Scripts.Sessions
                 Record.Log($"Not connected !", LogLevel.Error);
                 return;
             }
-            packet.Metadata = new Protos.Metadata();
+            packet.Metadata = new Metadata();
             //Record.Log($"Sending {packet}");
             await _outStream.WriteAsync(packet);
         }

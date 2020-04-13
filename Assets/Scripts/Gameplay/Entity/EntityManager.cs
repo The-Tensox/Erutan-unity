@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Erutan.Scripts.Protos;
+using Erutan;
 using Erutan.Scripts.Utils;
 using UnityEngine;
 using System.Linq;
-using static Erutan.Scripts.Protos.Packet.Types;
+using static Erutan.Packet.Types;
 
 namespace Erutan.Scripts.Gameplay.Entity
 {
@@ -59,28 +59,28 @@ namespace Erutan.Scripts.Gameplay.Entity
             var rotation = Quaternion.identity;
             Vector3 scale = Vector3.zero;
             Color color = Color.white;
-            Shape shape = null;
+            Mesh mesh = null;
             //Record.Log($"Packet {packet.Components}");
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
-                    case Protos.Component.TypeOneofCase.Space:
+                    case Component.TypeOneofCase.Space:
                         position = c.Space.Position.ToVector3();
                         rotation = c.Space.Rotation.ToQuaternion();
                         scale = c.Space.Scale.ToVector3();
-                        shape = c.Space.Shape;
+                        mesh = c.Space.Mesh;
                         break;
-                    case Protos.Component.TypeOneofCase.Render:
-                        color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
+                    case Component.TypeOneofCase.Render:
+                        color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue, c.Render.Alpha);
                         break;
                 }
             }
 
             // TODO: could handle the case "null shape"
-            var entity = InstanciateMesh(shape, color).AddComponent<Entity>();
+            var entity = InstanciateMesh(mesh, color).AddComponent<Entity>();
 
-            //var entity = Pool.Spawn(CubePrefab, position, rotation).GetComponent<Entity>();
-            //entity.GetComponent<Renderer>().material.color = color;
-
+            //var entity = Pool.Spawn(CubePrefab, position, rotation).GetComponent<Entity>(); 
+            entity.transform.position = position;
+            entity.transform.rotation = rotation;
             entity.transform.localScale = scale;
             entity.Id = packet.EntityId;
             entity.gameObject.name = $"{entity.Id}";
@@ -98,7 +98,7 @@ namespace Erutan.Scripts.Gameplay.Entity
             entity.Components = packet.Components;
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
-                    case Protos.Component.TypeOneofCase.Space:
+                    case Component.TypeOneofCase.Space:
                         var position = c.Space.Position.ToVector3();
                         var rotation = c.Space.Rotation.ToQuaternion();
                         var scale = c.Space.Scale.ToVector3();
@@ -106,10 +106,13 @@ namespace Erutan.Scripts.Gameplay.Entity
                         entity.transform.rotation = rotation;
                         entity.transform.localScale = scale;
                         break;
-                    case Protos.Component.TypeOneofCase.Render:
-                        entity.GetComponent<Renderer>().material.color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue);
+                    case Component.TypeOneofCase.Render:
+                        entity.GetComponent<Renderer>().material.color = new Color(c.Render.Red,
+                            c.Render.Green, 
+                            c.Render.Blue, 
+                            c.Render.Alpha);
                         break;
-                    case Protos.Component.TypeOneofCase.Health:
+                    case Component.TypeOneofCase.Health:
                         var renderer = entity.GetComponent<Renderer>();
                         var color = renderer.material.color;
                         color.r = (float)(Mathf.Clamp(4.0f*(float)(c.Health.Life) / 100f, 0.2f, 0.8f));
@@ -141,9 +144,13 @@ namespace Erutan.Scripts.Gameplay.Entity
 
         private void DestroyEntity(DestroyEntityPacket packet)
         {
-            var entity = Entities[packet.EntityId];
-            Entities.Remove(packet.EntityId);
-            Pool.Despawn(entity.gameObject);
+            if (Entities.ContainsKey(packet.EntityId)) {
+                var entity = Entities[packet.EntityId];
+                Entities.Remove(packet.EntityId);
+                Pool.Despawn(entity.gameObject);
+            } else {
+                Record.Log($"Tried to destroy inexistant entity");
+            }
         }
 
         private void AnimalUpdated(UpdateAnimalPacket packet)
@@ -157,25 +164,39 @@ namespace Erutan.Scripts.Gameplay.Entity
 
         #endregion
 
-        private GameObject InstanciateMesh(Shape shape, Color color) {
+        private GameObject InstanciateMesh(Mesh receivedMesh, Color color) {
             var go = new GameObject();
             var meshRenderer = go.AddComponent<MeshRenderer>();
-            meshRenderer.sharedMaterial = new Material(Shader.Find("Standard"));
-            meshRenderer.sharedMaterial.color = color;
+            
+            // Override standard shader to allow transparency
+            var m = new Material(Shader.Find("Standard"));
+            m.SetOverrideTag("RenderType", "Transparent");
+            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            m.SetInt("_ZWrite", 0);
+            m.DisableKeyword("_ALPHATEST_ON");
+            m.EnableKeyword("_ALPHABLEND_ON");
+            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+            m.SetFloat("_Mode", 2.0f);
+            m.color = color;
+            meshRenderer.sharedMaterial = m;
+            
             var meshFilter = go.AddComponent<MeshFilter>();
-            var mesh = new Mesh();
-
-            mesh.vertices = shape.Vertices.ToList().Select(e => e.ToVector3()).ToArray();
-            mesh.triangles = shape.Tris.ToArray();
-
-            if (shape.Normals != null) {
-                mesh.normals = shape.Normals.ToList().Select(e => e.ToVector3()).ToArray();
-                mesh.uv = shape.Uvs.ToList().Select(e => e.ToVector2()).ToArray();
+            // TODO: helper erutan.mesh -> unityengine.mesh
+            var mesh = new UnityEngine.Mesh
+            {
+                vertices = receivedMesh.Vertices.ToList().Select(e => e.ToVector3()).ToArray(),
+                triangles = receivedMesh.Tris.ToArray()
+            };
+            
+            if (receivedMesh.Normals != null) {
+                mesh.normals = receivedMesh.Normals.ToList().Select(e => e.ToVector3()).ToArray();
+                mesh.uv = receivedMesh.Uvs.ToList().Select(e => e.ToVector2()).ToArray();
             } else {
                 mesh.Optimize ();
 		        mesh.RecalculateNormals ();
             }
-            
             meshFilter.mesh = mesh;
             return go;
         }
