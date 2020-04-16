@@ -169,17 +169,16 @@ namespace Erutan.Scripts.Gameplay.Entity
             var meshRenderer = go.AddComponent<MeshRenderer>();
             
             // Override standard shader to allow transparency
-            var m = new Material(Shader.Find("Standard"));
-            m.SetOverrideTag("RenderType", "Transparent");
-            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            m.SetInt("_ZWrite", 0);
-            m.DisableKeyword("_ALPHATEST_ON");
-            m.EnableKeyword("_ALPHABLEND_ON");
-            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
-            m.SetFloat("_Mode", 2.0f);
-            m.color = color;
+            var m = new Material(Shader.Find("Standard")) {color = color};
+            // m.SetOverrideTag("RenderType", "Transparent");
+            // m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            // m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            // m.SetInt("_ZWrite", 0);
+            // m.DisableKeyword("_ALPHATEST_ON");
+            // m.EnableKeyword("_ALPHABLEND_ON");
+            // m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            // m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+            // m.SetFloat("_Mode", 2.0f);
             meshRenderer.sharedMaterial = m;
             
             var meshFilter = go.AddComponent<MeshFilter>();

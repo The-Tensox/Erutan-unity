@@ -29,18 +29,21 @@ protoc --csharp_out=protobuf \
 ## Build
 
 ```bash
+#ignore these
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 ```
 
 ```bash
-# Doesn't work
-~/Unity/Hub/Editor/2019.2.17f1/Editor/Unity -quit -batchmode -logFile stdout.log -projectPath $UNITY_PROJECT_PATH -buildLinux64Player . -executeMethod Builds.BuildLinux
+export EDITOR_PATH=~/Unity/Hub/Editor/2019.2.17f1/Editor/Unity
+cd $UNITY_PROJECT_PATH
+$EDITOR_PATH -quit -batchmode -logFile /tmp/erutan_unity_build.log -projectPath $UNITY_PROJECT_PATH -buildLinux64Player Builds/Linux -executeMethod Builds.BuildLinux
 ```
 
 
 ## Run
+
 
 ```bash
 ./Erutan.x86_64 & ./Erutan.x86_64 && fg
