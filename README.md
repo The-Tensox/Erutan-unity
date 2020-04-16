@@ -1,6 +1,6 @@
 # Erutan-unity
 
-Simulating darwinian evolution, fully networked allowing several clients to have a 3D vizualisation.
+Trying to simulate evolution, synchronized over gRPC to clients that render a 3D visualisation.
 
 To be used with [the go server](https://github.com/The-Tensox/Erutan-go)
 
@@ -11,42 +11,15 @@ To be used with [the go server](https://github.com/The-Tensox/Erutan-go)
 **Octree ugly visualisation**
 ![octree](docs/octree.png)
 
-## Installation
+## Usage
 
-TODO: add grpc installation ...
-
-```bash
-export UNITY_PROJECT_PATH="/home/louis/Documents/unity/Erutan"
-cd Assets
-protoc --csharp_out=protobuf/protometry \
-    protobuf/protometry/*.proto --grpc_out=protobuf/protometry \
-    --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
-protoc --csharp_out=protobuf \
-    protobuf/*.proto --grpc_out=protobuf \
-    --plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
-```
-
-## Build
+The Makefile is optimized for Linux, so if you're on different OS just read and adapt (will give instructions later).
+(you need to have installed gRPC for Unity, documentation incoming)
 
 ```bash
-#ignore these
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-```
-
-```bash
-export EDITOR_PATH=~/Unity/Hub/Editor/2019.2.17f1/Editor/Unity
-cd $UNITY_PROJECT_PATH
-$EDITOR_PATH -quit -batchmode -logFile /tmp/erutan_unity_build.log -projectPath $UNITY_PROJECT_PATH -buildLinux64Player Builds/Linux -executeMethod Builds.BuildLinux
-```
-
-
-## Run
-
-
-```bash
-./Erutan.x86_64 & ./Erutan.x86_64 && fg
+make proto
+make build
+make run
 ```
 
 ## Features

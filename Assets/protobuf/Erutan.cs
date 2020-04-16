@@ -31,71 +31,70 @@ namespace Erutan {
             "cm90b2J1Zi5UaW1lc3RhbXAigwEKBE1lc2gSJQoIdmVydGljZXMYAiADKAsy",
             "Ey5wcm90b21ldHJ5LlZlY3Rvck4SDAoEdHJpcxgDIAMoBRIkCgdub3JtYWxz",
             "GAQgAygLMhMucHJvdG9tZXRyeS5WZWN0b3JOEiAKA3V2cxgFIAMoCzITLnBy",
-            "b3RvbWV0cnkuVmVjdG9yTiLVCAoJQ29tcG9uZW50EjEKBXNwYWNlGAEgASgL",
-            "MiAuZXJ1dGFuLkNvbXBvbmVudC5TcGFjZUNvbXBvbmVudEgAEjoKCnNwYWNl",
-            "X3RpbWUYAiABKAsyJC5lcnV0YW4uQ29tcG9uZW50LlNwYWNlVGltZUNvbXBv",
-            "bmVudEgAEjMKBmhlYWx0aBgDIAEoCzIhLmVydXRhbi5Db21wb25lbnQuSGVh",
-            "bHRoQ29tcG9uZW50SAASMQoFc3BlZWQYBCABKAsyIC5lcnV0YW4uQ29tcG9u",
-            "ZW50LlNwZWVkQ29tcG9uZW50SAASMwoGcmVuZGVyGAUgASgLMiEuZXJ1dGFu",
-            "LkNvbXBvbmVudC5SZW5kZXJDb21wb25lbnRIABJCCg5iZWhhdmlvdXJfdHlw",
-            "ZRgGIAEoCzIoLmVydXRhbi5Db21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBv",
-            "bmVudEgAEjUKB3BoeXNpY3MYByABKAsyIi5lcnV0YW4uQ29tcG9uZW50LlBo",
-            "eXNpY3NDb21wb25lbnRIABqiAQoOU3BhY2VDb21wb25lbnQSJQoIcG9zaXRp",
-            "b24YASABKAsyEy5wcm90b21ldHJ5LlZlY3Rvck4SKQoIcm90YXRpb24YAiAB",
-            "KAsyFy5wcm90b21ldHJ5LlF1YXRlcm5pb25OEiIKBXNjYWxlGAMgASgLMhMu",
-            "cHJvdG9tZXRyeS5WZWN0b3JOEhoKBG1lc2gYBCABKAsyDC5lcnV0YW4uTWVz",
-            "aBp0ChJTcGFjZVRpbWVDb21wb25lbnQSLQoJdGltZXN0YW1wGAEgASgLMhou",
-            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIvCgVzcGFjZRgCIAEoCzIgLmVy",
-            "dXRhbi5Db21wb25lbnQuU3BhY2VDb21wb25lbnQaHwoPSGVhbHRoQ29tcG9u",
-            "ZW50EgwKBGxpZmUYASABKAEaJAoOU3BlZWRDb21wb25lbnQSEgoKbW92ZV9z",
-            "cGVlZBgBIAEoARo2Cg9UYXJnZXRDb21wb25lbnQSIwoGdGFyZ2V0GAEgASgL",
-            "MhMucHJvdG9tZXRyeS5WZWN0b3JOGkoKD1JlbmRlckNvbXBvbmVudBILCgNy",
-            "ZWQYASABKAISDQoFZ3JlZW4YAiABKAISDAoEYmx1ZRgDIAEoAhINCgVhbHBo",
-            "YRgEIAEoAhqpAQoWQmVoYXZpb3VyVHlwZUNvbXBvbmVudBJOCg5iZWhhdmlv",
-            "dXJfdHlwZRgBIAEoDjI2LmVydXRhbi5Db21wb25lbnQuQmVoYXZpb3VyVHlw",
-            "ZUNvbXBvbmVudC5CZWhhdmlvdXJUeXBlIj8KDUJlaGF2aW91clR5cGUSBwoD",
-            "QU5ZEAASCgoGQU5JTUFMEAESDgoKVkVHRVRBVElPThACEgkKBURFQlVHEAMa",
-            "JwoQUGh5c2ljc0NvbXBvbmVudBITCgt1c2VfZ3Jhdml0eRgBIAEoCEIGCgR0",
-            "eXBlIq8ICgZQYWNrZXQSIgoIbWV0YWRhdGEYASABKAsyEC5lcnV0YW4uTWV0",
-            "YWRhdGESOgoNY3JlYXRlX2VudGl0eRgCIAEoCzIhLmVydXRhbi5QYWNrZXQu",
-            "Q3JlYXRlRW50aXR5UGFja2V0SAASOgoNdXBkYXRlX2VudGl0eRgDIAEoCzIh",
-            "LmVydXRhbi5QYWNrZXQuVXBkYXRlRW50aXR5UGFja2V0SAASPgoPdXBkYXRl",
-            "X3Bvc2l0aW9uGAQgASgLMiMuZXJ1dGFuLlBhY2tldC5VcGRhdGVQb3NpdGlv",
-            "blBhY2tldEgAEj4KD3VwZGF0ZV9yb3RhdGlvbhgFIAEoCzIjLmVydXRhbi5Q",
-            "YWNrZXQuVXBkYXRlUm90YXRpb25QYWNrZXRIABI8Cg5kZXN0cm95X2VudGl0",
-            "eRgGIAEoCzIiLmVydXRhbi5QYWNrZXQuRGVzdHJveUVudGl0eVBhY2tldEgA",
-            "EjoKDXVwZGF0ZV9hbmltYWwYByABKAsyIS5lcnV0YW4uUGFja2V0LlVwZGF0",
-            "ZUFuaW1hbFBhY2tldEgAEkIKEXVwZGF0ZV9wYXJhbWV0ZXJzGAggASgLMiUu",
-            "ZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0ZXJzUGFja2V0SAAaTgoSQ3Jl",
-            "YXRlRW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpjb21wb25l",
-            "bnRzGAIgAygLMhEuZXJ1dGFuLkNvbXBvbmVudBpOChJVcGRhdGVFbnRpdHlQ",
-            "YWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEiUKCmNvbXBvbmVudHMYAiADKAsy",
-            "ES5lcnV0YW4uQ29tcG9uZW50GlAKFFVwZGF0ZVBvc2l0aW9uUGFja2V0EhEK",
-            "CWVudGl0eV9pZBgBIAEoBBIlCghwb3NpdGlvbhgCIAEoCzITLnByb3RvbWV0",
-            "cnkuVmVjdG9yThpUChRVcGRhdGVSb3RhdGlvblBhY2tldBIRCgllbnRpdHlf",
-            "aWQYASABKAQSKQoIcm90YXRpb24YAiABKAsyFy5wcm90b21ldHJ5LlF1YXRl",
-            "cm5pb25OGigKE0Rlc3Ryb3lFbnRpdHlQYWNrZXQSEQoJZW50aXR5X2lkGAEg",
-            "ASgEGjUKElVwZGF0ZUFuaW1hbFBhY2tldBIRCgllbnRpdHlfaWQYASABKAQS",
-            "DAoEbGlmZRgCIAEoARqZAQoWVXBkYXRlUGFyYW1ldGVyc1BhY2tldBJDCgpw",
-            "YXJhbWV0ZXJzGAEgAygLMi8uZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0",
-            "ZXJzUGFja2V0LlBhcmFtZXRlcho6CglQYXJhbWV0ZXISFAoKdGltZV9zY2Fs",
-            "ZRgBIAEoAUgAEg8KBWRlYnVnGAIgASgISABCBgoEdHlwZUIGCgR0eXBlMjgK",
-            "BkVydXRhbhIuCgZTdHJlYW0SDi5lcnV0YW4uUGFja2V0Gg4uZXJ1dGFuLlBh",
-            "Y2tldCIAKAEwAUInWhxnaXRodWIuY29tL1RoZS1UZW5zb3gvZXJ1dGFuqgIG",
-            "RXJ1dGFuYgZwcm90bzM="));
+            "b3RvbWV0cnkuVmVjdG9yTiK4CAoJQ29tcG9uZW50EjEKBXNwYWNlGAEgASgL",
+            "MiAuZXJ1dGFuLkNvbXBvbmVudC5TcGFjZUNvbXBvbmVudEgAEjMKBmhlYWx0",
+            "aBgCIAEoCzIhLmVydXRhbi5Db21wb25lbnQuSGVhbHRoQ29tcG9uZW50SAAS",
+            "MQoFc3BlZWQYAyABKAsyIC5lcnV0YW4uQ29tcG9uZW50LlNwZWVkQ29tcG9u",
+            "ZW50SAASMwoGcmVuZGVyGAQgASgLMiEuZXJ1dGFuLkNvbXBvbmVudC5SZW5k",
+            "ZXJDb21wb25lbnRIABJCCg5iZWhhdmlvdXJfdHlwZRgFIAEoCzIoLmVydXRh",
+            "bi5Db21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBvbmVudEgAEjUKB3BoeXNp",
+            "Y3MYBiABKAsyIi5lcnV0YW4uQ29tcG9uZW50LlBoeXNpY3NDb21wb25lbnRI",
+            "ABJIChFuZXR3b3JrX2JlaGF2aW91chgHIAEoCzIrLmVydXRhbi5Db21wb25l",
+            "bnQuTmV0d29ya0JlaGF2aW91ckNvbXBvbmVudEgAGqIBCg5TcGFjZUNvbXBv",
+            "bmVudBIlCghwb3NpdGlvbhgBIAEoCzITLnByb3RvbWV0cnkuVmVjdG9yThIp",
+            "Cghyb3RhdGlvbhgCIAEoCzIXLnByb3RvbWV0cnkuUXVhdGVybmlvbk4SIgoF",
+            "c2NhbGUYAyABKAsyEy5wcm90b21ldHJ5LlZlY3Rvck4SGgoEbWVzaBgEIAEo",
+            "CzIMLmVydXRhbi5NZXNoGh8KD0hlYWx0aENvbXBvbmVudBIMCgRsaWZlGAEg",
+            "ASgBGiQKDlNwZWVkQ29tcG9uZW50EhIKCm1vdmVfc3BlZWQYASABKAEaNgoP",
+            "VGFyZ2V0Q29tcG9uZW50EiMKBnRhcmdldBgBIAEoCzITLnByb3RvbWV0cnku",
+            "VmVjdG9yThpKCg9SZW5kZXJDb21wb25lbnQSCwoDcmVkGAEgASgCEg0KBWdy",
+            "ZWVuGAIgASgCEgwKBGJsdWUYAyABKAISDQoFYWxwaGEYBCABKAIafwoWQmVo",
+            "YXZpb3VyVHlwZUNvbXBvbmVudBI5CgN0YWcYASABKA4yLC5lcnV0YW4uQ29t",
+            "cG9uZW50LkJlaGF2aW91clR5cGVDb21wb25lbnQuVGFnIioKA1RhZxIHCgNB",
+            "TlkQABIKCgZBTklNQUwQARIOCgpWRUdFVEFUSU9OEAIaJwoQUGh5c2ljc0Nv",
+            "bXBvbmVudBITCgt1c2VfZ3Jhdml0eRgBIAEoCBp0ChlOZXR3b3JrQmVoYXZp",
+            "b3VyQ29tcG9uZW50EjwKA3RhZxgBIAEoDjIvLmVydXRhbi5Db21wb25lbnQu",
+            "TmV0d29ya0JlaGF2aW91ckNvbXBvbmVudC5UYWciGQoDVGFnEgcKA0FMTBAA",
+            "EgkKBURFQlVHEAFCBgoEdHlwZSKvCAoGUGFja2V0EiIKCG1ldGFkYXRhGAEg",
+            "ASgLMhAuZXJ1dGFuLk1ldGFkYXRhEjoKDWNyZWF0ZV9lbnRpdHkYAiABKAsy",
+            "IS5lcnV0YW4uUGFja2V0LkNyZWF0ZUVudGl0eVBhY2tldEgAEjoKDXVwZGF0",
+            "ZV9lbnRpdHkYAyABKAsyIS5lcnV0YW4uUGFja2V0LlVwZGF0ZUVudGl0eVBh",
+            "Y2tldEgAEj4KD3VwZGF0ZV9wb3NpdGlvbhgEIAEoCzIjLmVydXRhbi5QYWNr",
+            "ZXQuVXBkYXRlUG9zaXRpb25QYWNrZXRIABI+Cg91cGRhdGVfcm90YXRpb24Y",
+            "BSABKAsyIy5lcnV0YW4uUGFja2V0LlVwZGF0ZVJvdGF0aW9uUGFja2V0SAAS",
+            "PAoOZGVzdHJveV9lbnRpdHkYBiABKAsyIi5lcnV0YW4uUGFja2V0LkRlc3Ry",
+            "b3lFbnRpdHlQYWNrZXRIABI6Cg11cGRhdGVfYW5pbWFsGAcgASgLMiEuZXJ1",
+            "dGFuLlBhY2tldC5VcGRhdGVBbmltYWxQYWNrZXRIABJCChF1cGRhdGVfcGFy",
+            "YW1ldGVycxgIIAEoCzIlLmVydXRhbi5QYWNrZXQuVXBkYXRlUGFyYW1ldGVy",
+            "c1BhY2tldEgAGk4KEkNyZWF0ZUVudGl0eVBhY2tldBIRCgllbnRpdHlfaWQY",
+            "ASABKAQSJQoKY29tcG9uZW50cxgCIAMoCzIRLmVydXRhbi5Db21wb25lbnQa",
+            "TgoSVXBkYXRlRW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpj",
+            "b21wb25lbnRzGAIgAygLMhEuZXJ1dGFuLkNvbXBvbmVudBpQChRVcGRhdGVQ",
+            "b3NpdGlvblBhY2tldBIRCgllbnRpdHlfaWQYASABKAQSJQoIcG9zaXRpb24Y",
+            "AiABKAsyEy5wcm90b21ldHJ5LlZlY3Rvck4aVAoUVXBkYXRlUm90YXRpb25Q",
+            "YWNrZXQSEQoJZW50aXR5X2lkGAEgASgEEikKCHJvdGF0aW9uGAIgASgLMhcu",
+            "cHJvdG9tZXRyeS5RdWF0ZXJuaW9uThooChNEZXN0cm95RW50aXR5UGFja2V0",
+            "EhEKCWVudGl0eV9pZBgBIAEoBBo1ChJVcGRhdGVBbmltYWxQYWNrZXQSEQoJ",
+            "ZW50aXR5X2lkGAEgASgEEgwKBGxpZmUYAiABKAEamQEKFlVwZGF0ZVBhcmFt",
+            "ZXRlcnNQYWNrZXQSQwoKcGFyYW1ldGVycxgBIAMoCzIvLmVydXRhbi5QYWNr",
+            "ZXQuVXBkYXRlUGFyYW1ldGVyc1BhY2tldC5QYXJhbWV0ZXIaOgoJUGFyYW1l",
+            "dGVyEhQKCnRpbWVfc2NhbGUYASABKAFIABIPCgVkZWJ1ZxgCIAEoCEgAQgYK",
+            "BHR5cGVCBgoEdHlwZTI4CgZFcnV0YW4SLgoGU3RyZWFtEg4uZXJ1dGFuLlBh",
+            "Y2tldBoOLmVydXRhbi5QYWNrZXQiACgBMAFCJ1ocZ2l0aHViLmNvbS9UaGUt",
+            "VGVuc294L2VydXRhbqoCBkVydXRhbmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Protometry.VectornReflection.Descriptor, global::Protometry.QuaternionnReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Metadata), global::Erutan.Metadata.Parser, new[]{ "Timestamp" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Mesh), global::Erutan.Mesh.Parser, new[]{ "Vertices", "Tris", "Normals", "Uvs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "SpaceTime", "Health", "Speed", "Render", "BehaviourType", "Physics" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Mesh" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceTimeComponent), global::Erutan.Component.Types.SpaceTimeComponent.Parser, new[]{ "Timestamp", "Space" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "Health", "Speed", "Render", "BehaviourType", "Physics", "NetworkBehaviour" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Mesh" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.HealthComponent), global::Erutan.Component.Types.HealthComponent.Parser, new[]{ "Life" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpeedComponent), global::Erutan.Component.Types.SpeedComponent.Parser, new[]{ "MoveSpeed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.TargetComponent), global::Erutan.Component.Types.TargetComponent.Parser, new[]{ "Target" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent), global::Erutan.Component.Types.RenderComponent.Parser, new[]{ "Red", "Green", "Blue", "Alpha" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.BehaviourTypeComponent), global::Erutan.Component.Types.BehaviourTypeComponent.Parser, new[]{ "BehaviourType" }, null, new[]{ typeof(global::Erutan.Component.Types.BehaviourTypeComponent.Types.BehaviourType) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.PhysicsComponent), global::Erutan.Component.Types.PhysicsComponent.Parser, new[]{ "UseGravity" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.BehaviourTypeComponent), global::Erutan.Component.Types.BehaviourTypeComponent.Parser, new[]{ "Tag" }, null, new[]{ typeof(global::Erutan.Component.Types.BehaviourTypeComponent.Types.Tag) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.PhysicsComponent), global::Erutan.Component.Types.PhysicsComponent.Parser, new[]{ "UseGravity" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.NetworkBehaviourComponent), global::Erutan.Component.Types.NetworkBehaviourComponent.Parser, new[]{ "Tag" }, null, new[]{ typeof(global::Erutan.Component.Types.NetworkBehaviourComponent.Types.Tag) }, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet), global::Erutan.Packet.Parser, new[]{ "Metadata", "CreateEntity", "UpdateEntity", "UpdatePosition", "UpdateRotation", "DestroyEntity", "UpdateAnimal", "UpdateParameters" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.CreateEntityPacket), global::Erutan.Packet.Types.CreateEntityPacket.Parser, new[]{ "EntityId", "Components" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdateEntityPacket), global::Erutan.Packet.Types.UpdateEntityPacket.Parser, new[]{ "EntityId", "Components" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Packet.Types.UpdatePositionPacket), global::Erutan.Packet.Types.UpdatePositionPacket.Parser, new[]{ "EntityId", "Position" }, null, null, null),
@@ -461,9 +460,6 @@ namespace Erutan {
         case TypeOneofCase.Space:
           Space = other.Space.Clone();
           break;
-        case TypeOneofCase.SpaceTime:
-          SpaceTime = other.SpaceTime.Clone();
-          break;
         case TypeOneofCase.Health:
           Health = other.Health.Clone();
           break;
@@ -478,6 +474,9 @@ namespace Erutan {
           break;
         case TypeOneofCase.Physics:
           Physics = other.Physics.Clone();
+          break;
+        case TypeOneofCase.NetworkBehaviour:
+          NetworkBehaviour = other.NetworkBehaviour.Clone();
           break;
       }
 
@@ -500,19 +499,8 @@ namespace Erutan {
       }
     }
 
-    /// <summary>Field number for the "space_time" field.</summary>
-    public const int SpaceTimeFieldNumber = 2;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Erutan.Component.Types.SpaceTimeComponent SpaceTime {
-      get { return typeCase_ == TypeOneofCase.SpaceTime ? (global::Erutan.Component.Types.SpaceTimeComponent) type_ : null; }
-      set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.SpaceTime;
-      }
-    }
-
     /// <summary>Field number for the "health" field.</summary>
-    public const int HealthFieldNumber = 3;
+    public const int HealthFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Erutan.Component.Types.HealthComponent Health {
       get { return typeCase_ == TypeOneofCase.Health ? (global::Erutan.Component.Types.HealthComponent) type_ : null; }
@@ -523,7 +511,7 @@ namespace Erutan {
     }
 
     /// <summary>Field number for the "speed" field.</summary>
-    public const int SpeedFieldNumber = 4;
+    public const int SpeedFieldNumber = 3;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Erutan.Component.Types.SpeedComponent Speed {
       get { return typeCase_ == TypeOneofCase.Speed ? (global::Erutan.Component.Types.SpeedComponent) type_ : null; }
@@ -534,7 +522,7 @@ namespace Erutan {
     }
 
     /// <summary>Field number for the "render" field.</summary>
-    public const int RenderFieldNumber = 5;
+    public const int RenderFieldNumber = 4;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Erutan.Component.Types.RenderComponent Render {
       get { return typeCase_ == TypeOneofCase.Render ? (global::Erutan.Component.Types.RenderComponent) type_ : null; }
@@ -545,7 +533,7 @@ namespace Erutan {
     }
 
     /// <summary>Field number for the "behaviour_type" field.</summary>
-    public const int BehaviourTypeFieldNumber = 6;
+    public const int BehaviourTypeFieldNumber = 5;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Erutan.Component.Types.BehaviourTypeComponent BehaviourType {
       get { return typeCase_ == TypeOneofCase.BehaviourType ? (global::Erutan.Component.Types.BehaviourTypeComponent) type_ : null; }
@@ -556,7 +544,7 @@ namespace Erutan {
     }
 
     /// <summary>Field number for the "physics" field.</summary>
-    public const int PhysicsFieldNumber = 7;
+    public const int PhysicsFieldNumber = 6;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Erutan.Component.Types.PhysicsComponent Physics {
       get { return typeCase_ == TypeOneofCase.Physics ? (global::Erutan.Component.Types.PhysicsComponent) type_ : null; }
@@ -566,17 +554,28 @@ namespace Erutan {
       }
     }
 
+    /// <summary>Field number for the "network_behaviour" field.</summary>
+    public const int NetworkBehaviourFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Erutan.Component.Types.NetworkBehaviourComponent NetworkBehaviour {
+      get { return typeCase_ == TypeOneofCase.NetworkBehaviour ? (global::Erutan.Component.Types.NetworkBehaviourComponent) type_ : null; }
+      set {
+        type_ = value;
+        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.NetworkBehaviour;
+      }
+    }
+
     private object type_;
     /// <summary>Enum of possible cases for the "type" oneof.</summary>
     public enum TypeOneofCase {
       None = 0,
       Space = 1,
-      SpaceTime = 2,
-      Health = 3,
-      Speed = 4,
-      Render = 5,
-      BehaviourType = 6,
-      Physics = 7,
+      Health = 2,
+      Speed = 3,
+      Render = 4,
+      BehaviourType = 5,
+      Physics = 6,
+      NetworkBehaviour = 7,
     }
     private TypeOneofCase typeCase_ = TypeOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -604,12 +603,12 @@ namespace Erutan {
         return true;
       }
       if (!object.Equals(Space, other.Space)) return false;
-      if (!object.Equals(SpaceTime, other.SpaceTime)) return false;
       if (!object.Equals(Health, other.Health)) return false;
       if (!object.Equals(Speed, other.Speed)) return false;
       if (!object.Equals(Render, other.Render)) return false;
       if (!object.Equals(BehaviourType, other.BehaviourType)) return false;
       if (!object.Equals(Physics, other.Physics)) return false;
+      if (!object.Equals(NetworkBehaviour, other.NetworkBehaviour)) return false;
       if (TypeCase != other.TypeCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -618,12 +617,12 @@ namespace Erutan {
     public override int GetHashCode() {
       int hash = 1;
       if (typeCase_ == TypeOneofCase.Space) hash ^= Space.GetHashCode();
-      if (typeCase_ == TypeOneofCase.SpaceTime) hash ^= SpaceTime.GetHashCode();
       if (typeCase_ == TypeOneofCase.Health) hash ^= Health.GetHashCode();
       if (typeCase_ == TypeOneofCase.Speed) hash ^= Speed.GetHashCode();
       if (typeCase_ == TypeOneofCase.Render) hash ^= Render.GetHashCode();
       if (typeCase_ == TypeOneofCase.BehaviourType) hash ^= BehaviourType.GetHashCode();
       if (typeCase_ == TypeOneofCase.Physics) hash ^= Physics.GetHashCode();
+      if (typeCase_ == TypeOneofCase.NetworkBehaviour) hash ^= NetworkBehaviour.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -642,29 +641,29 @@ namespace Erutan {
         output.WriteRawTag(10);
         output.WriteMessage(Space);
       }
-      if (typeCase_ == TypeOneofCase.SpaceTime) {
-        output.WriteRawTag(18);
-        output.WriteMessage(SpaceTime);
-      }
       if (typeCase_ == TypeOneofCase.Health) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(Health);
       }
       if (typeCase_ == TypeOneofCase.Speed) {
-        output.WriteRawTag(34);
+        output.WriteRawTag(26);
         output.WriteMessage(Speed);
       }
       if (typeCase_ == TypeOneofCase.Render) {
-        output.WriteRawTag(42);
+        output.WriteRawTag(34);
         output.WriteMessage(Render);
       }
       if (typeCase_ == TypeOneofCase.BehaviourType) {
-        output.WriteRawTag(50);
+        output.WriteRawTag(42);
         output.WriteMessage(BehaviourType);
       }
       if (typeCase_ == TypeOneofCase.Physics) {
-        output.WriteRawTag(58);
+        output.WriteRawTag(50);
         output.WriteMessage(Physics);
+      }
+      if (typeCase_ == TypeOneofCase.NetworkBehaviour) {
+        output.WriteRawTag(58);
+        output.WriteMessage(NetworkBehaviour);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -676,9 +675,6 @@ namespace Erutan {
       int size = 0;
       if (typeCase_ == TypeOneofCase.Space) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Space);
-      }
-      if (typeCase_ == TypeOneofCase.SpaceTime) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpaceTime);
       }
       if (typeCase_ == TypeOneofCase.Health) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Health);
@@ -694,6 +690,9 @@ namespace Erutan {
       }
       if (typeCase_ == TypeOneofCase.Physics) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Physics);
+      }
+      if (typeCase_ == TypeOneofCase.NetworkBehaviour) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NetworkBehaviour);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -712,12 +711,6 @@ namespace Erutan {
             Space = new global::Erutan.Component.Types.SpaceComponent();
           }
           Space.MergeFrom(other.Space);
-          break;
-        case TypeOneofCase.SpaceTime:
-          if (SpaceTime == null) {
-            SpaceTime = new global::Erutan.Component.Types.SpaceTimeComponent();
-          }
-          SpaceTime.MergeFrom(other.SpaceTime);
           break;
         case TypeOneofCase.Health:
           if (Health == null) {
@@ -749,6 +742,12 @@ namespace Erutan {
           }
           Physics.MergeFrom(other.Physics);
           break;
+        case TypeOneofCase.NetworkBehaviour:
+          if (NetworkBehaviour == null) {
+            NetworkBehaviour = new global::Erutan.Component.Types.NetworkBehaviourComponent();
+          }
+          NetworkBehaviour.MergeFrom(other.NetworkBehaviour);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -772,15 +771,6 @@ namespace Erutan {
             break;
           }
           case 18: {
-            global::Erutan.Component.Types.SpaceTimeComponent subBuilder = new global::Erutan.Component.Types.SpaceTimeComponent();
-            if (typeCase_ == TypeOneofCase.SpaceTime) {
-              subBuilder.MergeFrom(SpaceTime);
-            }
-            input.ReadMessage(subBuilder);
-            SpaceTime = subBuilder;
-            break;
-          }
-          case 26: {
             global::Erutan.Component.Types.HealthComponent subBuilder = new global::Erutan.Component.Types.HealthComponent();
             if (typeCase_ == TypeOneofCase.Health) {
               subBuilder.MergeFrom(Health);
@@ -789,7 +779,7 @@ namespace Erutan {
             Health = subBuilder;
             break;
           }
-          case 34: {
+          case 26: {
             global::Erutan.Component.Types.SpeedComponent subBuilder = new global::Erutan.Component.Types.SpeedComponent();
             if (typeCase_ == TypeOneofCase.Speed) {
               subBuilder.MergeFrom(Speed);
@@ -798,7 +788,7 @@ namespace Erutan {
             Speed = subBuilder;
             break;
           }
-          case 42: {
+          case 34: {
             global::Erutan.Component.Types.RenderComponent subBuilder = new global::Erutan.Component.Types.RenderComponent();
             if (typeCase_ == TypeOneofCase.Render) {
               subBuilder.MergeFrom(Render);
@@ -807,7 +797,7 @@ namespace Erutan {
             Render = subBuilder;
             break;
           }
-          case 50: {
+          case 42: {
             global::Erutan.Component.Types.BehaviourTypeComponent subBuilder = new global::Erutan.Component.Types.BehaviourTypeComponent();
             if (typeCase_ == TypeOneofCase.BehaviourType) {
               subBuilder.MergeFrom(BehaviourType);
@@ -816,13 +806,22 @@ namespace Erutan {
             BehaviourType = subBuilder;
             break;
           }
-          case 58: {
+          case 50: {
             global::Erutan.Component.Types.PhysicsComponent subBuilder = new global::Erutan.Component.Types.PhysicsComponent();
             if (typeCase_ == TypeOneofCase.Physics) {
               subBuilder.MergeFrom(Physics);
             }
             input.ReadMessage(subBuilder);
             Physics = subBuilder;
+            break;
+          }
+          case 58: {
+            global::Erutan.Component.Types.NetworkBehaviourComponent subBuilder = new global::Erutan.Component.Types.NetworkBehaviourComponent();
+            if (typeCase_ == TypeOneofCase.NetworkBehaviour) {
+              subBuilder.MergeFrom(NetworkBehaviour);
+            }
+            input.ReadMessage(subBuilder);
+            NetworkBehaviour = subBuilder;
             break;
           }
         }
@@ -906,6 +905,9 @@ namespace Erutan {
         /// <summary>Field number for the "mesh" field.</summary>
         public const int MeshFieldNumber = 4;
         private global::Erutan.Mesh mesh_;
+        /// <summary>
+        /// TODO: maybe should be moved to render
+        /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public global::Erutan.Mesh Mesh {
           get { return mesh_; }
@@ -1070,175 +1072,6 @@ namespace Erutan {
 
       }
 
-      public sealed partial class SpaceTimeComponent : pb::IMessage<SpaceTimeComponent> {
-        private static readonly pb::MessageParser<SpaceTimeComponent> _parser = new pb::MessageParser<SpaceTimeComponent>(() => new SpaceTimeComponent());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<SpaceTimeComponent> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[1]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public SpaceTimeComponent() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public SpaceTimeComponent(SpaceTimeComponent other) : this() {
-          timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
-          space_ = other.space_ != null ? other.space_.Clone() : null;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public SpaceTimeComponent Clone() {
-          return new SpaceTimeComponent(this);
-        }
-
-        /// <summary>Field number for the "timestamp" field.</summary>
-        public const int TimestampFieldNumber = 1;
-        private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
-          get { return timestamp_; }
-          set {
-            timestamp_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "space" field.</summary>
-        public const int SpaceFieldNumber = 2;
-        private global::Erutan.Component.Types.SpaceComponent space_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Erutan.Component.Types.SpaceComponent Space {
-          get { return space_; }
-          set {
-            space_ = value;
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override bool Equals(object other) {
-          return Equals(other as SpaceTimeComponent);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(SpaceTimeComponent other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (!object.Equals(Timestamp, other.Timestamp)) return false;
-          if (!object.Equals(Space, other.Space)) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
-          if (space_ != null) hash ^= Space.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void WriteTo(pb::CodedOutputStream output) {
-          if (timestamp_ != null) {
-            output.WriteRawTag(10);
-            output.WriteMessage(Timestamp);
-          }
-          if (space_ != null) {
-            output.WriteRawTag(18);
-            output.WriteMessage(Space);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public int CalculateSize() {
-          int size = 0;
-          if (timestamp_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
-          }
-          if (space_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Space);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(SpaceTimeComponent other) {
-          if (other == null) {
-            return;
-          }
-          if (other.timestamp_ != null) {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            Timestamp.MergeFrom(other.Timestamp);
-          }
-          if (other.space_ != null) {
-            if (space_ == null) {
-              Space = new global::Erutan.Component.Types.SpaceComponent();
-            }
-            Space.MergeFrom(other.Space);
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(pb::CodedInputStream input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 10: {
-                if (timestamp_ == null) {
-                  Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-                }
-                input.ReadMessage(Timestamp);
-                break;
-              }
-              case 18: {
-                if (space_ == null) {
-                  Space = new global::Erutan.Component.Types.SpaceComponent();
-                }
-                input.ReadMessage(Space);
-                break;
-              }
-            }
-          }
-        }
-
-      }
-
       public sealed partial class HealthComponent : pb::IMessage<HealthComponent> {
         private static readonly pb::MessageParser<HealthComponent> _parser = new pb::MessageParser<HealthComponent>(() => new HealthComponent());
         private pb::UnknownFieldSet _unknownFields;
@@ -1247,7 +1080,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[2]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1376,7 +1209,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[3]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1505,7 +1338,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[4]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1640,7 +1473,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[5]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1846,7 +1679,7 @@ namespace Erutan {
       }
 
       /// <summary>
-      /// Acts as a sort of tag, see if we could do something cleaner
+      /// Acts as a sort of tag
       /// </summary>
       public sealed partial class BehaviourTypeComponent : pb::IMessage<BehaviourTypeComponent> {
         private static readonly pb::MessageParser<BehaviourTypeComponent> _parser = new pb::MessageParser<BehaviourTypeComponent>(() => new BehaviourTypeComponent());
@@ -1856,7 +1689,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[6]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1873,7 +1706,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public BehaviourTypeComponent(BehaviourTypeComponent other) : this() {
-          behaviourType_ = other.behaviourType_;
+          tag_ = other.tag_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1882,14 +1715,14 @@ namespace Erutan {
           return new BehaviourTypeComponent(this);
         }
 
-        /// <summary>Field number for the "behaviour_type" field.</summary>
-        public const int BehaviourTypeFieldNumber = 1;
-        private global::Erutan.Component.Types.BehaviourTypeComponent.Types.BehaviourType behaviourType_ = 0;
+        /// <summary>Field number for the "tag" field.</summary>
+        public const int TagFieldNumber = 1;
+        private global::Erutan.Component.Types.BehaviourTypeComponent.Types.Tag tag_ = 0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Erutan.Component.Types.BehaviourTypeComponent.Types.BehaviourType BehaviourType {
-          get { return behaviourType_; }
+        public global::Erutan.Component.Types.BehaviourTypeComponent.Types.Tag Tag {
+          get { return tag_; }
           set {
-            behaviourType_ = value;
+            tag_ = value;
           }
         }
 
@@ -1906,14 +1739,14 @@ namespace Erutan {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (BehaviourType != other.BehaviourType) return false;
+          if (Tag != other.Tag) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (BehaviourType != 0) hash ^= BehaviourType.GetHashCode();
+          if (Tag != 0) hash ^= Tag.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1927,9 +1760,9 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (BehaviourType != 0) {
+          if (Tag != 0) {
             output.WriteRawTag(8);
-            output.WriteEnum((int) BehaviourType);
+            output.WriteEnum((int) Tag);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -1939,8 +1772,8 @@ namespace Erutan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (BehaviourType != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BehaviourType);
+          if (Tag != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Tag);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1953,8 +1786,8 @@ namespace Erutan {
           if (other == null) {
             return;
           }
-          if (other.BehaviourType != 0) {
-            BehaviourType = other.BehaviourType;
+          if (other.Tag != 0) {
+            Tag = other.Tag;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1968,7 +1801,7 @@ namespace Erutan {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 8: {
-                BehaviourType = (global::Erutan.Component.Types.BehaviourTypeComponent.Types.BehaviourType) input.ReadEnum();
+                Tag = (global::Erutan.Component.Types.BehaviourTypeComponent.Types.Tag) input.ReadEnum();
                 break;
               }
             }
@@ -1979,11 +1812,10 @@ namespace Erutan {
         /// <summary>Container for nested types declared in the BehaviourTypeComponent message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Types {
-          public enum BehaviourType {
+          public enum Tag {
             [pbr::OriginalName("ANY")] Any = 0,
             [pbr::OriginalName("ANIMAL")] Animal = 1,
             [pbr::OriginalName("VEGETATION")] Vegetation = 2,
-            [pbr::OriginalName("DEBUG")] Debug = 3,
           }
 
         }
@@ -1999,7 +1831,7 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Erutan.Component.Descriptor.NestedTypes[7]; }
+          get { return global::Erutan.Component.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2117,6 +1949,153 @@ namespace Erutan {
             }
           }
         }
+
+      }
+
+      /// <summary>
+      /// Some information about how this object should be synchronized
+      /// </summary>
+      public sealed partial class NetworkBehaviourComponent : pb::IMessage<NetworkBehaviourComponent> {
+        private static readonly pb::MessageParser<NetworkBehaviourComponent> _parser = new pb::MessageParser<NetworkBehaviourComponent>(() => new NetworkBehaviourComponent());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<NetworkBehaviourComponent> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Erutan.Component.Descriptor.NestedTypes[7]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public NetworkBehaviourComponent() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public NetworkBehaviourComponent(NetworkBehaviourComponent other) : this() {
+          tag_ = other.tag_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public NetworkBehaviourComponent Clone() {
+          return new NetworkBehaviourComponent(this);
+        }
+
+        /// <summary>Field number for the "tag" field.</summary>
+        public const int TagFieldNumber = 1;
+        private global::Erutan.Component.Types.NetworkBehaviourComponent.Types.Tag tag_ = 0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Erutan.Component.Types.NetworkBehaviourComponent.Types.Tag Tag {
+          get { return tag_; }
+          set {
+            tag_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as NetworkBehaviourComponent);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(NetworkBehaviourComponent other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Tag != other.Tag) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Tag != 0) hash ^= Tag.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (Tag != 0) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Tag);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (Tag != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Tag);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(NetworkBehaviourComponent other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Tag != 0) {
+            Tag = other.Tag;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Tag = (global::Erutan.Component.Types.NetworkBehaviourComponent.Types.Tag) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        }
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the NetworkBehaviourComponent message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static partial class Types {
+          /// <summary>
+          /// Some kind of filter, should an object be considered debug thing or normal or hack mode: show only clients :p
+          /// </summary>
+          public enum Tag {
+            [pbr::OriginalName("ALL")] All = 0,
+            [pbr::OriginalName("DEBUG")] Debug = 1,
+          }
+
+        }
+        #endregion
 
       }
 

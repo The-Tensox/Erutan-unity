@@ -19,33 +19,13 @@ build:
 
 
 run:
-		go run .
+	./Builds/Linux/Erutan.x86_64
 
 proto:
-		protoc --go_out=plugins=grpc:. protobuf/protometry/*.proto --go_opt=paths=source_relative
-		protoc --go_out=plugins=grpc:. protobuf/*.proto --go_opt=paths=source_relative
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	# TODO: fix this need for cd Assets later :)
+	cd Assets; protoc --csharp_out=protobuf/protometry protobuf/protometry/*.proto --grpc_out=protobuf/protometry \
+		--plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
+	cd Assets; protoc --csharp_out=protobuf protobuf/*.proto --grpc_out=protobuf \
+		--plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
 
 default: dbuild
