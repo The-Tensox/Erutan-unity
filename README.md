@@ -22,6 +22,13 @@ make build
 make run
 ```
 
+
+```bash
+# Monitor logs
+tail -f ~/.config/unity3d/com.erutan/Erutan/Player.log
+```
+
+
 ## Features
 
 - Stateless front-end

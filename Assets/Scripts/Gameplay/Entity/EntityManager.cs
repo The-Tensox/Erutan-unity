@@ -9,36 +9,25 @@ namespace Erutan.Scripts.Gameplay.Entity
 {
     public class EntityManager : Singleton<EntityManager>
     {
-        [SerializeField]
-        private GameObject CubePrefab;
-        private Dictionary<ulong, Entity> _entities;
-
-        public Dictionary<ulong, Entity> Entities { get => _entities; set => _entities = value; }
-
-
+        public Dictionary<ulong, Entity> Entities { get; private set; }
 
         #region MONO
 
         private void Start()
         {
             Entities = new Dictionary<ulong, Entity>();
-            Pool.Preload(CubePrefab, 20);
-            GameplayManager.Instance.OnEntityCreated += CreateEntity;
             GameplayManager.Instance.OnEntityUpdated += UpdateEntity;
             GameplayManager.Instance.OnEntityMoved += MoveEntity;
             GameplayManager.Instance.OnEntityRotated += RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed += DestroyEntity;
-            GameplayManager.Instance.OnAnimalUpdated += AnimalUpdated;
         }
 
         protected override void OnDestroy()
         {
-            GameplayManager.Instance.OnEntityCreated -= CreateEntity;
             GameplayManager.Instance.OnEntityUpdated -= UpdateEntity;
             GameplayManager.Instance.OnEntityMoved -= MoveEntity;
             GameplayManager.Instance.OnEntityRotated -= RotateEntity;
             GameplayManager.Instance.OnEntityDestroyed -= DestroyEntity;
-            GameplayManager.Instance.OnAnimalUpdated -= AnimalUpdated;
         }
 
         #endregion
@@ -50,17 +39,24 @@ namespace Erutan.Scripts.Gameplay.Entity
         #region PRIVATE METHODS
 
         /// <summary>
-        /// Spawns new unit and adds it to dictionary
+        /// Update entity (~=POST + PUT)
         /// </summary>
         /// <param name="packet"></param>
-        private void CreateEntity(CreateEntityPacket packet)
+        private void UpdateEntity(UpdateEntityPacket packet)
         {
+            Entity entity = null;
             var position = Vector3.zero;
             var rotation = Quaternion.identity;
-            Vector3 scale = Vector3.zero;
-            Color color = Color.white;
+            var scale = Vector3.zero;
+            var color = Color.white;
             Mesh mesh = null;
-            //Record.Log($"Packet {packet.Components}");
+            
+            // Update entity case
+            if (Entities.ContainsKey(packet.EntityId))
+            {
+                entity = Entities[packet.EntityId];
+            }
+
             foreach(var c in packet.Components) {
                 switch (c.TypeCase) {
                     case Component.TypeOneofCase.Space:
@@ -70,56 +66,34 @@ namespace Erutan.Scripts.Gameplay.Entity
                         mesh = c.Space.Mesh;
                         break;
                     case Component.TypeOneofCase.Render:
-                        color = new Color(c.Render.Red, c.Render.Green, c.Render.Blue, c.Render.Alpha);
-                        break;
-                }
-            }
-
-            // TODO: could handle the case "null shape"
-            var entity = InstanciateMesh(mesh, color).AddComponent<Entity>();
-
-            //var entity = Pool.Spawn(CubePrefab, position, rotation).GetComponent<Entity>(); 
-            entity.transform.position = position;
-            entity.transform.rotation = rotation;
-            entity.transform.localScale = scale;
-            entity.Id = packet.EntityId;
-            entity.gameObject.name = $"{entity.Id}";
-            entity.Components = packet.Components;
-            Entities[entity.Id] = entity;
-        }
-
-        /// <summary>
-        /// Update entity
-        /// </summary>
-        /// <param name="packet"></param>
-        private void UpdateEntity(UpdateEntityPacket packet)
-        {
-            var entity = Entities[packet.EntityId];
-            entity.Components = packet.Components;
-            foreach(var c in packet.Components) {
-                switch (c.TypeCase) {
-                    case Component.TypeOneofCase.Space:
-                        var position = c.Space.Position.ToVector3();
-                        var rotation = c.Space.Rotation.ToQuaternion();
-                        var scale = c.Space.Scale.ToVector3();
-                        entity.transform.position = position;
-                        entity.transform.rotation = rotation;
-                        entity.transform.localScale = scale;
-                        break;
-                    case Component.TypeOneofCase.Render:
-                        entity.GetComponent<Renderer>().material.color = new Color(c.Render.Red,
-                            c.Render.Green, 
-                            c.Render.Blue, 
-                            c.Render.Alpha);
+                        color = c.Render.ToColor();
                         break;
                     case Component.TypeOneofCase.Health:
-                        var renderer = entity.GetComponent<Renderer>();
-                        var color = renderer.material.color;
-                        color.r = (float)(Mathf.Clamp(4.0f*(float)(c.Health.Life) / 100f, 0.2f, 0.8f));
-                        renderer.material.color = color;
+                        if (entity)
+                        {
+                            var renderer = entity.GetComponent<Renderer>();
+                            color = renderer.material.color;
+                            color.r = Mathf.Clamp(4.0f * (float) c.Health.Life / 100f, 0.2f, 0.8f);
+                            renderer.material.color = color;
+                        }
                         break;
                 }
             }
+
+            // Create entity case
+            if (!entity)
+            {
+                entity = InstanciateMesh(mesh, color).AddComponent<Entity>();
+                entity.Id = packet.EntityId;
+                entity.gameObject.name = $"{entity.Id}";
+                Entities[entity.Id] = entity;
+            }
+
+            var transform1 = entity.transform;
+            transform1.position = position;
+            transform1.rotation = rotation;
+            transform1.localScale = scale;
+            entity.Components = packet.Components;
         }
 
         /// <summary>
@@ -146,21 +120,13 @@ namespace Erutan.Scripts.Gameplay.Entity
         {
             if (Entities.ContainsKey(packet.EntityId)) {
                 var entity = Entities[packet.EntityId];
+                Destroy(entity.gameObject);
                 Entities.Remove(packet.EntityId);
-                Pool.Despawn(entity.gameObject);
             } else {
-                Record.Log($"Tried to destroy inexistant entity");
+                Record.Log($"Tried to destroy in-existent entity");
             }
         }
-
-        private void AnimalUpdated(UpdateAnimalPacket packet)
-        {
-            var eater = Entities[packet.EntityId];
-            var renderer = eater.GetComponent<Renderer>();
-            var color = renderer.material.color;
-            color.r = (float)(0.4f + packet.Life / 100f);
-            renderer.material.color = color;
-        }
+        
 
         #endregion
 
@@ -170,7 +136,7 @@ namespace Erutan.Scripts.Gameplay.Entity
             
             // Override standard shader to allow transparency
             var m = new Material(Shader.Find("Standard")) {color = color};
-            // m.SetOverrideTag("RenderType", "Transparent");
+            m.SetOverrideTag("RenderType", "Transparent");
             // m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
             // m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
             // m.SetInt("_ZWrite", 0);

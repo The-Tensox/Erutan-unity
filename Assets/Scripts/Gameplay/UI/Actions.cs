@@ -49,7 +49,7 @@ namespace Erutan.Scripts.Gameplay.UI
             if (!Physics.Raycast(ray, out var hit, 1000.0f))
                 return;
             var p = new Packet {Metadata = new Metadata()};
-            var t = new Packet.Types.CreateEntityPacket();
+            var t = new Packet.Types.UpdateEntityPacket();
             var c = new Component
             {
                 Space = new Component.Types.SpaceComponent()
@@ -62,7 +62,7 @@ namespace Erutan.Scripts.Gameplay.UI
             };
             t.Components.Add(c);
 
-            p.CreateEntity = t;
+            p.UpdateEntity = t;
             SessionManager.Instance.Client.Send(p);
         }
     }

@@ -15,14 +15,10 @@ namespace Erutan.Scripts.Gameplay
         public event Action OnGameStarted;
 
         // Physical world 
-        public event Action<CreateEntityPacket> OnEntityCreated;
         public event Action<UpdateEntityPacket> OnEntityUpdated;
         public event Action<UpdatePositionPacket> OnEntityMoved;
         public event Action<UpdateRotationPacket> OnEntityRotated;
         public event Action<DestroyEntityPacket> OnEntityDestroyed;
-
-        // Animals & Environment
-        public event Action<UpdateAnimalPacket> OnAnimalUpdated;
 
 
         #endregion
@@ -41,9 +37,6 @@ namespace Erutan.Scripts.Gameplay
         private void Handler(Packet packet) {
             //Record.Log($"Receiving packet: {packet.TypeCase}");
             switch (packet.TypeCase) {
-                case Packet.TypeOneofCase.CreateEntity:
-                    OnEntityCreated?.Invoke(packet.CreateEntity);
-                    break;
                 case Packet.TypeOneofCase.UpdateEntity:
                     OnEntityUpdated?.Invoke(packet.UpdateEntity);
                     break;
@@ -55,9 +48,6 @@ namespace Erutan.Scripts.Gameplay
                     break;
                 case Packet.TypeOneofCase.DestroyEntity:
                     OnEntityDestroyed?.Invoke(packet.DestroyEntity);
-                    break;
-                case Packet.TypeOneofCase.UpdateAnimal:
-                    OnAnimalUpdated?.Invoke(packet.UpdateAnimal);
                     break;
                 default:
                     // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions

@@ -98,8 +98,6 @@ namespace Erutan.Scripts.Sessions
             _listenerThread.IsBackground = true;
             _listenerThread.Start();
             
-            //SpamServer();
-
             Connected?.Invoke();
             IsConnected = true;
         }

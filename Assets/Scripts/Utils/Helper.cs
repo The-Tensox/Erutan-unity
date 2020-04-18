@@ -61,5 +61,10 @@ namespace Erutan.Scripts.Utils
         {
             return new Vector2(v.GetF(0), v.GetF(1));
         }
+        
+        public static Color ToColor(this Component.Types.RenderComponent c) 
+        {
+            return new Color(c.Red, c.Green, c.Blue, c.Alpha);
+        }
     }
 }
