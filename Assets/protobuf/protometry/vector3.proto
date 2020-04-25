@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package protometry;
+option go_package = "github.com/The-Tensox/protometry";
+option csharp_namespace = "Protometry";
+
+
+message Vector3 {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}

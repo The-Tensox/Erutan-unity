@@ -37,7 +37,7 @@ namespace Erutan.Scripts.Gameplay.UI
         public void StartDraggingCreateObject() {
             _isDragging = true;
             _draggedObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            _draggedObject.transform.localScale = new Vector3(5, 5, 5);
+            _draggedObject.transform.localScale = new UnityEngine.Vector3(5, 5, 5);
             _draggedObject.GetComponent<Renderer>().material.color = Color.red;
         }
         
@@ -50,15 +50,31 @@ namespace Erutan.Scripts.Gameplay.UI
                 return;
             var p = new Packet {Metadata = new Metadata()};
             var t = new Packet.Types.UpdateEntityPacket();
-            var c = new Component
+            var c = new Component();
+            var pos = new Protometry.Vector3
             {
-                Space = new Component.Types.SpaceComponent()
-                {
-                    Position =
-                        Helper.VectorN(new double[] {hit.transform.position.x, 1, hit.transform.position.z}),
-                    Rotation = Helper.QuaternionN(new double[]{ 0, 0, 0, 0}),
-                    Scale = Helper.VectorN(new double[] {1, 1, 1})
-                }
+                X = hit.transform.position.x,
+                Y = 1,
+                Z = hit.transform.position.z
+            };
+            var rot = new Protometry.Quaternion
+            {
+                X = 0,
+                Y = 0,
+                Z = 0,
+                W = 0
+            };
+            var sca = new Protometry.Vector3
+            {
+                X = 1,
+                Y = 1,
+                Z = 1
+            };
+            c.Space = new Component.Types.SpaceComponent
+            {
+                Position = pos,
+                Rotation = rot,
+                Scale = sca
             };
             t.Components.Add(c);
 

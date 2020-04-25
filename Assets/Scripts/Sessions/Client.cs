@@ -56,23 +56,22 @@ namespace Erutan.Scripts.Sessions
         {
             Host = host;
             Port = port;
-            // _channel = new Channel($"{host}:{port}", ChannelCredentials.Insecure);
         }
 
         public async void Init() {
             // Add client cert to the handler
-            AsyncAuthInterceptor asyncAuthInterceptor = (context, metadata) =>
-                  {
-                      return Task.Run(() => {
-                          metadata.Add("Authorization", $"Bearer {_token}");
-                      });
-                  };
-                  
+            Task AsyncAuthInterceptor(AuthInterceptorContext context, Grpc.Core.Metadata metadata)
+            {
+                return Task.Run(() => { metadata.Add("Authorization", $"Bearer {_token}"); });
+            }
+
             var channelCredentials = new SslCredentials(File.ReadAllText($"{Application.streamingAssetsPath}/server1.crt"));//, //new KeyCertificatePair(File.ReadAllText($"{Application.dataPath}/server1.crt"), ""));
             
-            var callCredentials = CallCredentials.FromInterceptor(asyncAuthInterceptor);
+            var callCredentials = CallCredentials.FromInterceptor(AsyncAuthInterceptor);
+            var ip = Environment.GetEnvironmentVariable("ERUTAN_HOST");
+            ip = ip == null ? "127.0.0.1" : ip;
             _channel = new Channel(
-                "127.0.0.1",
+                ip,
                 50051,
                 ChannelCredentials.Create(
                     channelCredentials,
@@ -94,8 +93,7 @@ namespace Erutan.Scripts.Sessions
             _outStream = _stream.RequestStream;
             
             // Listen to server packets on different thread
-            _listenerThread = new Thread(new ThreadStart(Listen));
-            _listenerThread.IsBackground = true;
+            _listenerThread = new Thread(Listen) {IsBackground = true};
             _listenerThread.Start();
             
             Connected?.Invoke();

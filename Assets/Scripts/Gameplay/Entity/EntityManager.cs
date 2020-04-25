@@ -48,8 +48,8 @@ namespace Erutan.Scripts.Gameplay.Entity
             var position = Vector3.zero;
             var rotation = Quaternion.identity;
             var scale = Vector3.zero;
-            var color = Color.white;
-            Mesh mesh = null;
+            var colors = new[] {Color.white};
+            Protometry.Mesh mesh = null;
             
             // Update entity case
             if (Entities.ContainsKey(packet.EntityId))
@@ -63,18 +63,22 @@ namespace Erutan.Scripts.Gameplay.Entity
                         position = c.Space.Position.ToVector3();
                         rotation = c.Space.Rotation.ToQuaternion();
                         scale = c.Space.Scale.ToVector3();
-                        mesh = c.Space.Mesh;
                         break;
                     case Component.TypeOneofCase.Render:
-                        color = c.Render.ToColor();
+                        colors = c.Render.Colors.Select(col => col.ToColor()).ToArray();
+                        mesh = c.Render.Mesh;
                         break;
                     case Component.TypeOneofCase.Health:
                         if (entity)
                         {
-                            var renderer = entity.GetComponent<Renderer>();
-                            color = renderer.material.color;
-                            color.r = Mathf.Clamp(4.0f * (float) c.Health.Life / 100f, 0.2f, 0.8f);
-                            renderer.material.color = color;
+                            var rend = entity.GetComponent<Mesh>();
+                            if (rend)
+                            {
+                                for (var i = 0; i < rend.colors.Length; i++)
+                                {
+                                    rend.colors[i].r = Mathf.Clamp(4.0f * (float) c.Health.Life / 100f, 0.2f, 0.8f);
+                                }
+                            }
                         }
                         break;
                 }
@@ -83,12 +87,14 @@ namespace Erutan.Scripts.Gameplay.Entity
             // Create entity case
             if (!entity)
             {
-                entity = InstanciateMesh(mesh, color).AddComponent<Entity>();
+                entity = InstanciateMesh(mesh, colors).AddComponent<Entity>();
                 entity.Id = packet.EntityId;
                 entity.gameObject.name = $"{entity.Id}";
                 Entities[entity.Id] = entity;
             }
-
+            //if (color.a < 1) {
+            //    Record.Log($"packet {color} pos {position}");
+            //}
             var transform1 = entity.transform;
             transform1.position = position;
             transform1.rotation = rotation;
@@ -130,21 +136,21 @@ namespace Erutan.Scripts.Gameplay.Entity
 
         #endregion
 
-        private GameObject InstanciateMesh(Mesh receivedMesh, Color color) {
+        private GameObject InstanciateMesh(Protometry.Mesh receivedMesh, Color[] colors) {
             var go = new GameObject();
             var meshRenderer = go.AddComponent<MeshRenderer>();
             
             // Override standard shader to allow transparency
-            var m = new Material(Shader.Find("Standard")) {color = color};
+            var m = new Material(Shader.Find("Standard")) {color = colors[0]};
             m.SetOverrideTag("RenderType", "Transparent");
-            // m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            // m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            // m.SetInt("_ZWrite", 0);
-            // m.DisableKeyword("_ALPHATEST_ON");
-            // m.EnableKeyword("_ALPHABLEND_ON");
-            // m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            // m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
-            // m.SetFloat("_Mode", 2.0f);
+            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+            m.SetInt("_ZWrite", 0);
+            m.DisableKeyword("_ALPHATEST_ON");
+            m.EnableKeyword("_ALPHABLEND_ON");
+            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+            m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
+            m.SetFloat("_Mode", 2.0f);
             meshRenderer.sharedMaterial = m;
             
             var meshFilter = go.AddComponent<MeshFilter>();
@@ -157,12 +163,18 @@ namespace Erutan.Scripts.Gameplay.Entity
             
             if (receivedMesh.Normals != null) {
                 mesh.normals = receivedMesh.Normals.ToList().Select(e => e.ToVector3()).ToArray();
-                mesh.uv = receivedMesh.Uvs.ToList().Select(e => e.ToVector2()).ToArray();
+                foreach (var u in receivedMesh.Uvs)
+                {
+                    mesh.uv.Append(new Vector2((float) u.X, (float) u.Y));
+                }
             } else {
                 mesh.Optimize ();
 		        mesh.RecalculateNormals ();
             }
             meshFilter.mesh = mesh;
+            mesh.colors = colors;
+
+
             return go;
         }
     }

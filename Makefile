@@ -7,7 +7,7 @@ CONTAINER_NAME ?= erutan-unity
 CONTAINER_INSTANCE ?= default
 
 
-.PHONY: help build run proto docker-build docker-run
+.PHONY: help build build-headless run proto docker-build docker-run
 help:
 		@echo ''
 		@echo 'Usage: make [TARGET]'
@@ -18,11 +18,15 @@ help:
 
 build:
 	rm -rf Builds/Linux
-	$(EDITOR_PATH) -quit -batchmode -logFile /tmp/erutan_unity_build.log -projectPath $(UNITY_PROJECT_PATH) \
-		-buildLinux64Player $(UNITY_PROJECT_PATH)/Builds/Linux -executeMethod Builds.BuildLinux \
-		-silent-crashes 
-	#> /dev/null 2>&1 \
-	#	&& cat /tmp/erutan_unity_build.log | grep 'Linux'
+	$(EDITOR_PATH) -batchmode -quit -logFile /tmp/erutan_unity_build.log -projectPath $(UNITY_PROJECT_PATH) \
+		-buildLinux64Player $(UNITY_PROJECT_PATH)/Builds/Linux -executeMethod Editor.Builds.BuildLinux \
+		-silent-crashes -headless 
+
+build-headless:
+	rm -rf Builds/Linux
+	$(EDITOR_PATH) -batchmode -quit -logFile /tmp/erutan_unity_build.log -projectPath $(UNITY_PROJECT_PATH) \
+		-buildLinux64Player $(UNITY_PROJECT_PATH)/Builds/Linux -executeMethod Editor.Builds.BuildLinuxHeadless \
+		-silent-crashes -headless
 
 
 run:

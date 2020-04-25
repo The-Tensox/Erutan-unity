@@ -26,66 +26,65 @@ namespace Erutan {
           string.Concat(
             "ChVwcm90b2J1Zi9lcnV0YW4ucHJvdG8SBmVydXRhbhofZ29vZ2xlL3Byb3Rv",
             "YnVmL3RpbWVzdGFtcC5wcm90bxohcHJvdG9idWYvcHJvdG9tZXRyeS92ZWN0",
-            "b3JuLnByb3RvGiVwcm90b2J1Zi9wcm90b21ldHJ5L3F1YXRlcm5pb25uLnBy",
-            "b3RvIjkKCE1ldGFkYXRhEi0KCXRpbWVzdGFtcBgBIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXAigwEKBE1lc2gSJQoIdmVydGljZXMYAiADKAsy",
-            "Ey5wcm90b21ldHJ5LlZlY3Rvck4SDAoEdHJpcxgDIAMoBRIkCgdub3JtYWxz",
-            "GAQgAygLMhMucHJvdG9tZXRyeS5WZWN0b3JOEiAKA3V2cxgFIAMoCzITLnBy",
-            "b3RvbWV0cnkuVmVjdG9yTiK4CAoJQ29tcG9uZW50EjEKBXNwYWNlGAEgASgL",
-            "MiAuZXJ1dGFuLkNvbXBvbmVudC5TcGFjZUNvbXBvbmVudEgAEjMKBmhlYWx0",
-            "aBgCIAEoCzIhLmVydXRhbi5Db21wb25lbnQuSGVhbHRoQ29tcG9uZW50SAAS",
-            "MQoFc3BlZWQYAyABKAsyIC5lcnV0YW4uQ29tcG9uZW50LlNwZWVkQ29tcG9u",
-            "ZW50SAASMwoGcmVuZGVyGAQgASgLMiEuZXJ1dGFuLkNvbXBvbmVudC5SZW5k",
-            "ZXJDb21wb25lbnRIABJCCg5iZWhhdmlvdXJfdHlwZRgFIAEoCzIoLmVydXRh",
-            "bi5Db21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBvbmVudEgAEjUKB3BoeXNp",
-            "Y3MYBiABKAsyIi5lcnV0YW4uQ29tcG9uZW50LlBoeXNpY3NDb21wb25lbnRI",
-            "ABJIChFuZXR3b3JrX2JlaGF2aW91chgHIAEoCzIrLmVydXRhbi5Db21wb25l",
-            "bnQuTmV0d29ya0JlaGF2aW91ckNvbXBvbmVudEgAGqIBCg5TcGFjZUNvbXBv",
-            "bmVudBIlCghwb3NpdGlvbhgBIAEoCzITLnByb3RvbWV0cnkuVmVjdG9yThIp",
-            "Cghyb3RhdGlvbhgCIAEoCzIXLnByb3RvbWV0cnkuUXVhdGVybmlvbk4SIgoF",
-            "c2NhbGUYAyABKAsyEy5wcm90b21ldHJ5LlZlY3Rvck4SGgoEbWVzaBgEIAEo",
-            "CzIMLmVydXRhbi5NZXNoGh8KD0hlYWx0aENvbXBvbmVudBIMCgRsaWZlGAEg",
-            "ASgBGiQKDlNwZWVkQ29tcG9uZW50EhIKCm1vdmVfc3BlZWQYASABKAEaNgoP",
-            "VGFyZ2V0Q29tcG9uZW50EiMKBnRhcmdldBgBIAEoCzITLnByb3RvbWV0cnku",
-            "VmVjdG9yThpKCg9SZW5kZXJDb21wb25lbnQSCwoDcmVkGAEgASgCEg0KBWdy",
-            "ZWVuGAIgASgCEgwKBGJsdWUYAyABKAISDQoFYWxwaGEYBCABKAIafwoWQmVo",
-            "YXZpb3VyVHlwZUNvbXBvbmVudBI5CgN0YWcYASABKA4yLC5lcnV0YW4uQ29t",
-            "cG9uZW50LkJlaGF2aW91clR5cGVDb21wb25lbnQuVGFnIioKA1RhZxIHCgNB",
-            "TlkQABIKCgZBTklNQUwQARIOCgpWRUdFVEFUSU9OEAIaJwoQUGh5c2ljc0Nv",
-            "bXBvbmVudBITCgt1c2VfZ3Jhdml0eRgBIAEoCBp0ChlOZXR3b3JrQmVoYXZp",
-            "b3VyQ29tcG9uZW50EjwKA3RhZxgBIAEoDjIvLmVydXRhbi5Db21wb25lbnQu",
-            "TmV0d29ya0JlaGF2aW91ckNvbXBvbmVudC5UYWciGQoDVGFnEgcKA0FMTBAA",
-            "EgkKBURFQlVHEAFCBgoEdHlwZSKwBgoGUGFja2V0EiIKCG1ldGFkYXRhGAEg",
-            "ASgLMhAuZXJ1dGFuLk1ldGFkYXRhEjoKDXVwZGF0ZV9lbnRpdHkYAiABKAsy",
-            "IS5lcnV0YW4uUGFja2V0LlVwZGF0ZUVudGl0eVBhY2tldEgAEj4KD3VwZGF0",
-            "ZV9wb3NpdGlvbhgDIAEoCzIjLmVydXRhbi5QYWNrZXQuVXBkYXRlUG9zaXRp",
-            "b25QYWNrZXRIABI+Cg91cGRhdGVfcm90YXRpb24YBCABKAsyIy5lcnV0YW4u",
-            "UGFja2V0LlVwZGF0ZVJvdGF0aW9uUGFja2V0SAASPAoOZGVzdHJveV9lbnRp",
-            "dHkYBSABKAsyIi5lcnV0YW4uUGFja2V0LkRlc3Ryb3lFbnRpdHlQYWNrZXRI",
-            "ABJCChF1cGRhdGVfcGFyYW1ldGVycxgGIAEoCzIlLmVydXRhbi5QYWNrZXQu",
-            "VXBkYXRlUGFyYW1ldGVyc1BhY2tldEgAGk4KElVwZGF0ZUVudGl0eVBhY2tl",
-            "dBIRCgllbnRpdHlfaWQYASABKAQSJQoKY29tcG9uZW50cxgCIAMoCzIRLmVy",
-            "dXRhbi5Db21wb25lbnQaUAoUVXBkYXRlUG9zaXRpb25QYWNrZXQSEQoJZW50",
-            "aXR5X2lkGAEgASgEEiUKCHBvc2l0aW9uGAIgASgLMhMucHJvdG9tZXRyeS5W",
-            "ZWN0b3JOGlQKFFVwZGF0ZVJvdGF0aW9uUGFja2V0EhEKCWVudGl0eV9pZBgB",
-            "IAEoBBIpCghyb3RhdGlvbhgCIAEoCzIXLnByb3RvbWV0cnkuUXVhdGVybmlv",
-            "bk4aKAoTRGVzdHJveUVudGl0eVBhY2tldBIRCgllbnRpdHlfaWQYASABKAQa",
-            "mQEKFlVwZGF0ZVBhcmFtZXRlcnNQYWNrZXQSQwoKcGFyYW1ldGVycxgBIAMo",
-            "CzIvLmVydXRhbi5QYWNrZXQuVXBkYXRlUGFyYW1ldGVyc1BhY2tldC5QYXJh",
-            "bWV0ZXIaOgoJUGFyYW1ldGVyEhQKCnRpbWVfc2NhbGUYASABKAFIABIPCgVk",
-            "ZWJ1ZxgCIAEoCEgAQgYKBHR5cGVCBgoEdHlwZTI4CgZFcnV0YW4SLgoGU3Ry",
-            "ZWFtEg4uZXJ1dGFuLlBhY2tldBoOLmVydXRhbi5QYWNrZXQiACgBMAFCJ1oc",
-            "Z2l0aHViLmNvbS9UaGUtVGVuc294L2VydXRhbqoCBkVydXRhbmIGcHJvdG8z"));
+            "b3IzLnByb3RvGiRwcm90b2J1Zi9wcm90b21ldHJ5L3F1YXRlcm5pb24ucHJv",
+            "dG8aIHByb3RvYnVmL3Byb3RvbWV0cnkvdm9sdW1lLnByb3RvIjkKCE1ldGFk",
+            "YXRhEi0KCXRpbWVzdGFtcBgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
+            "c3RhbXAi/ggKCUNvbXBvbmVudBIxCgVzcGFjZRgBIAEoCzIgLmVydXRhbi5D",
+            "b21wb25lbnQuU3BhY2VDb21wb25lbnRIABIzCgZoZWFsdGgYAiABKAsyIS5l",
+            "cnV0YW4uQ29tcG9uZW50LkhlYWx0aENvbXBvbmVudEgAEjEKBXNwZWVkGAMg",
+            "ASgLMiAuZXJ1dGFuLkNvbXBvbmVudC5TcGVlZENvbXBvbmVudEgAEjMKBnJl",
+            "bmRlchgEIAEoCzIhLmVydXRhbi5Db21wb25lbnQuUmVuZGVyQ29tcG9uZW50",
+            "SAASQgoOYmVoYXZpb3VyX3R5cGUYBSABKAsyKC5lcnV0YW4uQ29tcG9uZW50",
+            "LkJlaGF2aW91clR5cGVDb21wb25lbnRIABI1CgdwaHlzaWNzGAYgASgLMiIu",
+            "ZXJ1dGFuLkNvbXBvbmVudC5QaHlzaWNzQ29tcG9uZW50SAASSAoRbmV0d29y",
+            "a19iZWhhdmlvdXIYByABKAsyKy5lcnV0YW4uQ29tcG9uZW50Lk5ldHdvcmtC",
+            "ZWhhdmlvdXJDb21wb25lbnRIABqFAQoOU3BhY2VDb21wb25lbnQSJQoIcG9z",
+            "aXRpb24YASABKAsyEy5wcm90b21ldHJ5LlZlY3RvcjMSKAoIcm90YXRpb24Y",
+            "AiABKAsyFi5wcm90b21ldHJ5LlF1YXRlcm5pb24SIgoFc2NhbGUYAyABKAsy",
+            "Ey5wcm90b21ldHJ5LlZlY3RvcjMaHwoPSGVhbHRoQ29tcG9uZW50EgwKBGxp",
+            "ZmUYASABKAEaJAoOU3BlZWRDb21wb25lbnQSEgoKbW92ZV9zcGVlZBgBIAEo",
+            "ARo2Cg9UYXJnZXRDb21wb25lbnQSIwoGdGFyZ2V0GAEgASgLMhMucHJvdG9t",
+            "ZXRyeS5WZWN0b3IzGqwBCg9SZW5kZXJDb21wb25lbnQSHgoEbWVzaBgBIAEo",
+            "CzIQLnByb3RvbWV0cnkuTWVzaBI3CgZjb2xvcnMYAiADKAsyJy5lcnV0YW4u",
+            "Q29tcG9uZW50LlJlbmRlckNvbXBvbmVudC5Db2xvchpACgVDb2xvchILCgNy",
+            "ZWQYASABKAISDQoFZ3JlZW4YAiABKAISDAoEYmx1ZRgDIAEoAhINCgVhbHBo",
+            "YRgEIAEoAhp/ChZCZWhhdmlvdXJUeXBlQ29tcG9uZW50EjkKA3RhZxgBIAEo",
+            "DjIsLmVydXRhbi5Db21wb25lbnQuQmVoYXZpb3VyVHlwZUNvbXBvbmVudC5U",
+            "YWciKgoDVGFnEgcKA0FOWRAAEgoKBkFOSU1BTBABEg4KClZFR0VUQVRJT04Q",
+            "AhonChBQaHlzaWNzQ29tcG9uZW50EhMKC3VzZV9ncmF2aXR5GAEgASgIGnQK",
+            "GU5ldHdvcmtCZWhhdmlvdXJDb21wb25lbnQSPAoDdGFnGAEgASgOMi8uZXJ1",
+            "dGFuLkNvbXBvbmVudC5OZXR3b3JrQmVoYXZpb3VyQ29tcG9uZW50LlRhZyIZ",
+            "CgNUYWcSBwoDQUxMEAASCQoFREVCVUcQAUIGCgR0eXBlIq8GCgZQYWNrZXQS",
+            "IgoIbWV0YWRhdGEYASABKAsyEC5lcnV0YW4uTWV0YWRhdGESOgoNdXBkYXRl",
+            "X2VudGl0eRgCIAEoCzIhLmVydXRhbi5QYWNrZXQuVXBkYXRlRW50aXR5UGFj",
+            "a2V0SAASPgoPdXBkYXRlX3Bvc2l0aW9uGAMgASgLMiMuZXJ1dGFuLlBhY2tl",
+            "dC5VcGRhdGVQb3NpdGlvblBhY2tldEgAEj4KD3VwZGF0ZV9yb3RhdGlvbhgE",
+            "IAEoCzIjLmVydXRhbi5QYWNrZXQuVXBkYXRlUm90YXRpb25QYWNrZXRIABI8",
+            "Cg5kZXN0cm95X2VudGl0eRgFIAEoCzIiLmVydXRhbi5QYWNrZXQuRGVzdHJv",
+            "eUVudGl0eVBhY2tldEgAEkIKEXVwZGF0ZV9wYXJhbWV0ZXJzGAYgASgLMiUu",
+            "ZXJ1dGFuLlBhY2tldC5VcGRhdGVQYXJhbWV0ZXJzUGFja2V0SAAaTgoSVXBk",
+            "YXRlRW50aXR5UGFja2V0EhEKCWVudGl0eV9pZBgBIAEoBBIlCgpjb21wb25l",
+            "bnRzGAIgAygLMhEuZXJ1dGFuLkNvbXBvbmVudBpQChRVcGRhdGVQb3NpdGlv",
+            "blBhY2tldBIRCgllbnRpdHlfaWQYASABKAQSJQoIcG9zaXRpb24YAiABKAsy",
+            "Ey5wcm90b21ldHJ5LlZlY3RvcjMaUwoUVXBkYXRlUm90YXRpb25QYWNrZXQS",
+            "EQoJZW50aXR5X2lkGAEgASgEEigKCHJvdGF0aW9uGAIgASgLMhYucHJvdG9t",
+            "ZXRyeS5RdWF0ZXJuaW9uGigKE0Rlc3Ryb3lFbnRpdHlQYWNrZXQSEQoJZW50",
+            "aXR5X2lkGAEgASgEGpkBChZVcGRhdGVQYXJhbWV0ZXJzUGFja2V0EkMKCnBh",
+            "cmFtZXRlcnMYASADKAsyLy5lcnV0YW4uUGFja2V0LlVwZGF0ZVBhcmFtZXRl",
+            "cnNQYWNrZXQuUGFyYW1ldGVyGjoKCVBhcmFtZXRlchIUCgp0aW1lX3NjYWxl",
+            "GAEgASgBSAASDwoFZGVidWcYAiABKAhIAEIGCgR0eXBlQgYKBHR5cGUyOAoG",
+            "RXJ1dGFuEi4KBlN0cmVhbRIOLmVydXRhbi5QYWNrZXQaDi5lcnV0YW4uUGFj",
+            "a2V0IgAoATABQidaHGdpdGh1Yi5jb20vVGhlLVRlbnNveC9lcnV0YW6qAgZF",
+            "cnV0YW5iBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Protometry.VectornReflection.Descriptor, global::Protometry.QuaternionnReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Protometry.Vector3Reflection.Descriptor, global::Protometry.QuaternionReflection.Descriptor, global::Protometry.VolumeReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Metadata), global::Erutan.Metadata.Parser, new[]{ "Timestamp" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Mesh), global::Erutan.Mesh.Parser, new[]{ "Vertices", "Tris", "Normals", "Uvs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "Health", "Speed", "Render", "BehaviourType", "Physics", "NetworkBehaviour" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale", "Mesh" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component), global::Erutan.Component.Parser, new[]{ "Space", "Health", "Speed", "Render", "BehaviourType", "Physics", "NetworkBehaviour" }, new[]{ "Type" }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpaceComponent), global::Erutan.Component.Types.SpaceComponent.Parser, new[]{ "Position", "Rotation", "Scale" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.HealthComponent), global::Erutan.Component.Types.HealthComponent.Parser, new[]{ "Life" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.SpeedComponent), global::Erutan.Component.Types.SpeedComponent.Parser, new[]{ "MoveSpeed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.TargetComponent), global::Erutan.Component.Types.TargetComponent.Parser, new[]{ "Target" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent), global::Erutan.Component.Types.RenderComponent.Parser, new[]{ "Red", "Green", "Blue", "Alpha" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent), global::Erutan.Component.Types.RenderComponent.Parser, new[]{ "Mesh", "Colors" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.RenderComponent.Types.Color), global::Erutan.Component.Types.RenderComponent.Types.Color.Parser, new[]{ "Red", "Green", "Blue", "Alpha" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.BehaviourTypeComponent), global::Erutan.Component.Types.BehaviourTypeComponent.Parser, new[]{ "Tag" }, null, new[]{ typeof(global::Erutan.Component.Types.BehaviourTypeComponent.Types.Tag) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.PhysicsComponent), global::Erutan.Component.Types.PhysicsComponent.Parser, new[]{ "UseGravity" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Erutan.Component.Types.NetworkBehaviourComponent), global::Erutan.Component.Types.NetworkBehaviourComponent.Parser, new[]{ "Tag" }, null, new[]{ typeof(global::Erutan.Component.Types.NetworkBehaviourComponent.Types.Tag) }, null)}),
@@ -236,191 +235,6 @@ namespace Erutan {
   }
 
   /// <summary>
-  /// Mesh is used for rendering meshes
-  /// </summary>
-  public sealed partial class Mesh : pb::IMessage<Mesh> {
-    private static readonly pb::MessageParser<Mesh> _parser = new pb::MessageParser<Mesh>(() => new Mesh());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<Mesh> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Mesh() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Mesh(Mesh other) : this() {
-      vertices_ = other.vertices_.Clone();
-      tris_ = other.tris_.Clone();
-      normals_ = other.normals_.Clone();
-      uvs_ = other.uvs_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public Mesh Clone() {
-      return new Mesh(this);
-    }
-
-    /// <summary>Field number for the "vertices" field.</summary>
-    public const int VerticesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::Protometry.VectorN> _repeated_vertices_codec
-        = pb::FieldCodec.ForMessage(18, global::Protometry.VectorN.Parser);
-    private readonly pbc::RepeatedField<global::Protometry.VectorN> vertices_ = new pbc::RepeatedField<global::Protometry.VectorN>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Protometry.VectorN> Vertices {
-      get { return vertices_; }
-    }
-
-    /// <summary>Field number for the "tris" field.</summary>
-    public const int TrisFieldNumber = 3;
-    private static readonly pb::FieldCodec<int> _repeated_tris_codec
-        = pb::FieldCodec.ForInt32(26);
-    private readonly pbc::RepeatedField<int> tris_ = new pbc::RepeatedField<int>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<int> Tris {
-      get { return tris_; }
-    }
-
-    /// <summary>Field number for the "normals" field.</summary>
-    public const int NormalsFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::Protometry.VectorN> _repeated_normals_codec
-        = pb::FieldCodec.ForMessage(34, global::Protometry.VectorN.Parser);
-    private readonly pbc::RepeatedField<global::Protometry.VectorN> normals_ = new pbc::RepeatedField<global::Protometry.VectorN>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Protometry.VectorN> Normals {
-      get { return normals_; }
-    }
-
-    /// <summary>Field number for the "uvs" field.</summary>
-    public const int UvsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::Protometry.VectorN> _repeated_uvs_codec
-        = pb::FieldCodec.ForMessage(42, global::Protometry.VectorN.Parser);
-    private readonly pbc::RepeatedField<global::Protometry.VectorN> uvs_ = new pbc::RepeatedField<global::Protometry.VectorN>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Protometry.VectorN> Uvs {
-      get { return uvs_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as Mesh);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(Mesh other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!vertices_.Equals(other.vertices_)) return false;
-      if(!tris_.Equals(other.tris_)) return false;
-      if(!normals_.Equals(other.normals_)) return false;
-      if(!uvs_.Equals(other.uvs_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= vertices_.GetHashCode();
-      hash ^= tris_.GetHashCode();
-      hash ^= normals_.GetHashCode();
-      hash ^= uvs_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-      vertices_.WriteTo(output, _repeated_vertices_codec);
-      tris_.WriteTo(output, _repeated_tris_codec);
-      normals_.WriteTo(output, _repeated_normals_codec);
-      uvs_.WriteTo(output, _repeated_uvs_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      size += vertices_.CalculateSize(_repeated_vertices_codec);
-      size += tris_.CalculateSize(_repeated_tris_codec);
-      size += normals_.CalculateSize(_repeated_normals_codec);
-      size += uvs_.CalculateSize(_repeated_uvs_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(Mesh other) {
-      if (other == null) {
-        return;
-      }
-      vertices_.Add(other.vertices_);
-      tris_.Add(other.tris_);
-      normals_.Add(other.normals_);
-      uvs_.Add(other.uvs_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 18: {
-            vertices_.AddEntriesFrom(input, _repeated_vertices_codec);
-            break;
-          }
-          case 26:
-          case 24: {
-            tris_.AddEntriesFrom(input, _repeated_tris_codec);
-            break;
-          }
-          case 34: {
-            normals_.AddEntriesFrom(input, _repeated_normals_codec);
-            break;
-          }
-          case 42: {
-            uvs_.AddEntriesFrom(input, _repeated_uvs_codec);
-            break;
-          }
-        }
-      }
-    }
-
-  }
-
-  /// <summary>
   /// Data-oriented design : Entity Component System (ECS)
   /// </summary>
   public sealed partial class Component : pb::IMessage<Component> {
@@ -431,7 +245,7 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -852,7 +666,6 @@ namespace Erutan {
           position_ = other.position_ != null ? other.position_.Clone() : null;
           rotation_ = other.rotation_ != null ? other.rotation_.Clone() : null;
           scale_ = other.scale_ != null ? other.scale_.Clone() : null;
-          mesh_ = other.mesh_ != null ? other.mesh_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -863,9 +676,9 @@ namespace Erutan {
 
         /// <summary>Field number for the "position" field.</summary>
         public const int PositionFieldNumber = 1;
-        private global::Protometry.VectorN position_;
+        private global::Protometry.Vector3 position_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.VectorN Position {
+        public global::Protometry.Vector3 Position {
           get { return position_; }
           set {
             position_ = value;
@@ -874,9 +687,9 @@ namespace Erutan {
 
         /// <summary>Field number for the "rotation" field.</summary>
         public const int RotationFieldNumber = 2;
-        private global::Protometry.QuaternionN rotation_;
+        private global::Protometry.Quaternion rotation_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.QuaternionN Rotation {
+        public global::Protometry.Quaternion Rotation {
           get { return rotation_; }
           set {
             rotation_ = value;
@@ -885,26 +698,12 @@ namespace Erutan {
 
         /// <summary>Field number for the "scale" field.</summary>
         public const int ScaleFieldNumber = 3;
-        private global::Protometry.VectorN scale_;
+        private global::Protometry.Vector3 scale_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.VectorN Scale {
+        public global::Protometry.Vector3 Scale {
           get { return scale_; }
           set {
             scale_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "mesh" field.</summary>
-        public const int MeshFieldNumber = 4;
-        private global::Erutan.Mesh mesh_;
-        /// <summary>
-        /// TODO: maybe should be moved to render
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Erutan.Mesh Mesh {
-          get { return mesh_; }
-          set {
-            mesh_ = value;
           }
         }
 
@@ -924,7 +723,6 @@ namespace Erutan {
           if (!object.Equals(Position, other.Position)) return false;
           if (!object.Equals(Rotation, other.Rotation)) return false;
           if (!object.Equals(Scale, other.Scale)) return false;
-          if (!object.Equals(Mesh, other.Mesh)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -934,7 +732,6 @@ namespace Erutan {
           if (position_ != null) hash ^= Position.GetHashCode();
           if (rotation_ != null) hash ^= Rotation.GetHashCode();
           if (scale_ != null) hash ^= Scale.GetHashCode();
-          if (mesh_ != null) hash ^= Mesh.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -960,10 +757,6 @@ namespace Erutan {
             output.WriteRawTag(26);
             output.WriteMessage(Scale);
           }
-          if (mesh_ != null) {
-            output.WriteRawTag(34);
-            output.WriteMessage(Mesh);
-          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -981,9 +774,6 @@ namespace Erutan {
           if (scale_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Scale);
           }
-          if (mesh_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mesh);
-          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -997,27 +787,21 @@ namespace Erutan {
           }
           if (other.position_ != null) {
             if (position_ == null) {
-              Position = new global::Protometry.VectorN();
+              Position = new global::Protometry.Vector3();
             }
             Position.MergeFrom(other.Position);
           }
           if (other.rotation_ != null) {
             if (rotation_ == null) {
-              Rotation = new global::Protometry.QuaternionN();
+              Rotation = new global::Protometry.Quaternion();
             }
             Rotation.MergeFrom(other.Rotation);
           }
           if (other.scale_ != null) {
             if (scale_ == null) {
-              Scale = new global::Protometry.VectorN();
+              Scale = new global::Protometry.Vector3();
             }
             Scale.MergeFrom(other.Scale);
-          }
-          if (other.mesh_ != null) {
-            if (mesh_ == null) {
-              Mesh = new global::Erutan.Mesh();
-            }
-            Mesh.MergeFrom(other.Mesh);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -1032,30 +816,23 @@ namespace Erutan {
                 break;
               case 10: {
                 if (position_ == null) {
-                  Position = new global::Protometry.VectorN();
+                  Position = new global::Protometry.Vector3();
                 }
                 input.ReadMessage(Position);
                 break;
               }
               case 18: {
                 if (rotation_ == null) {
-                  Rotation = new global::Protometry.QuaternionN();
+                  Rotation = new global::Protometry.Quaternion();
                 }
                 input.ReadMessage(Rotation);
                 break;
               }
               case 26: {
                 if (scale_ == null) {
-                  Scale = new global::Protometry.VectorN();
+                  Scale = new global::Protometry.Vector3();
                 }
                 input.ReadMessage(Scale);
-                break;
-              }
-              case 34: {
-                if (mesh_ == null) {
-                  Mesh = new global::Erutan.Mesh();
-                }
-                input.ReadMessage(Mesh);
                 break;
               }
             }
@@ -1358,9 +1135,9 @@ namespace Erutan {
 
         /// <summary>Field number for the "target" field.</summary>
         public const int TargetFieldNumber = 1;
-        private global::Protometry.VectorN target_;
+        private global::Protometry.Vector3 target_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.VectorN Target {
+        public global::Protometry.Vector3 Target {
           get { return target_; }
           set {
             target_ = value;
@@ -1429,7 +1206,7 @@ namespace Erutan {
           }
           if (other.target_ != null) {
             if (target_ == null) {
-              Target = new global::Protometry.VectorN();
+              Target = new global::Protometry.Vector3();
             }
             Target.MergeFrom(other.Target);
           }
@@ -1446,7 +1223,7 @@ namespace Erutan {
                 break;
               case 10: {
                 if (target_ == null) {
-                  Target = new global::Protometry.VectorN();
+                  Target = new global::Protometry.Vector3();
                 }
                 input.ReadMessage(Target);
                 break;
@@ -1482,10 +1259,8 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public RenderComponent(RenderComponent other) : this() {
-          red_ = other.red_;
-          green_ = other.green_;
-          blue_ = other.blue_;
-          alpha_ = other.alpha_;
+          mesh_ = other.mesh_ != null ? other.mesh_.Clone() : null;
+          colors_ = other.colors_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -1494,48 +1269,25 @@ namespace Erutan {
           return new RenderComponent(this);
         }
 
-        /// <summary>Field number for the "red" field.</summary>
-        public const int RedFieldNumber = 1;
-        private float red_;
+        /// <summary>Field number for the "mesh" field.</summary>
+        public const int MeshFieldNumber = 1;
+        private global::Protometry.Mesh mesh_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Red {
-          get { return red_; }
+        public global::Protometry.Mesh Mesh {
+          get { return mesh_; }
           set {
-            red_ = value;
+            mesh_ = value;
           }
         }
 
-        /// <summary>Field number for the "green" field.</summary>
-        public const int GreenFieldNumber = 2;
-        private float green_;
+        /// <summary>Field number for the "colors" field.</summary>
+        public const int ColorsFieldNumber = 2;
+        private static readonly pb::FieldCodec<global::Erutan.Component.Types.RenderComponent.Types.Color> _repeated_colors_codec
+            = pb::FieldCodec.ForMessage(18, global::Erutan.Component.Types.RenderComponent.Types.Color.Parser);
+        private readonly pbc::RepeatedField<global::Erutan.Component.Types.RenderComponent.Types.Color> colors_ = new pbc::RepeatedField<global::Erutan.Component.Types.RenderComponent.Types.Color>();
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Green {
-          get { return green_; }
-          set {
-            green_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "blue" field.</summary>
-        public const int BlueFieldNumber = 3;
-        private float blue_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Blue {
-          get { return blue_; }
-          set {
-            blue_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "alpha" field.</summary>
-        public const int AlphaFieldNumber = 4;
-        private float alpha_;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public float Alpha {
-          get { return alpha_; }
-          set {
-            alpha_ = value;
-          }
+        public pbc::RepeatedField<global::Erutan.Component.Types.RenderComponent.Types.Color> Colors {
+          get { return colors_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1551,20 +1303,16 @@ namespace Erutan {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Red, other.Red)) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Green, other.Green)) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Blue, other.Blue)) return false;
-          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Alpha, other.Alpha)) return false;
+          if (!object.Equals(Mesh, other.Mesh)) return false;
+          if(!colors_.Equals(other.colors_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (Red != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Red);
-          if (Green != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Green);
-          if (Blue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Blue);
-          if (Alpha != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Alpha);
+          if (mesh_ != null) hash ^= Mesh.GetHashCode();
+          hash ^= colors_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1578,22 +1326,11 @@ namespace Erutan {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
-          if (Red != 0F) {
-            output.WriteRawTag(13);
-            output.WriteFloat(Red);
+          if (mesh_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Mesh);
           }
-          if (Green != 0F) {
-            output.WriteRawTag(21);
-            output.WriteFloat(Green);
-          }
-          if (Blue != 0F) {
-            output.WriteRawTag(29);
-            output.WriteFloat(Blue);
-          }
-          if (Alpha != 0F) {
-            output.WriteRawTag(37);
-            output.WriteFloat(Alpha);
-          }
+          colors_.WriteTo(output, _repeated_colors_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1602,18 +1339,10 @@ namespace Erutan {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (Red != 0F) {
-            size += 1 + 4;
+          if (mesh_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mesh);
           }
-          if (Green != 0F) {
-            size += 1 + 4;
-          }
-          if (Blue != 0F) {
-            size += 1 + 4;
-          }
-          if (Alpha != 0F) {
-            size += 1 + 4;
-          }
+          size += colors_.CalculateSize(_repeated_colors_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -1625,18 +1354,13 @@ namespace Erutan {
           if (other == null) {
             return;
           }
-          if (other.Red != 0F) {
-            Red = other.Red;
+          if (other.mesh_ != null) {
+            if (mesh_ == null) {
+              Mesh = new global::Protometry.Mesh();
+            }
+            Mesh.MergeFrom(other.Mesh);
           }
-          if (other.Green != 0F) {
-            Green = other.Green;
-          }
-          if (other.Blue != 0F) {
-            Blue = other.Blue;
-          }
-          if (other.Alpha != 0F) {
-            Alpha = other.Alpha;
-          }
+          colors_.Add(other.colors_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -1648,25 +1372,240 @@ namespace Erutan {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 13: {
-                Red = input.ReadFloat();
+              case 10: {
+                if (mesh_ == null) {
+                  Mesh = new global::Protometry.Mesh();
+                }
+                input.ReadMessage(Mesh);
                 break;
               }
-              case 21: {
-                Green = input.ReadFloat();
-                break;
-              }
-              case 29: {
-                Blue = input.ReadFloat();
-                break;
-              }
-              case 37: {
-                Alpha = input.ReadFloat();
+              case 18: {
+                colors_.AddEntriesFrom(input, _repeated_colors_codec);
                 break;
               }
             }
           }
         }
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the RenderComponent message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static partial class Types {
+          public sealed partial class Color : pb::IMessage<Color> {
+            private static readonly pb::MessageParser<Color> _parser = new pb::MessageParser<Color>(() => new Color());
+            private pb::UnknownFieldSet _unknownFields;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public static pb::MessageParser<Color> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::Erutan.Component.Types.RenderComponent.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Color() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Color(Color other) : this() {
+              red_ = other.red_;
+              green_ = other.green_;
+              blue_ = other.blue_;
+              alpha_ = other.alpha_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public Color Clone() {
+              return new Color(this);
+            }
+
+            /// <summary>Field number for the "red" field.</summary>
+            public const int RedFieldNumber = 1;
+            private float red_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public float Red {
+              get { return red_; }
+              set {
+                red_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "green" field.</summary>
+            public const int GreenFieldNumber = 2;
+            private float green_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public float Green {
+              get { return green_; }
+              set {
+                green_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "blue" field.</summary>
+            public const int BlueFieldNumber = 3;
+            private float blue_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public float Blue {
+              get { return blue_; }
+              set {
+                blue_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "alpha" field.</summary>
+            public const int AlphaFieldNumber = 4;
+            private float alpha_;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public float Alpha {
+              get { return alpha_; }
+              set {
+                alpha_ = value;
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override bool Equals(object other) {
+              return Equals(other as Color);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool Equals(Color other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Red, other.Red)) return false;
+              if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Green, other.Green)) return false;
+              if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Blue, other.Blue)) return false;
+              if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Alpha, other.Alpha)) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (Red != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Red);
+              if (Green != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Green);
+              if (Blue != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Blue);
+              if (Alpha != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Alpha);
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void WriteTo(pb::CodedOutputStream output) {
+              if (Red != 0F) {
+                output.WriteRawTag(13);
+                output.WriteFloat(Red);
+              }
+              if (Green != 0F) {
+                output.WriteRawTag(21);
+                output.WriteFloat(Green);
+              }
+              if (Blue != 0F) {
+                output.WriteRawTag(29);
+                output.WriteFloat(Blue);
+              }
+              if (Alpha != 0F) {
+                output.WriteRawTag(37);
+                output.WriteFloat(Alpha);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public int CalculateSize() {
+              int size = 0;
+              if (Red != 0F) {
+                size += 1 + 4;
+              }
+              if (Green != 0F) {
+                size += 1 + 4;
+              }
+              if (Blue != 0F) {
+                size += 1 + 4;
+              }
+              if (Alpha != 0F) {
+                size += 1 + 4;
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void MergeFrom(Color other) {
+              if (other == null) {
+                return;
+              }
+              if (other.Red != 0F) {
+                Red = other.Red;
+              }
+              if (other.Green != 0F) {
+                Green = other.Green;
+              }
+              if (other.Blue != 0F) {
+                Blue = other.Blue;
+              }
+              if (other.Alpha != 0F) {
+                Alpha = other.Alpha;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public void MergeFrom(pb::CodedInputStream input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+                switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 13: {
+                    Red = input.ReadFloat();
+                    break;
+                  }
+                  case 21: {
+                    Green = input.ReadFloat();
+                    break;
+                  }
+                  case 29: {
+                    Blue = input.ReadFloat();
+                    break;
+                  }
+                  case 37: {
+                    Alpha = input.ReadFloat();
+                    break;
+                  }
+                }
+              }
+            }
+
+          }
+
+        }
+        #endregion
 
       }
 
@@ -2104,7 +2043,7 @@ namespace Erutan {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Erutan.ErutanReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2656,9 +2595,9 @@ namespace Erutan {
 
         /// <summary>Field number for the "position" field.</summary>
         public const int PositionFieldNumber = 2;
-        private global::Protometry.VectorN position_;
+        private global::Protometry.Vector3 position_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.VectorN Position {
+        public global::Protometry.Vector3 Position {
           get { return position_; }
           set {
             position_ = value;
@@ -2739,7 +2678,7 @@ namespace Erutan {
           }
           if (other.position_ != null) {
             if (position_ == null) {
-              Position = new global::Protometry.VectorN();
+              Position = new global::Protometry.Vector3();
             }
             Position.MergeFrom(other.Position);
           }
@@ -2760,7 +2699,7 @@ namespace Erutan {
               }
               case 18: {
                 if (position_ == null) {
-                  Position = new global::Protometry.VectorN();
+                  Position = new global::Protometry.Vector3();
                 }
                 input.ReadMessage(Position);
                 break;
@@ -2819,9 +2758,9 @@ namespace Erutan {
 
         /// <summary>Field number for the "rotation" field.</summary>
         public const int RotationFieldNumber = 2;
-        private global::Protometry.QuaternionN rotation_;
+        private global::Protometry.Quaternion rotation_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Protometry.QuaternionN Rotation {
+        public global::Protometry.Quaternion Rotation {
           get { return rotation_; }
           set {
             rotation_ = value;
@@ -2902,7 +2841,7 @@ namespace Erutan {
           }
           if (other.rotation_ != null) {
             if (rotation_ == null) {
-              Rotation = new global::Protometry.QuaternionN();
+              Rotation = new global::Protometry.Quaternion();
             }
             Rotation.MergeFrom(other.Rotation);
           }
@@ -2923,7 +2862,7 @@ namespace Erutan {
               }
               case 18: {
                 if (rotation_ == null) {
-                  Rotation = new global::Protometry.QuaternionN();
+                  Rotation = new global::Protometry.Quaternion();
                 }
                 input.ReadMessage(Rotation);
                 break;

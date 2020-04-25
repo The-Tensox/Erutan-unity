@@ -11,11 +11,11 @@ namespace Erutan.Scripts.Gameplay.Entity
         [HideInInspector] public ulong Id;
         [HideInInspector] public Google.Protobuf.Collections.RepeatedField<Component> Components;
 
-        public void Move(VectorN position) {
+        public void Move(Protometry.Vector3 position) {
             transform.position = position.ToVector3();
         }
 
-        public void Rotate(QuaternionN rotation) {
+        public void Rotate(Protometry.Quaternion rotation) {
             transform.rotation = rotation.ToQuaternion();
         }
     }
