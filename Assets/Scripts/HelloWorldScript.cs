@@ -1,21 +1,28 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Erutan.Scripts.Sessions;
-using Erutan.Scripts.Utils;
+using System;
+using Sessions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-namespace Erutan.Scripts
+public class HelloWorldScript : MonoBehaviour
 {
-    public class HelloWorldScript : MonoBehaviour {
-    
-    private float _lastSent;
-    private void Start() {
-      Record.Log(SessionManager.Instance.Client.ToString());
-      SessionManager.Instance.Client.Init();
-    }
+  private void Awake()
+  {
+    SessionManager.Instance.Init("127.0.0.1", 50051);
+    SessionManager.Instance.Connected += SessionOnConnected;
+    // if (SessionManager.Instance.Client == null) Connect();
+  }
 
-    void OnApplicationQuit() {
-      SessionManager.Instance.Client.Logout();
-    }
+  public void Connect()
+  {
+    SessionManager.Instance.Connect();
+  }
+
+  private void SessionOnConnected()
+  {
+    SceneManager.LoadScene("Main");
+  }
+
+  void OnApplicationQuit() {
+    SessionManager.Instance.Client.Logout();
   }
 }

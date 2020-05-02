@@ -1,10 +1,9 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
 
-
-namespace Erutan.Scripts.Utils
+namespace Utils
 {
     /// Author: Pim de Witte (pimdewitte.com) and contributors, https://github.com/PimDeWitte/UnityMainThreadDispatcher
     /// <summary>

@@ -11,9 +11,6 @@
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # [Aa]ssets/AssetStoreTools*
 
-# Visual Studio cache directory
-.vs/
-
 # Gradle cache directory
 .gradle/
 
@@ -46,16 +43,21 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.exe
+*.x86_64
 
 # Crashlytics generated file
 crashlytics-build.properties
 
 # Plugins
-Assets/Plugins
+# Avoid excluding the unity json package thing
 Packages/Grpc*
+Assets/Packages
+Assets/UnityPackages
+Assets/NuGet
+NuGet.config
 
 # SSL
 *.crt
 
-# Jetbrains
-.idea
+

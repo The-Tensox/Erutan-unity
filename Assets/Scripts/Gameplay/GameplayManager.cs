@@ -1,10 +1,10 @@
 ﻿using System;
 using Erutan;
-using Erutan.Scripts.Sessions;
-using Erutan.Scripts.Utils;
+using Sessions;
+using Utils;
 using static Erutan.Packet.Types;
 
-namespace Erutan.Scripts.Gameplay
+namespace Gameplay
 {
     public class GameplayManager : Singleton<GameplayManager>
     {    
@@ -15,39 +15,45 @@ namespace Erutan.Scripts.Gameplay
         public event Action OnGameStarted;
 
         // Physical world 
-        public event Action<UpdateEntityPacket> OnEntityUpdated;
-        public event Action<UpdatePositionPacket> OnEntityMoved;
-        public event Action<UpdateRotationPacket> OnEntityRotated;
-        public event Action<DestroyEntityPacket> OnEntityDestroyed;
+        public event Func<UpdateObjectPacket, UnityEngine.GameObject> ObjectUpdated;
+        public event Action<UpdatePositionPacket> ObjectMoved;
+        public event Action<UpdateRotationPacket> ObjectRotated;
+        public event Action<DestroyObjectPacket> ObjectDestroyed;
+        
+        // Player
+        public event Action<CreatePlayerPacket> PlayerCreated;
 
 
         #endregion
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
-            SessionManager.Instance.Client.ReceivedPacket += Handler;
+            SessionManager.Instance.Client.ReceivedPacket += OnReceivedPacket;
         }
 
         protected override void OnDestroy()
         {
-            SessionManager.Instance.Client.ReceivedPacket -= Handler;
+            SessionManager.Instance.Client.ReceivedPacket -= OnReceivedPacket;
         }
 
-        private void Handler(Packet packet) {
+        private void OnReceivedPacket(Packet packet) {
             //Record.Log($"Receiving packet: {packet.TypeCase}");
             switch (packet.TypeCase) {
-                case Packet.TypeOneofCase.UpdateEntity:
-                    OnEntityUpdated?.Invoke(packet.UpdateEntity);
+                case Packet.TypeOneofCase.UpdateObject:
+                    ObjectUpdated?.Invoke(packet.UpdateObject);
                     break;
                 case Packet.TypeOneofCase.UpdatePosition:
-                    OnEntityMoved?.Invoke(packet.UpdatePosition);
+                    ObjectMoved?.Invoke(packet.UpdatePosition);
                     break;
                 case Packet.TypeOneofCase.UpdateRotation:
-                    OnEntityRotated?.Invoke(packet.UpdateRotation);
+                    ObjectRotated?.Invoke(packet.UpdateRotation);
                     break;
-                case Packet.TypeOneofCase.DestroyEntity:
-                    OnEntityDestroyed?.Invoke(packet.DestroyEntity);
+                case Packet.TypeOneofCase.DestroyObject:
+                    ObjectDestroyed?.Invoke(packet.DestroyObject);
+                    break;
+                case Packet.TypeOneofCase.CreatePlayer:
+                    PlayerCreated?.Invoke(packet.CreatePlayer);
                     break;
                 default:
                     // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions

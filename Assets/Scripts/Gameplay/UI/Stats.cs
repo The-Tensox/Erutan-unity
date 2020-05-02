@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Erutan.Scripts.Gameplay.Entity;
-using Erutan.Scripts.Utils;
+﻿using GamePlay.Object;
 using UnityEngine;
-using static Erutan.Packet.Types;
 
-namespace Erutan.Scripts.Gameplay.UI 
+namespace Gameplay.UI 
 {
     public class Stats : MonoBehaviour
     {
@@ -26,8 +22,8 @@ namespace Erutan.Scripts.Gameplay.UI
             if (Time.frameCount % 60 == 0) { // TODO: tweak ...
                 double averageSpeed = 0, minimumSpeed = double.MaxValue, maximumSpeed = double.MinValue;
                 double averageLife = 0, minimumLife = double.MaxValue, maximumLife = double.MinValue;
-                foreach(var entity in EntityManager.Instance.Entities.Values) {
-                    foreach(var component in entity.Components) {
+                foreach(var obj in ObjectManager.Instance.Objects.Values) {
+                    foreach(var component in obj.Components) {
                         if (component.Speed != null) {
                             averageSpeed = (averageSpeed + component.Speed.MoveSpeed) / (averageSpeed != 0 ? 2 : 1);
                             minimumSpeed = component.Speed.MoveSpeed < minimumSpeed ? component.Speed.MoveSpeed : minimumSpeed;

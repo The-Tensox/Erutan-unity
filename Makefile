@@ -5,6 +5,7 @@ EDITOR_PATH ?= $(HOME)/Unity/Hub/Editor/2019.2.17f1/Editor/Unity
 IMAGE_NAME ?= erutan-unity
 CONTAINER_NAME ?= erutan-unity
 CONTAINER_INSTANCE ?= default
+GRPC_CSHARP_PLUGIN_PATH ?= /usr/local/bin
 
 
 .PHONY: help build build-headless run proto docker-build docker-run
@@ -35,9 +36,9 @@ run:
 proto:
 	# TODO: fix this need for cd Assets later :)
 	cd Assets; protoc --csharp_out=protobuf/protometry protobuf/protometry/*.proto --grpc_out=protobuf/protometry \
-		--plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
+		--plugin=protoc-gen-grpc=$(GRPC_CSHARP_PLUGIN_PATH)/grpc_csharp_plugin
 	cd Assets; protoc --csharp_out=protobuf protobuf/*.proto --grpc_out=protobuf \
-		--plugin=protoc-gen-grpc=/usr/local/bin/grpc_csharp_plugin
+		--plugin=protoc-gen-grpc=$(GRPC_CSHARP_PLUGIN_PATH)/grpc_csharp_plugin
 
 docker-build:
 	# FIXME: make build always say "failed to build" (but succeed) it break the make pipeline

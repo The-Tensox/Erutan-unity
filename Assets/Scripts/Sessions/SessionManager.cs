@@ -1,94 +1,75 @@
-using UnityEngine;
 using System;
-using Erutan.Scripts.Utils;
-using System.Threading.Tasks;
+using Erutan;
+using Utils;
+using Component = UnityEngine.Component;
 
-namespace Erutan.Scripts.Sessions
+namespace Sessions
 {
+    /// <summary>
+    /// Should act as a high-level layer to networking
+    /// </summary>
     public class SessionManager : Singleton<SessionManager>
     {
         #region Variables
-        [SerializeField] private string _ipAddress = "127.0.0.1";
-        [SerializeField] private int _port = 50051;
         private string _deviceId;
         private Client _client;
 
         #endregion
+        
 
         #region Properties
 
-        public Client Client
+        public Client Client => _client;
+
+        #endregion
+        
+        #region events
+
+        /// <summary>
+        /// Received when the client is disconnected.
+        /// </summary>
+        public event Action Disconnected;
+
+        /// <summary>
+        /// Received when the client is connected.
+        /// </summary>
+        public event Action Connected;
+
+        #endregion
+
+        public void Init(string ip, int port)
         {
-            get
-            {
-                if (_client == null)
-                {
-                    _client = new Client(_ipAddress, _port);
-                }
-                return _client;
-            }
+            _client = new Client(ip, port);
+            _client.StreamConnected += ClientOnStreamConnected;
+            _client.StreamClosed += ClientOnStreamClosed;
         }
-
-        #endregion
-
-        #region Events
-        public event Action OnConnectionSuccess = delegate { Record.Log(">> Connection Success"); };
-
-        public event Action OnNewAccountCreated = delegate { Record.Log(">> New Account Created"); };
-
-        public event Action OnConnectionFailure = delegate { Record.Log(">> Connection Error"); };
-
-        public event Action OnDisconnected = delegate { Record.Log(">> Disconnected"); };
-
-        #endregion
 
         
-
-/*
-        public async Task<bool> ConnectAsync()
+        private void ClientOnStreamConnected()
         {
-            //HelloReply response = await Client.SayHelloAsync($"Log me plz");
-            
-            switch (response)
-            {
-                case AuthenticationResponse.Authenticated:
-                    OnConnectionSuccess?.Invoke();
-                    break;
-                case AuthenticationResponse.NewAccountCreated:
-                    OnNewAccountCreated?.Invoke();
-                    OnConnectionSuccess?.Invoke();
-                    break;
-                case AuthenticationResponse.Error:
-                    OnConnectionFailure?.Invoke();
-                    break;
-                default:
-                    InConsole.Instance.Log("Unhandled response received: " + response, LogLevel.Error);
-                    break;
-            }
-
-            if (response != null) {
-                OnConnectionSuccess?.Invoke();
-            } else {
-                OnConnectionFailure?.Invoke();
-            }
-            return response != null;
-            
-            return true;
+            Connected?.Invoke();
         }
 
-        public async Task<bool> SendPosition(Vector3 position) {
-            return await Client.SendPosition(position);
-        }
-
-        public async Task<bool> DisconnectAsync()
+        private void ClientOnStreamClosed()
         {
-            
-            ByeReply response = await Client.SayByeAsync($"Disconnect me plz");
-            if (response != null) OnDisconnected.Invoke();
-            return response != null;
-            
-            return true;
+            Disconnected?.Invoke();
         }
-        */
+
+        public void Connect()
+        {
+            _client.Init();
+        }
+
+        public void UpdateParameters(double timeScale = 0, bool debug = false, Protometry.Box cullingArea = null)
+        {
+            var p = new Packet();
+            var t = new Packet.Types.UpdateParametersPacket.Types.Parameter();
+            if (timeScale != 0) t.TimeScale = timeScale;
+            if (debug) t.Debug = debug;
+            if (cullingArea != null) t.CullingArea = cullingArea;
+            p.UpdateParameters = new Packet.Types.UpdateParametersPacket();
+            p.UpdateParameters.Parameters.Add(t);
+            Instance.Client.Send(p);
+        }
     }
 }

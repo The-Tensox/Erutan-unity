@@ -8,7 +8,7 @@ namespace Editor
         private const string BasePath = "Builds/";
 
         private static readonly string[] GameLevels = {
-            "Assets/Scenes/SampleScene.unity"
+            "Assets/Scenes/Main.unity"
         };
     
         [MenuItem("Builds/Windows %#W")]
@@ -94,7 +94,6 @@ namespace Editor
                 Debug.LogError($"Error building Android { message }");
         }
     
-        // Seems to be runnable from bash
         [MenuItem("Builds/PC All Platforms")]
         public static void BuildAllPc() {
             BuildWindows();

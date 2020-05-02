@@ -1,7 +1,9 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UnityEngine;
 
-namespace Erutan.Scripts.Utils
+namespace Utils
 {
     public static class Pool {
 
@@ -124,7 +126,7 @@ namespace Erutan.Scripts.Utils
         /// Spawn/Despawn sequence is going to be pretty darn quick and
         /// this avoids code duplication.
         /// </summary>
-        static public void Preload(GameObject _prefab, int qty = 1) {
+        public static void Preload(GameObject _prefab, int qty = 1) {
             Init(_prefab, qty);
 
             // Make an array to grab the objects we're about to pre-spawn.
@@ -146,22 +148,23 @@ namespace Erutan.Scripts.Utils
         /// after spawning -- but remember that toggling IsActive will also
         /// call that function.
         /// </summary>
-        static public GameObject Spawn(GameObject _prefab, Vector3 pos, Quaternion rot) {
+        public static GameObject Spawn(GameObject _prefab, Vector3 pos, Quaternion rot) {
             Init(_prefab);
 
             return pools[_prefab].Spawn(pos, rot);
         }
 
-        static public GameObject Spawn(GameObject _prefab) {
+        public static GameObject Spawn(GameObject _prefab) {
             Init(_prefab);
 
             return pools[_prefab].Spawn(Vector3.zero, Quaternion.identity);
         }
+        
 
         /// <summary>
         /// Despawn the specified gameobject back into its pool.
         /// </summary>
-        static public void Despawn(GameObject obj) {
+        public static void Despawn(GameObject obj) {
             PoolMember pm = obj.GetComponent<PoolMember>();
             if(pm == null) {
                 Debug.Log ("Object '"+obj.name+"' wasn't spawned from a pool. Destroying it instead.");
@@ -172,6 +175,14 @@ namespace Erutan.Scripts.Utils
             }
         }
         
+        /// <summary>
+        /// Despawn the specified gameobject back into its pool after a delay
+        /// </summary>
+        public static void Despawn(GameObject obj, int after)
+        {
+            Task.Delay(after).ContinueWith(t=> UnityMainThreadDispatcher.Instance().Enqueue(() => Despawn(obj)));
+        }
+
     }
 
 }

@@ -1,6 +1,6 @@
-using UnityEngine;
+using Component = Erutan.Component;
 
-namespace Erutan.Scripts.Utils
+namespace Utils
 {
     /**
     * Simple protobuf helpers to have cleaner code
@@ -15,10 +15,19 @@ namespace Erutan.Scripts.Utils
         {
             return new UnityEngine.Vector3((float) v.X, (float) v.Y, (float) v.Z);
         }
-
-        public static Color ToColor(this Component.Types.RenderComponent.Types.Color c) 
+        
+        public static Protometry.Quaternion ToQuaternion(this UnityEngine.Quaternion q)
         {
-            return new Color(c.Red, c.Green, c.Blue, c.Alpha);
+            return new Protometry.Quaternion {X = q.x, Y = q.y, Z = q.z, W = q.w};
+        }
+        public static Protometry.Vector3 ToVector3(this UnityEngine.Vector3 v) 
+        {
+            return new Protometry.Vector3 { X = v.x, Y = v.y,  Z = v.z};
+        }
+
+        public static UnityEngine.Color ToColor(this Component.Types.RenderComponent.Types.Color c) 
+        {
+            return new UnityEngine.Color(c.Red, c.Green, c.Blue, c.Alpha);
         }
     }
 }

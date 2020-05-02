@@ -1,20 +1,20 @@
-﻿using Erutan.Scripts.Utils;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Erutan.Scripts.Gameplay.Player
+namespace Gameplay.Player
 {
     public class CameraController : MonoBehaviour {
     
-        [SerializeField] private float MovementSpeed = 1.0f;
-        [SerializeField] private float DezoomSpeed = 1000f;
-        [SerializeField] private float RotationSpeed = 3.0f;
+        [SerializeField] private float movementSpeed = 0.5f;
+        [SerializeField] private float dezoomSpeed = 100f;
+        [SerializeField] private float rotationSpeed = 3.0f;
 
         private float _eulerX;
         private float _eulerY;
     
         void Update () {
             // Zoom / dezoom
-            transform.position += Vector3.up * -Input.GetAxis("Mouse ScrollWheel") * DezoomSpeed;
+            transform.position += Vector3.up * -Input.GetAxis("Mouse ScrollWheel") * dezoomSpeed;
             
             //Get Forward face
             Vector3 dir = transform.forward;
@@ -23,11 +23,11 @@ namespace Erutan.Scripts.Gameplay.Player
             dir.Normalize();
 
             // Move position with arrows around
-            transform.position += (transform.right * Input.GetAxis("Horizontal") + dir * Input.GetAxis("Vertical")) * MovementSpeed;
+            transform.position += (transform.right * Input.GetAxis("Horizontal") + dir * Input.GetAxis("Vertical")) * movementSpeed;
 
             // Rotate camera on Y axis
             if(Input.GetMouseButton(1) && !Input.GetMouseButton(2)) {
-                transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * RotationSpeed, 0));
+                transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X") * rotationSpeed, 0));
                 _eulerX = transform.rotation.eulerAngles.x;
                 _eulerY = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(_eulerX, _eulerY, 0);
@@ -35,7 +35,7 @@ namespace Erutan.Scripts.Gameplay.Player
 
             // Rotate camera on X axis
             if(Input.GetMouseButton(1) && Input.GetMouseButton(2)) {
-                transform.Rotate(-new Vector3(Input.GetAxis("Mouse Y") * RotationSpeed, 0, 0));
+                transform.Rotate(-new Vector3(Input.GetAxis("Mouse Y") * rotationSpeed, 0, 0));
                 _eulerX = transform.rotation.eulerAngles.x;
                 _eulerY = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(_eulerX, _eulerY, 0);

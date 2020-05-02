@@ -1,57 +1,68 @@
-using UnityEngine;
-using Grpc.Core;
-using Erutan.Scripts.Utils;
-using System.Threading.Tasks;
-using System.Threading;
 using System;
+using System.Collections.Generic;
 using System.IO;
-using static Erutan.Erutan;
+using System.Threading;
+using System.Threading.Tasks;
 using Erutan;
+using Grpc.Core;
+using UnityEngine;
+using Utils;
+using static Erutan.Erutan;
+using Metadata = Erutan.Metadata;
 
-namespace Erutan.Scripts.Sessions
+namespace Sessions
 {
+    /// <summary>
+    /// Should act as the lowest layer of networking, should be used rarely
+    /// </summary>
     public class Client
     {
+
+        #region properties
+
         public string Host { get; }
         public int Port { get; }
+        
         public bool IsConnected;
+        public string Token => _token;
 
+        #endregion
+
+
+        #region events
 
         /// <summary>
         /// Received when a stream is closed.
         /// </summary>
-        public event Action Closed;
+        public event Action StreamClosed;
 
         /// <summary>
         /// Received when a stream is connected.
         /// </summary>
-        public event Action Connected;
+        public event Action StreamConnected;
 
         /// <summary>
         /// Received a stream packet.
         /// </summary>
         public event Action<Packet> ReceivedPacket;
 
-        /// <summary>
-        /// Received a presence change for joins and leaves with users in a stream.
-        /// </summary>
-        //event Action<PresenceEvent> ReceivedPresence;
+        #endregion
 
-        /// <summary>
-        /// Received when an error occurs on the stream.
-        /// </summary>
-        public event Action<Exception> ReceivedError;
 
         private ErutanClient _networkClient;
-        public Channel _channel;
+        private Channel _channel;
 
         private string _token;
 
+
+
         private Thread _listenerThread;
+        private Thread _senderThread;
 
         private AsyncDuplexStreamingCall<Packet, Packet> _stream;
         private IAsyncStreamReader<Packet> _inStream;
         private IAsyncStreamWriter<Packet> _outStream;
+        private Queue<Packet> _packetsToBeSent = new Queue<Packet>();
         public Client(string host, int port)
         {
             Host = host;
@@ -68,10 +79,10 @@ namespace Erutan.Scripts.Sessions
             var channelCredentials = new SslCredentials(File.ReadAllText($"{Application.streamingAssetsPath}/server1.crt"));//, //new KeyCertificatePair(File.ReadAllText($"{Application.dataPath}/server1.crt"), ""));
             
             var callCredentials = CallCredentials.FromInterceptor(AsyncAuthInterceptor);
-            var ip = Environment.GetEnvironmentVariable("ERUTAN_HOST");
-            ip = ip == null ? "127.0.0.1" : ip;
+            Record.Log($"Trying to connect ...");
+
             _channel = new Channel(
-                ip,
+                "127.0.0.1",
                 50051,
                 ChannelCredentials.Create(
                     channelCredentials,
@@ -96,14 +107,18 @@ namespace Erutan.Scripts.Sessions
             _listenerThread = new Thread(Listen) {IsBackground = true};
             _listenerThread.Start();
             
-            Connected?.Invoke();
+            // Send packets to server on different thread
+            _senderThread = new Thread(DequeuePacketsToBeSent) {IsBackground = true};
+            _senderThread.Start();
+            
+            StreamConnected?.Invoke();
             IsConnected = true;
         }
 
         public void Logout() {
             // Close stream !
             _stream?.Dispose();
-            Closed?.Invoke();
+            StreamClosed?.Invoke();
         }
 
         private async void Listen() {
@@ -112,38 +127,49 @@ namespace Erutan.Scripts.Sessions
                 var packet = _inStream.Current;
                 // Invoke the event on the main thread
                 UnityMainThreadDispatcher.Instance()
-                    .Enqueue(() => ReceivedPacket?.Invoke(packet));
+                    .Enqueue(() =>
+                    {
+                        switch (packet.TypeCase)
+                        {
+                            case Packet.TypeOneofCase.Authentication:
+                                _token = packet.Authentication.ClientToken;
+                                // Record.Log($"Received auth {_token}");
+
+                                break;
+                            case Packet.TypeOneofCase.CreatePlayer:
+                                Record.Log($"Received create player {packet.CreatePlayer}");
+
+                                break;
+                        }
+                        // Record.Log($"Received {packet}");
+
+                        ReceivedPacket?.Invoke(packet);
+                    });
+            }
+        }
+
+        private async void DequeuePacketsToBeSent()
+        {
+            while (true)
+            {
+                while (_packetsToBeSent.Count > 0)
+                {
+                    // Record.Log($"Send");
+                    await _outStream.WriteAsync(_packetsToBeSent.Dequeue());
+                }
+                await Task.Delay(100);
             }
         }
         
         /// General purpose low level client to server packet sending method
-        public async void Send(Packet packet)
+        public void Send(Packet packet)
         {
             if (!IsConnected) {
                 Record.Log($"Not connected !", LogLevel.Error);
                 return;
             }
             packet.Metadata = new Metadata();
-            //Record.Log($"Sending {packet}");
-            await _outStream.WriteAsync(packet);
-        }
-
-        private async void SpamServer() {
-            /*
-            var updatePositionPacket = new Packet.Types.UpdatePositionPacket();
-            var randomPosition = UnityEngine.Random.insideUnitSphere * 10;
-            updatePositionPacket.ObjectId = "zz";
-            updatePositionPacket.Position = new NetVector3();
-            updatePositionPacket.Position.X = randomPosition.x;
-            updatePositionPacket.Position.Y = randomPosition.y;
-            updatePositionPacket.Position.Z = randomPosition.z;
-            var packet = new Packet();
-            packet.UpdatePosition = updatePositionPacket;
-            while (true) {
-                Send(packet);
-                await Task.Delay(1000);
-            }
-            */
+            _packetsToBeSent.Enqueue(packet);
         }
     }
 }

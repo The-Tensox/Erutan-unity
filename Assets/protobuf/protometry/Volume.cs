@@ -38,11 +38,11 @@ namespace Protometry {
             "dG9tZXRyeWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Protometry.Vector3Reflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Sphere), global::Protometry.Sphere.Parser, new[]{ "Center", "Radius" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Capsule), global::Protometry.Capsule.Parser, new[]{ "Center", "Width" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Box), global::Protometry.Box.Parser, new[]{ "Min", "Max" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Mesh), global::Protometry.Mesh.Parser, new[]{ "Center", "Vertices", "Tris", "Normals", "Uvs" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Sphere), global::Protometry.Sphere.Parser, new[]{ "Center", "Radius" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Capsule), global::Protometry.Capsule.Parser, new[]{ "Center", "Width" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Box), global::Protometry.Box.Parser, new[]{ "Min", "Max" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Protometry.Mesh), global::Protometry.Mesh.Parser, new[]{ "Center", "Vertices", "Tris", "Normals", "Uvs" }, null, null, null, null)
           }));
     }
     #endregion

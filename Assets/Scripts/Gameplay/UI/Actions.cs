@@ -1,14 +1,19 @@
-﻿using System;
-using Erutan.Scripts.Gameplay.Entity;
-using Erutan.Scripts.Sessions;
-using Erutan.Scripts.Utils;
-using Protometry;
+﻿using System.Collections;
+using Erutan;
+using GamePlay.Object;
+using Sessions;
 using UnityEngine;
+using Utils;
+using Component = Erutan.Component;
 
-namespace Erutan.Scripts.Gameplay.UI
+namespace Gameplay.UI
 {
     public class Actions : MonoBehaviour
     {
+        [SerializeField] private GameObject fireballPrefab;
+
+        private float _lastFireball;
+        
         private bool _isDragging;
         
         private GameObject _draggedObject;
@@ -16,22 +21,44 @@ namespace Erutan.Scripts.Gameplay.UI
 
         private void Update() {
             if (_draggedObject != null && _isDragging) {
-                var v3 = Input.mousePosition;
-                v3.z = 100.0f;
-                v3 = Camera.main.ScreenToWorldPoint(v3);
-                _draggedObject.transform.position = v3;
+                DragObject();
             }
-            if(Input.GetMouseButton(0)) {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Time.time > _lastFireball && Input.GetKey(KeyCode.F) && Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                _lastFireball = Time.time + 0.2f; // 2 sec cooldown
+                ThrowFireBall();
+            }
 
-                if(!Physics.Raycast (ray, out var hit))
-                    return;
-                /*
-                var id = Convert.ToUInt64(hit.transform.name);
-                EntityManager.Instance.Entities.TryGetValue(id, out var entity);
-                Record.Log($"{entity}");
-                */
-            }
+            // if(Input.GetMouseButton(0)) {
+            //     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //
+            //     if(!Physics.Raycast (ray, out var hit))
+            //         return;
+            //     /*
+            //     var id = Convert.ToUInt64(hit.transform.name);
+            //     ObjectManager.Instance.Entities.TryGetValue(id, out var obj);
+            //     Record.Log($"{obj}");
+            //     */
+            // }
+        }
+        
+        private void ThrowFireBall()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var camPos = Camera.main.transform.position;
+            var go = Pool.Spawn(fireballPrefab, Vector3.Lerp(camPos, ray.direction, 0.1f),
+                Quaternion.LookRotation(ray.direction));
+            go.GetComponent<Rigidbody>().AddForce(go.transform.forward*1000f);
+            // go.transform.localScale *= 10;
+        }
+        
+
+        private void DragObject()
+        {
+            var v3 = Input.mousePosition;
+            v3.z = 100.0f;
+            v3 = Camera.main.ScreenToWorldPoint(v3);
+            _draggedObject.transform.position = v3;
         }
 
         public void StartDraggingCreateObject() {
@@ -48,38 +75,21 @@ namespace Erutan.Scripts.Gameplay.UI
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(ray, out var hit, 1000.0f))
                 return;
-            var p = new Packet {Metadata = new Metadata()};
-            var t = new Packet.Types.UpdateEntityPacket();
-            var c = new Component();
-            var pos = new Protometry.Vector3
+            var hitPos = hit.transform.position;
+            ObjectManager.Instance.CreateObject(new Protometry.Vector3
             {
-                X = hit.transform.position.x,
+                X = hitPos.x,
                 Y = 1,
-                Z = hit.transform.position.z
-            };
-            var rot = new Protometry.Quaternion
-            {
-                X = 0,
-                Y = 0,
-                Z = 0,
-                W = 0
-            };
-            var sca = new Protometry.Vector3
-            {
-                X = 1,
-                Y = 1,
-                Z = 1
-            };
-            c.Space = new Component.Types.SpaceComponent
-            {
-                Position = pos,
-                Rotation = rot,
-                Scale = sca
-            };
-            t.Components.Add(c);
+                Z = hitPos.z
+            });
+        }
 
-            p.UpdateEntity = t;
+        public void Armageddon()
+        {
+            var p = new Packet {Armageddon = new Packet.Types.ArmageddonPacket()};
             SessionManager.Instance.Client.Send(p);
         }
+
+
     }
 }

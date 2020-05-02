@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Erutan.Scripts.Utils
+namespace Utils
 {
     public enum LogLevel {
         Debug,
