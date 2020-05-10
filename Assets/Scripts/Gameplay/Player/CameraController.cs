@@ -5,7 +5,7 @@ namespace Gameplay.Player
 {
     public class CameraController : MonoBehaviour {
     
-        [SerializeField] private float movementSpeed = 0.5f;
+        [SerializeField] private float movementSpeed = 5f;
         [SerializeField] private float dezoomSpeed = 100f;
         [SerializeField] private float rotationSpeed = 3.0f;
 

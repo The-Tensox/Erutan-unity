@@ -47,11 +47,11 @@ namespace GamePlay.Object
             // Only add camera, etc if it's self client, we don't want to have other clients view !
             if (isSelf)
             {
-                go.AddComponent<Camera>();
+                go.AddComponent<Camera>().farClipPlane = 2000f;
                 go.AddComponent<CameraController>();
                 go.AddComponent<AudioListener>(); // No audio anyway ..
                 go.AddComponent<TransformNetwork>().id = p.ObjectId;
-                var cullingSize = 50; // TODO: config or something
+                var cullingSize = 5000; // TODO: config or something
                 go.AddComponent<Cull>().size = new Vector3(cullingSize, cullingSize, cullingSize);
                 go.tag = "MainCamera";
             }
@@ -221,7 +221,7 @@ namespace GamePlay.Object
             // Create object case
             if (!obj)
             {
-                Record.Log($"Creating object");
+                // Record.Log($"Creating object");
                 // GameObject go;
                 // if (_preloaded != null) {
                 //     go = Pool.Spawn(_preloaded);
@@ -289,19 +289,12 @@ namespace GamePlay.Object
         private GameObject InstanciateMesh(Protometry.Mesh receivedMesh, Color[] colors) {
             var go = new GameObject();
             var meshRenderer = go.AddComponent<MeshRenderer>();
-            // Override standard shader to allow transparency
-            var m = new Material(Shader.Find("Standard")) {color = colors[0]};
-            m.SetOverrideTag("RenderType", "Transparent");
-            m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-            m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-            m.SetInt("_ZWrite", 0);
-            m.DisableKeyword("_ALPHATEST_ON");
-            m.EnableKeyword("_ALPHABLEND_ON");
-            m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            m.renderQueue = (int)UnityEngine.Rendering.RenderQueue.Transparent;
-            m.SetFloat("_Mode", 2.0f);
+            var props = new MaterialPropertyBlock();
+            var m = new Material(Shader.Find("Custom/GpuInstancing")) {enableInstancing = true};
             meshRenderer.sharedMaterial = m;
-            
+            props.SetColor("_Color", colors[0]);
+            meshRenderer.SetPropertyBlock(props);
+
             var meshFilter = go.AddComponent<MeshFilter>();
             // TODO: helper erutan.mesh -> unityengine.mesh
             var mesh = new UnityEngine.Mesh

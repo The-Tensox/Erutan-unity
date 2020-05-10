@@ -34,11 +34,12 @@ namespace Gameplay
 
         protected override void OnDestroy()
         {
-            SessionManager.Instance.Client.ReceivedPacket -= OnReceivedPacket;
+            if (SessionManager.Instance != null && SessionManager.Instance.Client != null)
+                SessionManager.Instance.Client.ReceivedPacket -= OnReceivedPacket;
         }
 
         private void OnReceivedPacket(Packet packet) {
-            //Record.Log($"Receiving packet: {packet.TypeCase}");
+            // Record.Log($"Receiving packet: {packet.TypeCase}");
             switch (packet.TypeCase) {
                 case Packet.TypeOneofCase.UpdateObject:
                     ObjectUpdated?.Invoke(packet.UpdateObject);
@@ -54,6 +55,7 @@ namespace Gameplay
                     break;
                 case Packet.TypeOneofCase.CreatePlayer:
                     PlayerCreated?.Invoke(packet.CreatePlayer);
+                    Record.Log($"Creating player {packet.CreatePlayer}");
                     break;
                 default:
                     // TODO: https://docs.microsoft.com/en-us/dotnet/standard/exceptions/how-to-create-user-defined-exceptions
